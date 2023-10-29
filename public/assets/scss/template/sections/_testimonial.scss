@@ -1,0 +1,234 @@
+.testi-box {
+    border-radius: 30px;
+    background-color: $white-color;
+    box-shadow: 0px 7px 12px 4px rgba(75, 83, 100, 0.06);
+    padding: 60px 40px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+    .testi-avater {
+        @include equal-size(103px);
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        i {
+            color: $theme-color;
+            font-size: 30px;
+            @include equal-size-lineHeight(60px);
+            background-color: $white-color;
+            border-radius: 50%;
+            position: absolute;
+            top: 35%;
+            left: -38px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .testi-title {
+        font-weight: 600;
+    }
+
+    .name {
+        margin-bottom: 0;
+        line-height: 1;
+        font-weight: 600;
+    }
+}
+
+.testi-slider-area {
+    position: relative;
+}
+
+.vs-icon-box {
+    --icon-size: 50px;
+
+    &.testi-1 {
+        .icon-btn {
+            background-color: $white-color;
+            border: 1px solid $theme-color;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white-color;
+            }
+        }
+    }
+
+    &.testi-1,
+    &.testi-2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -90px;
+        width: var(--icon-size);
+    }
+
+    &.testi-2 {
+        top: 35%;
+        transform: translateY(-35%);
+
+        .icon-btn {
+            background-color: $white-color;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.rating-box {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 20px 42.75px 2.25px rgba(214, 206, 185, 0.15);
+    background-color: $white-color;
+    padding: 30px 30px;
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .number {
+        margin-bottom: 0;
+        border-right: 2px solid #f7f3e8;
+        color: $theme-color;
+        line-height: 0.9;
+        padding-top: 5px;
+        padding-right: 20px;
+        margin-right: 20px;
+    }
+
+    .rating-count {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    .star-rating {
+        margin-bottom: 10px;
+    }
+}
+
+.testi-grid-wrapper {
+    position: relative;
+}
+
+#clipShape {
+    position: absolute;
+}
+
+.testi-grid {
+    --icon-size: 80px;
+    margin-top: calc(var(--icon-size)/2);
+
+    .testi-text {
+        background-color: $white-color;
+        padding: 55px 40px 35px 40px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        position: relative;
+
+        i {
+            font-size: 36px;
+            position: absolute;
+            color: $theme-color;
+            top: calc(var(--icon-size)/-2);
+            left: calc(var(--icon-size)/2);
+            @include equal-size-lineHeight(var(--icon-size));
+            background-color: $white-color;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        &:after {
+            content: "";
+            height: 38px;
+            width: 58px;
+            background-color: inherit;
+            clip-path: url(#testiAfterShape);
+            position: absolute;
+            top: calc(100% - 1px);
+            right: calc(var(--icon-size)/2);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .testi-author {
+        display: flex;
+        align-items: center;
+    }
+
+    .name {
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    .avater {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+
+@include lg {
+    .testi-box {
+        padding: 30px 30px 25px 30px;
+    }
+
+    .testi-grid {
+        --icon-size: 50px;
+
+        .testi-text {
+            padding: 40px 25px 20px 25px;
+
+            i {
+                font-size: 24px;
+            }
+        }
+
+        .quote-icon img {
+            width: 23px;
+        }
+    }
+}
+
+@include md {
+    .testi-grid-wrapper.ml-40 {
+        margin-left: 0;
+    }
+}
+
+@include sm {
+    .testi-grid {
+        .testi-text {
+            padding: 40px 35px 30px 35px;
+        }
+    }
+}
+
+@include vxs {
+    .testi-grid {
+        .testi-text {
+            padding: 40px 25px 20px 25px;
+        }
+    }
+
+    .rating-box {
+        padding: 25px 25px;
+    }
+}

@@ -1,0 +1,150 @@
+.contact-form {
+	.form-label {
+		margin-bottom: 11px;
+		color: $title-color;
+		font-family: $para-font;
+		font-weight: 600;
+	}
+
+	select,
+	.form-select,
+	.form-control {
+		height: 50px;
+		padding: 15px 27px;
+		background-color: $smoke-color;
+		border-radius: 10px;
+		border: none;
+		background-position: right 22px center;
+	}
+
+	textarea {
+		resize: none;
+	}
+}
+
+.small-title {
+	font-weight: 500;
+	display: block;
+	margin-bottom: 7px;
+	margin-top: -0.5rem;
+}
+
+.contact-info-box,
+.contact-form-box {
+
+
+	.contact-title {
+		position: relative;
+		padding-bottom: 10px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 60px;
+			height: 2px;
+			background-color: $theme-color;
+			display: inline-block;
+		}
+	}
+}
+
+.contact-info-box {
+	margin-left: 30px;
+
+	.contact-title {
+		margin-bottom: 25px;
+	}
+}
+
+.contact-form-box,
+.contact-info-box {
+	border: 2px dashed rgb(235, 235, 235);
+	box-shadow: 0px 8px 40px 0px rgba(105, 116, 119, 0.08);
+	border-radius: 30px;
+	background-color: rgb(253, 253, 253);
+	padding: 35px 40px 40px 40px;
+}
+
+.contact-form-box {
+	.form-group {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.info-media {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+
+	.media-icon {
+		@include equal-size(75px);
+		background-color: $white-color;
+		text-align: center;
+		line-height: 54px;
+		border-radius: 50%;
+		border: 10px solid $smoke-theme;
+		margin-right: 25px;
+	}
+
+	.info-title {
+		font-weight: 600;
+		margin-bottom: 6px;
+	}
+
+	.info-text {
+		margin-bottom: 0;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				color: $theme-color;
+			}
+		}
+	}
+}
+
+.contact-location {
+	line-height: 1px;
+	border-radius: 30px;
+	overflow: hidden;
+
+	iframe {
+		height: 265px;
+	}
+}
+
+@include lg {
+	.contact-info-box {
+		margin-left: 0;
+	}
+}
+
+@include sm {
+
+	.contact-form-box,
+	.contact-info-box {
+		padding: 37px 20px 50px 20px;
+	}
+}
+
+@include xs {
+
+	.contact-info-box,
+	.contact-location {
+		border-radius: 15px;
+	}
+
+	.info-media {
+		flex-direction: column;
+		align-items: flex-start;
+
+		.media-icon {
+			margin-bottom: 15px;
+		}
+	}
+}

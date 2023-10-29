@@ -1,0 +1,66 @@
+@each $fontsMap,
+$value in $fontsMap {
+  .font-#{$fontsMap} {
+    font-family: #{$value};
+  }
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.fw-extrabold {
+  font-weight: 800;
+}
+
+.fs-md {
+  font-size: 18px;
+}
+
+.fs-xs {
+  font-size: 14px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+@include lg {
+
+  .fs-40 {
+    font-size: 36px;
+  }
+}
+
+@include md {
+  .fs-40 {
+    font-size: 32px;
+  }
+}
+
+@include sm {
+
+  .fs-md {
+    font-size: 16px;
+  }
+
+  .fs-40 {
+    font-size: 26px;
+  }
+}

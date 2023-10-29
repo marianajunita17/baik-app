@@ -1,0 +1,151 @@
+.class-sidebar,
+.service-sidebar {
+    .widget {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+
+        .widget_title {
+            position: relative;
+            padding-bottom: 12px;
+
+            &::after {
+                content: "";
+                height: 2px;
+                width: 40px;
+                background-color: $theme-color;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+.widget {
+    .banner-2 {
+        img {
+            border-radius: 30px;
+        }
+    }
+}
+
+ul.popular-service-wrap {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    li {
+        color: $body-color;
+        position: relative;
+        border-bottom: 1px solid rgb(249, 237, 234);
+
+        a {
+            color: inherit;
+            padding: 10px 0;
+            display: block;
+
+            &::after {
+                content: "";
+                font-family: var(--icon-font);
+                font-weight: 300;
+                float: right;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+
+            a {
+                padding-bottom: 0;
+            }
+        }
+
+        &:first-child {
+            a {
+                padding-top: 0;
+            }
+        }
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+
+.class-info-wrap,
+.author-widget-wrap {
+    background-color: $white-color;
+    border-radius: 30px;
+    padding: 45px 50px;
+}
+
+.info-item {
+    display: flex;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    i {
+        color: $theme-color;
+        font-size: 30px;
+        margin-right: 22px;
+    }
+
+    .title {
+        margin-bottom: 3px;
+        font-size: 18px;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+.author-widget-wrap {
+    padding: 50px 50px 45px 50px;
+    text-align: center;
+
+    .author-info {
+        margin-bottom: 15px;
+    }
+
+    .avator {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 25px auto;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .name {
+        margin-bottom: 0;
+    }
+
+    .author-bio {
+        margin-bottom: 25px;
+    }
+}
+
+.author-social {
+    a {
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+@include vxs {
+    .class-info-wrap {
+        padding: 25px 25px;
+    }
+
+    .author-widget-wrap {
+        padding: 30px 25px 25px 25px;
+    }
+}

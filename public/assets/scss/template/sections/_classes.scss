@@ -1,0 +1,409 @@
+.class-text {
+    margin-bottom: 23px;
+}
+
+.class-card {
+    --class-gap: 40px;
+    margin-bottom: 30px;
+
+    .class-content {
+        margin-top: -100px;
+        background-color: $smoke-theme;
+        border-radius: 50px;
+        padding: 134px 40px 30px 40px;
+    }
+
+    .class-img {
+        max-width: calc(100% - var(--class-gap)*2);
+        margin-left: var(--class-gap);
+        position: relative;
+
+        a {
+            display: block;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+        
+        img {
+            border-radius: 50px;
+            transition: 0.4s;
+        }
+    }
+
+    .class-fee {
+        display: inline-block;
+        @include equal-size-lineHeight(60px);
+        background-color: $theme-color;
+        color: $white-color;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 50px;
+        position: absolute;
+        bottom: -30px;
+        right: 30px;
+        transition: all ease 0.4s;
+    }
+
+    .class-title {
+        color: $theme-color;
+
+        &:hover {
+            color: $title-color;
+        }
+    }
+
+    .class-text {
+        color: $title-color;
+    }
+
+    .vs-btn {
+        padding: 6px 20px 6px 20px;
+        min-width: auto;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    &:hover {
+        .class-img img {
+            transform: scale(1.15);
+            @include safariNoScale();
+        }
+
+        .class-fee {
+            background-color: $secondary-color;
+        }
+
+        .class-title a {
+            color: $secondary-color;
+        }
+
+        .class-info {
+            li {
+                span {
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .vs-btn {
+            border-color: $secondary-color;
+            color: $secondary-color;
+
+            &:hover {
+                background-color: $theme-color;
+                border-color: $theme-color;
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.class-img {
+    display: block;
+
+    img {
+        transition: 0.4s;
+    }
+}
+
+.class-info {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        flex: auto;
+        margin-right: 24px;
+        border-right: 1px solid rgb(246, 209, 201);
+
+        p,
+        span {
+            display: block;
+            font-family: $body-font;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        p {
+            color: $title-color;
+            margin-bottom: 6px;
+            margin-top: -2px;
+        }
+
+        span {
+            color: $theme-color;
+            transition: all ease 0.4s;
+        }
+
+        &:last-child {
+            border-right: none;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+// Style 2
+.class-box {
+    border-radius: 30px;
+    background-color: $white-color;
+    box-shadow: 0px 13px 20px 0px rgba(229, 226, 219, 0.4);
+    padding: 40px;
+    margin-bottom: 30px;
+
+    .class-img {
+        border-radius: 30px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        img {
+            border-radius: 30px;
+        }
+    }
+
+    .class-profile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 23px;
+        padding-bottom: 23px;
+        margin-bottom: 23px;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: rgb(241, 241, 241);
+
+        .avator {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            margin-right: 12px;
+            border-radius: 200px;
+
+            img {
+                transform: scale(1);
+                transition: all ease 0.4s;
+                border-radius: 200px;
+            }
+        }
+
+        .info {
+            line-height: 1;
+        }
+
+        .author-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .author-desig {
+            font-size: 14px;
+        }
+
+        &:hover {
+            .avator {
+                img {
+                    transform: scale(1.15);
+                    @include safariNoScale();
+                }
+            }
+        }
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .class-fee {
+        background-color: $smoke-theme;
+        color: $theme-color;
+        padding: 7px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        min-width: 84px;
+        transition: all ease 0.4s;
+
+        &:hover {
+            background-color: $theme-color;
+            color: $white-color;
+        }
+    }
+
+    .class-title {
+        color: $title-color;
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+
+    .class-info {
+        justify-content: space-between;
+
+        li {
+            flex: 1;
+            border-right: 1px solid rgb(241, 241, 241);
+
+            &:last-child {
+                border-right: none;
+                margin-left: auto;
+            }
+        }
+    }
+
+    .vs-btn {
+        padding: 6px 20px 6px 20px;
+        min-width: auto;
+        font-size: 16px;
+        margin-top: 25px;
+
+        &:hover {
+            color: $white-color;
+            background-color: $theme-color;
+            border-color: $theme-color;
+        }
+    }
+
+
+    &:hover {
+        .class-img {
+            img {
+                transform: scale(1.15);
+                @include safariNoScale();
+            }
+        }
+    }
+}
+
+.class-title {
+    a {
+        color: inherit;
+    }
+
+    &:hover {
+        a {
+            color: inherit;
+        }
+    }
+}
+
+/* -------- Class Details ------- */
+.class-big-img {
+    img {
+        border-radius: 30px;
+    }
+}
+
+.class-thumb-img {
+    margin-top: var(--bs-gutter-x);
+
+    img {
+        border-radius: 30px;
+        width: 100%;
+        outline: 2px solid transparent;
+        outline-offset: -2px;
+        transition: all ease 0.4s;
+    }
+
+
+    img:hover,
+    .slick-current img {
+        outline-color: $theme-color;
+        cursor: pointer;
+    }
+}
+
+.vs-register-form {
+    border: none;
+}
+
+@include lg {
+    .class-info {
+        li {
+            margin-right: 4px;
+        }
+    }
+
+    .class-box {
+        padding: 25px;
+
+        .class-fee {
+            font-size: 16px;
+            min-width: 70px;
+            padding: 4px 7px 3px 7px;
+        }
+
+        .class-info {
+            li {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@include md {
+    .class-card {
+        --class-gap: 30px;
+
+        .class-content {
+            padding: 119px 30px 26px 30px;
+            border-radius: 30px;
+        }
+
+        .class-img a {
+            border-radius: 30px;
+        }
+    }
+
+    .class-info li {
+        margin-right: 10px;
+    }
+
+    .class-box {
+        .class-info {
+            li {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+@include sm {
+    .class-info li {
+        border-right: none;
+    }
+
+    .class-box {
+        padding: 40px;
+    }
+
+    .class-info li {
+        margin-right: 10px;
+    }
+}
+
+@include vxs {
+    .class-card {
+        --class-gap: 25px;
+
+        .class-content {
+            padding: 119px 25px 36px 25px;
+        }
+    }
+
+    .class-box {
+        padding: 25px;
+
+        .class-info li {
+            border-right: none;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: $white-color;
+
+  .vs-btn {
+    border-radius: 0;
+    padding: 7px 22px;
+  }
+}
+
+.preloader-inner {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+
+  svg {
+    animation: preloadAni 2s linear infinite;
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@keyframes preloadAni {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

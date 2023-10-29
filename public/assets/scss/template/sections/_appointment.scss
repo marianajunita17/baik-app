@@ -1,0 +1,52 @@
+.appointment-form {
+    padding: 60px;
+    border-radius: 50px;
+    background-color: $smoke-theme;
+
+    select,
+    .form-select,
+    .form-control {
+        height: 60px;
+        border: none;
+        border-radius: 30px;
+    }
+
+    .vs-btn {
+        width: 100%;
+        display: block;
+        height: 60px;
+    }
+
+    textarea {
+        resize: none;
+    }
+}
+
+@include lg {
+    .appointment-form {
+        padding: 40px;
+    }
+}
+
+@include xs {
+    .appointment-form {
+        padding: 40px 20px;
+        border-radius: 30px;
+
+        select,
+        .form-select,
+        .form-control {
+            height: 45px;
+            border-radius: 23px;
+        }
+
+        .vs-btn {
+            height: 45px;
+        }
+
+        textarea {
+            resize: none;
+            padding-top: 7px;
+        }
+    }
+}
