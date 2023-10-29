@@ -193,21 +193,21 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-links">
-                            <ul>
+                            {{-- <ul>
                                 <li><i class="fal fa-clock"></i>9:30 am - 6:30 pm - Mon - Sun</li>
                                 <li><i class="fas fa-phone-alt"></i><a href="tel:+25625921589">+256 259 21589</a></li>
                                 <li><i class="fas fa-map-marker-alt"></i>Hilton Street, New York 215 US</li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="header-social">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#">Profil BAIK</a></li>
+                                <li><a href="#">BAIK Edukasi</a></li>
+                                {{-- <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                <li><a href="#"><i class="fab fa-skype"></i></a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -230,7 +230,7 @@
                             </div>
                             <div class="col-auto">
                                 <nav class="main-menu menu-style1 d-none d-lg-inline-block">
-                                    <ul>
+                                    {{-- <ul>
                                         <li class="menu-item-has-children">
                                             <a href="index.html">Home</a>
                                             <ul class="sub-menu">
@@ -280,14 +280,14 @@
                                         <li>
                                             <a href="contact.html">Contact</a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </nav>
                                 <button type="button" class="vs-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i> Menu</button>
                             </div>
                             <div class="col-auto d-none d-xl-block">
                                 <div class="header-button">
-                                    <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
-                                    <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
+                                    <a href="login" class="vs-btn wave-btn">Login</a>
+                                    {{-- <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button> --}}
                                     <button type="button" class="sideMenuToggler icon-btn"><i class="fal fa-bars"></i></button>
                                 </div>
                             </div>
@@ -301,13 +301,13 @@
     <!--======== / Header ========-->
 
     <!--======== About Section ========-->
-    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/breadcrumb-bg-1.jpg') }}">
+    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/team/t-1.jpg') }}">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">About Us</h1>
+                <h1 class="breadcumb-title">This Is BAIK</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">About Us</li>
+                    <li><a href="index.html">Login</a></li>
+                    {{-- <li class="active">About Us</li> --}}
                 </ul>
             </div>
         </div>
