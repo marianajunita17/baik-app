@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets//img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets//img/favicon.ico') }}" type="image/x-icon">
 
     <!--==============================
 	    All CSS File
@@ -306,7 +306,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">This Is BAIK</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.html">Login</a></li>
+                    <li><a href="login">Login</a></li>
                     {{-- <li class="active">About Us</li> --}}
                 </ul>
             </div>
@@ -319,22 +319,23 @@
         <div class="container">
             <div class="row align-items-center gy-30">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <div class="img-box-2">
+                    <div class="img-box-2 center-crop">
                         <img src="{{ asset('assets/img/normal/square-1.jpg') }}" alt="photo" class="big-img">
                         <img src="{{ asset('assets/img/normal/square-2.jpg') }}" alt="photo" class="small-img">
                     </div>
                 </div>
                 <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="text-center text-lg-start">
-                        <span class="sub-title">About Knirpse</span>
-                        <h2 class="sec-title big-title">Special Care For Your Children</h2>
-                        <p class="fs-md mb-30">Formulate innovative web-readiness and installed base ideas. Distinctively integrate high-payoff paradigms without next generation systems disseminate holistic e-services through customer directed expertise.</p>
+                        <span class="sub-title">About BAIK</span>
+                        <h2 class="sec-title big-title">Memantau Kesehatan Mental Anak</h2>
+                        <p class="fs-md mb-30">Memberikan pelayanan terbaik. Memberikan dokter psikolog terbaik yang telah terverifikasi oleh kami.
+                            Memberikan fitur yang lengkap dalam menjaga dan juga memantau kesehatan mental anak. Memberikan pengajaran khsusus untuk ibu dalam menjaga anak.</p>
 
                         <div class="call-media">
                             <div class="media-icon"><i class="fas fa-phone-alt"></i></div>
                             <div class="media-body">
-                                <span class="media-label">Call Anytime 24/7</span>
-                                <p class="media-info"><a href="tel:+26921562148" class="text-inherit">+269 2156 2148</a></p>
+                                <span class="media-label">Email Us</span>
+                                <p class="media-info"><a href="tel:+26921562148" class="text-inherit">ubayabaik@gmail.com</a></p>
                             </div>
                         </div>
 
@@ -349,7 +350,7 @@
     <!--======== / About Section ========-->
 
     <!--======== Counter Section ========-->
-    <section class="counter-section space-double" data-bg-src="{{ asset('assets/img/bg/counter.jpg') }}" data-overlay="title" data-opacity="8">
+    {{-- <section class="counter-section space-double" data-bg-src="{{ asset('assets/img/bg/counter.jpg') }}" data-overlay="title" data-opacity="8">
         <div class="container">
             <div class="row gy-30 justify-content-between">
                 <!-- Single Item -->
@@ -757,7 +758,7 @@
             </div>
         </div>
     </footer>
-
+ --}}
     <!--********************************
 			Code End  Here
 	******************************** -->
