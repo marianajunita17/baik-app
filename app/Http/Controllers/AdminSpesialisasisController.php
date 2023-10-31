@@ -31,13 +31,13 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Nama Spesialisasi","name"=>"nama_spesialisasi"];
-			$this->col[] = ["label"=>"Bidang Id","name"=>"bidang_id","join"=>"bidang,id"];
+			$this->col[] = ["label"=>"Bidang Id","name"=>"bidang_id","join"=>"bidangs,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nama Spesialisasi','name'=>'nama_spesialisasi','type'=>'text','validation'=>'required|min:1|max:255|required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Bidang Id','name'=>'bidang_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'bidang,id'];
+			$this->form[] = ['label'=>'Bidang Id','name'=>'bidang_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'bidangs,nama_bidang'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
