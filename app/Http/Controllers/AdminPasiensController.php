@@ -36,7 +36,7 @@
 			$this->col[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by"];
 			$this->col[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at"];
 			$this->col[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status"];
-			$this->col[] = ["label"=>"Users Id","name"=>"users_id","join"=>"users,username"];
+			$this->col[] = ["label"=>"Users Id","name"=>"user_id","join"=>"users,username"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
