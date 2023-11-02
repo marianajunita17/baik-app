@@ -59,6 +59,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
+            // $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','icon'=>'fa fa-bars','foreign_key'=>'spesialis _id'];
 
 
 	        /*

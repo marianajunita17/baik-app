@@ -30,14 +30,14 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselor_id","join"=>"konselors,id"];
-			$this->col[] = ["label"=>"Spesialisasi","name"=>"spesialis_id","join"=>"spesialisasis,id"];
+			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
+			$this->col[] = ["label"=>"Spesialisasi","name"=>"spesialis_id","join"=>"spesialisasis,nama_spesialisasi"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselor,nama_konselor'];
-			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'spesialis,nama_spesialis'];
+			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

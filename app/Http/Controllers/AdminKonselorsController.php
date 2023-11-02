@@ -59,7 +59,7 @@
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Username','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
-            $this->form[] = ['label'=>'Spesialisasi','type'=>'select2','datatable'=>'spesialisasis,nama_spesialis','relationship_table'=>'konselor_spesialis'];
+            // $this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'checkbox','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -96,6 +96,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
+            // $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','icon'=>'fa fa-bars','foreign_key'=>'konselor_id'];
 
 
 	        /*

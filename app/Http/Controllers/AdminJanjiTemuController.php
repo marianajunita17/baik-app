@@ -60,6 +60,7 @@
 			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'wysiwyg','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
 			$this->form[] = ['label'=>'Konselor Id','name'=>'konselor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+            // $this->form[] = ['label'=>'Topik','type'=>'select2','datatable'=>'topiks,nama_topik','relationship_table'=>'films_actors'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
