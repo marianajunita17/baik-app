@@ -29,15 +29,17 @@
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
-	        $this->col = [];
-			$this->col[] = array("label"=>"Nama Konselor","name"=>"nama_konselor" );
-		$this->col[] = array("label"=>"Tgl Lahir","name"=>"tgl_lahir" );
-		$this->col[] = array("label"=>"Jenis Kelamin","name"=>"jenis_kelamin" );
-		$this->col[] = array("label"=>"CV","name"=>"CV" );
-		$this->col[] = array("label"=>"SIPP","name"=>"SIPP" );
-		$this->col[] = array("label"=>"Ijazah","name"=>"Ijazah" );
-		$this->col[] = array("label"=>"Surat Sebutan Psi","name"=>"surat_sebutan_psi" );
-
+			$this->col = [];
+			$this->col[] = ["label"=>"Nama Konselor","name"=>"nama_konselor"];
+			$this->col[] = ["label"=>"Tgl Lahir","name"=>"tgl_lahir"];
+			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
+			$this->col[] = ["label"=>"CV","name"=>"CV","image"=>true];
+			$this->col[] = ["label"=>"SIPP","name"=>"SIPP","image"=>true];
+			$this->col[] = ["label"=>"Ijazah","name"=>"Ijazah","image"=>true];
+			$this->col[] = ["label"=>"Surat Sebutan Psi","name"=>"surat_sebutan_psi","image"=>true];
+			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
+			$this->col[] = ["label"=>"KTP","name"=>"KTP","image"=>true];
+			$this->col[] = ["label"=>"NPWP","name"=>"NPWP","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -45,12 +47,12 @@
 			$this->form[] = ['label'=>'Nama Konselor','name'=>'nama_konselor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
-			$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ijazah','name'=>'Ijazah','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Surat Sebutan Psi','name'=>'surat_sebutan_psi','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'KTP','name'=>'KTP','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ijazah','name'=>'Ijazah','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Surat Sebutan Psi','name'=>'surat_sebutan_psi','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'KTP','name'=>'KTP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
 			$this->form[] = ['label'=>'No Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Verifikasi At','name'=>'verifikasi_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
@@ -59,28 +61,29 @@
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Username','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
-            // $this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'checkbox','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
+			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Nama Konselor","name"=>"nama_konselor","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Tgl Lahir","name"=>"tgl_lahir","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
-			//$this->form[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"CV","name"=>"CV","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"SIPP","name"=>"SIPP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Ijazah","name"=>"Ijazah","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Surat Sebutan Psi","name"=>"surat_sebutan_psi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"KTP","name"=>"KTP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"NPWP","name"=>"NPWP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Photo","name"=>"photo","type"=>"upload","required"=>TRUE,"validation"=>"required|image|max:3000","help"=>"File types support : JPG, JPEG, PNG, GIF, BMP"];
-			//$this->form[] = ["label"=>"No Rekening","name"=>"no_rekening","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
-			//$this->form[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Status Aktif","name"=>"status_aktif","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Jadwal","name"=>"jadwal","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
-			//$this->form[] = ["label"=>"Users Id","name"=>"users_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"users,username"];
+			//$this->form[] = ['label'=>'Nama Konselor','name'=>'nama_konselor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
+			//$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Ijazah','name'=>'Ijazah','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Surat Sebutan Psi','name'=>'surat_sebutan_psi','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'KTP','name'=>'KTP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
+			//$this->form[] = ['label'=>'No Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Verifikasi At','name'=>'verifikasi_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Verifikasi By','name'=>'verifikasi_by','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
+			//$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Username','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
+			//// $this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'checkbox','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
 			# OLD END FORM
 
 			/*
@@ -96,7 +99,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
-            // $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','icon'=>'fa fa-bars','foreign_key'=>'konselor_id'];
+            $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','parent_columns'=>'nama_konselor,SIPP','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
 
 
 	        /*

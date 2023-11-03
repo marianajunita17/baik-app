@@ -12,7 +12,7 @@
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "id";
 			$this->limit = "20";
-			$this->orderby = ",desc";
+			$this->orderby = "id,desc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
 			$this->button_bulk_action = true;
@@ -30,14 +30,14 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
-			$this->col[] = ["label"=>"Spesialisasi","name"=>"spesialis_id","join"=>"spesialisasis,nama_spesialisasi"];
+			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselors_id","join"=>"konselors,nama_konselor"];
+			$this->col[] = ["label"=>"Spesialisasi","name"=>"spesialisasis_id","join"=>"spesialisasis,nama_spesialisasi"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
-			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi'];
+			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselors_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialisasis_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
