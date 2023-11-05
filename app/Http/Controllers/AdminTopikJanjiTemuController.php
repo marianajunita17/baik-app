@@ -31,13 +31,13 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Topik","name"=>"topiks_id","join"=>"topiks,nama_topik"];
-			$this->col[] = ["label"=>"Janji Temu","name"=>"janji_temu_id","join"=>"janji_temu,catatan_kasus"];
+			$this->col[] = ["label"=>"Catatan Kasus","name"=>"janji_temu_id","join"=>"janji_temu,catatan_kasus"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Topik','name'=>'topiks_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'topiks,nama_topik'];
-			$this->form[] = ['label'=>'Janji Temu','name'=>'janji_temu_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,catatan_kasus'];
+			$this->form[] = ['label'=>'Catatan Kasus','name'=>'janji_temu_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,catatan_kasus'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
