@@ -32,33 +32,27 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Umur","name"=>"umur"];
-			$this->col[] = ["label"=>"Nama","name"=>"nama"];
+			$this->col[] = ["label"=>"Nama","name"=>"nama_pasien"];
 			$this->col[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by"];
 			$this->col[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at"];
 			$this->col[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status"];
-			$this->col[] = ["label"=>"Users Id","name"=>"user_id","join"=>"users,username"];
+            $this->col[] = ["label"=>"User","name"=>"users_id","join"=>"users,username"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
 			$this->form[] = ['label'=>'Umur','name'=>'umur','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nama','name'=>'nama','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			$this->form[] = ['label'=>'Verifikasi By','name'=>'verifikasi_by','type'=>'datetime','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Verifikasi At','name'=>'verifikasi_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
-			$this->form[] = ['label'=>'Users Id','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
+			$this->form[] = ['label'=>'Nama','name'=>'nama_pasien','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
+			$this->form[] = ['label'=>'Users','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
 			//$this->form[] = ['label'=>'Umur','name'=>'umur','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Nama','name'=>'nama','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			//$this->form[] = ['label'=>'Verifikasi By','name'=>'verifikasi_by','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Verifikasi At','name'=>'verifikasi_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Users Id','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
+			//$this->form[] = ['label'=>'Users Id','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/*
@@ -74,6 +68,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
+            $this->sub_module[] = ['label'=>'Pasien Konselor','path'=>'pasien_konselor','parent_columns'=>'nama_pasien,umur','icon'=>'fa fa-bars','foreign_key'=>'pasiens_id'];
 
 
 	        /*

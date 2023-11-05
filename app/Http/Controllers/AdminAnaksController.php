@@ -33,7 +33,7 @@
 			$this->col[] = ["label"=>"Nama Anak","name"=>"nama_anak"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Tgl Lahir","name"=>"tgl_lahir"];
-			$this->col[] = ["label"=>"Pasien Id","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
+			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE

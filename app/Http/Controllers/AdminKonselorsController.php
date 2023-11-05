@@ -55,13 +55,13 @@
 			$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
 			$this->form[] = ['label'=>'No Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Verifikasi At','name'=>'verifikasi_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Verifikasi By','name'=>'verifikasi_by','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
-			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Username','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
-			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
+			$this->form[] = ['label'=>'User','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
+			$this->form[] = ['label'=>'Nomor Induk','name'=>'nomor_induk','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialisasis_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -83,7 +83,8 @@
 			//$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Username','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
-			//// $this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'checkbox','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
+			//$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialis_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
+			//$this->form[] = ['label'=>'Nomor Induk','name'=>'nomor_induk','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/*
@@ -99,7 +100,8 @@
 	        |
 	        */
 	        $this->sub_module = array();
-            $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','parent_columns'=>'nama_konselor,SIPP','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
+            $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','parent_columns'=>'nama_konselor,nomor_induk','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
+            $this->sub_module[] = ['label'=>'Pasien Konselor','path'=>'pasien_konselor','parent_columns'=>'nama_konselor,nomor_induk','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
 
 
 	        /*
