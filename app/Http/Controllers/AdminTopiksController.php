@@ -2,7 +2,7 @@
 
 	use Session;
 	use Request;
-	use DB;
+	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
 
 	class AdminTopiksController extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -30,7 +30,17 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+            $this->col[] = ["label"=>"Kode Topik","name"=>"id"];
 			$this->col[] = ["label"=>"Nama Topik","name"=>"nama_topik"];
+            $this->col[] = ["label"=>"Jumlah janji temu","name"=>"id","callback"=>function($row){
+                $db = DB::table('topiks')
+                    ->join('topik_janji_temu','topiks.id','=','topik_janji_temu.topiks_id')
+                    ->where('topiks.id', $row->id)->count();
+
+                $res = "";
+                $res = $db;
+                return $res.' orang';
+            }];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -56,7 +66,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
-            $this->sub_module[] = ['label'=>'Topik Janji Temu','path'=>'topik_janji_temu','icon'=>'fa fa-bars','foreign_key'=>'topiks_id'];
+            $this->sub_module[] = ['label'=>'Topik Janji Temu','path'=>'topik_janji_temu','parent_columns'=>'nama_topik','icon'=>'fa fa-bars','foreign_key'=>'topiks_id'];
 
 
 	        /*
