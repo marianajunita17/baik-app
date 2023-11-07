@@ -2,7 +2,7 @@
 
 	use Session;
 	use Request;
-	use DB;
+	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
 
 	class AdminSpesialisasisController extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -32,6 +32,15 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Nama Spesialisasi","name"=>"nama_spesialisasi"];
 			$this->col[] = ["label"=>"Nama Bidang","name"=>"bidang_id","join"=>"bidangs,nama_bidang"];
+            $this->col[] = ["label"=>"Jumlah Konselor","name"=>"id","callback"=>function($row){
+                $db = DB::table('spesialisasis')
+                    ->join('konselor_spesialis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
+                    ->where('spesialisasis.id', $row->id)->count();
+
+                $res = "";
+                $res = $db;
+                return $res.' orang';
+            }];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -59,7 +68,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
-            $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','icon'=>'fa fa-bars','foreign_key'=>'spesialisasis_id'];
+            $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','parent_columns'=>'nama_spesialisasi','icon'=>'fa fa-bars','foreign_key'=>'spesialisasis_id'];
 
 
 	        /*
