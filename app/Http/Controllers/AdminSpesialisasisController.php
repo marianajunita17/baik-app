@@ -30,8 +30,8 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Spesialisasi","name"=>"nama_spesialisasi"];
 			$this->col[] = ["label"=>"Nama Bidang","name"=>"bidang_id","join"=>"bidangs,nama_bidang"];
+			$this->col[] = ["label"=>"Nama Spesialisasi","name"=>"nama_spesialisasi"];
             $this->col[] = ["label"=>"Jumlah Konselor","name"=>"id","callback"=>function($row){
                 $db = DB::table('spesialisasis')
                     ->join('konselor_spesialis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
@@ -45,8 +45,8 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			$this->form[] = ['label'=>'Nama Bidang','name'=>'bidang_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'bidangs,nama_bidang'];
 			$this->form[] = ['label'=>'Nama Spesialisasi','name'=>'nama_spesialisasi','type'=>'text','validation'=>'required|min:1|max:255|required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nama Bidang','name'=>'nama_bidang','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'bidangs,nama_bidang'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

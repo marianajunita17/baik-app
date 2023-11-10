@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
 			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
-            $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultas_selesai"];
+            $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
 			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"catatan_kasus"];
 			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"presentase_kesesuaian"];
@@ -54,7 +54,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
 			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultas_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Topik','name'=>'topiks_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'topiks,nama_topik','relationship_table'=>'topik_janji_temu'];
 			$this->form[] = ['label'=>'Keluhan','name'=>'keluhan','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
@@ -74,7 +74,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			//$this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Bank','name'=>'bank','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Tgl Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Tgl Konsultas Selesai','name'=>'tgl_konsultas_selesai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tgl Konsultas Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Durasi Konsultasi','name'=>'durasi_konsultasi','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Catatan Kasus','name'=>'catatan_kasus','type'=>'wysiwyg','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Presentase Kesesuaian','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -97,7 +97,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 	        |
 	        */
 	        $this->sub_module = array();
-            $this->sub_module[] = ['label'=>'Topik Janji Temu','path'=>'topik_janji_temu','parent_columns'=>'id,tgl_konsultasi_mulai,tgl_konsultas_selesai,keluhan,catatan_kasus','icon'=>'fa fa-bars','foreign_key'=>'janji_temu_id'];
+            $this->sub_module[] = ['label'=>'Topik Janji Temu','path'=>'topik_janji_temu','parent_columns'=>'id,tgl_konsultasi_mulai,tgl_konsultasi_selesai,keluhan,catatan_kasus','icon'=>'fa fa-bars','foreign_key'=>'janji_temu_id'];
 
 
 	        /*
@@ -307,7 +307,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
             $janjitemu = janjitemu::find($id);
 
             $startDate = Carbon::parse($janjitemu->tgl_konsultasi_mulai);
-            $endDate = Carbon::parse($janjitemu->tgl_konsultas_selesai);
+            $endDate = Carbon::parse($janjitemu->tgl_konsultasi_selesai);
 
             $diff = $startDate->diffInMinutes($endDate);
 

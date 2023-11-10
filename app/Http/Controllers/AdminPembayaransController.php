@@ -30,8 +30,9 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+            $this->col[] = ["label"=>"Kode","name"=>"id"];
 			$this->col[] = ["label"=>"Bank","name"=>"bank"];
-			$this->col[] = ["label"=>"Janji Temu Id","name"=>"janji_temu_id","join"=>"janji_temu,id"];
+			$this->col[] = ["label"=>"Kode Janji Temu","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE

@@ -32,13 +32,14 @@
 			$this->col = [];
             $this->col[] = ["label"=>"Kode","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"janji_temu_id","join"=>"janji_temu,tgl_konsultasi_mulai"];
-            $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"janji_temu_id","join"=>"janji_temu,tgl_konsultas_selesai"];
+            $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"janji_temu_id","join"=>"janji_temu,tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"janji_temu_id","join"=>"janji_temu,keluhan"];
 			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"janji_temu_id","join"=>"janji_temu,catatan_kasus"];
 			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"janji_temu_id","join"=>"janji_temu,presentase_kesesuaian"];
 			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"janji_temu_id","join"=>"janji_temu,durasi_konsultasi"];
 			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"janji_temu_id","join"=>"janji_temu,rekomendasi"];
-			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"janji_temu_id","join"=>"janji_temu,perlu_lanjut"];
+            $this->col[] = ["label"=>"Perlu Lanjut?","name"=>"janji_temu_id","join"=>"janji_temu,perlu_lanjut"];
+            $this->col[] = ["label"=>"Nama Topik","name"=>"topiks_id","join"=>"topiks,nama_topik"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE

@@ -2,7 +2,7 @@
 
 	use Session;
 	use Request;
-	use DB;
+	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
 
 	class AdminPasiensController extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -30,13 +30,22 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
+            $this->col[] = ["label"=>"User","name"=>"users_id","join"=>"users,username"];
+			$this->col[] = ["label"=>"Nama","name"=>"nama_pasien"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Umur","name"=>"umur"];
-			$this->col[] = ["label"=>"Nama","name"=>"nama_pasien"];
-			$this->col[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by"];
-			$this->col[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at"];
-			$this->col[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status"];
-            $this->col[] = ["label"=>"User","name"=>"users_id","join"=>"users,username"];
+            $this->col[] = ["label"=>"Jumlah Anak","name"=>"id","callback"=>function($row){
+                $db = DB::table('pasiens')
+                    ->join('anaks','pasiens.id','=','anaks.pasien_id')
+                    ->where('pasiens.id', $row->id)->count();
+
+                $res = "";
+                $res = $db;
+                return $res.' anak';
+            }];
+			// $this->col[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by"];
+			// $this->col[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at"];
+			// $this->col[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -68,7 +77,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
-            $this->sub_module[] = ['label'=>'Pasien Konselor','path'=>'pasien_konselor','parent_columns'=>'nama_pasien,umur','icon'=>'fa fa-bars','foreign_key'=>'pasiens_id'];
+            $this->sub_module[] = ['label'=>'Pasien Konselor','path'=>'pasien_konselor','parent_columns'=>'nama_pasien,jenis_kelamin,umur','icon'=>'fa fa-bars','foreign_key'=>'pasiens_id'];
 
 
 	        /*

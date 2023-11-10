@@ -30,18 +30,18 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Anak","name"=>"nama_anak"];
-			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
-			$this->col[] = ["label"=>"Tgl Lahir","name"=>"tgl_lahir"];
 			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
+			$this->col[] = ["label"=>"Nama Anak","name"=>"nama_anak"];
+			$this->col[] = ["label"=>"Tanggal Lahir Anak","name"=>"tgl_lahir"];
+			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama Anak','name'=>'nama_anak','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
-			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
+			$this->form[] = ['label'=>'Nama Anak','name'=>'nama_anak','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Lahir Anak','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date_format:Y-m-d','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
