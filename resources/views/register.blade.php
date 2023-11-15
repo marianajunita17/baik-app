@@ -139,7 +139,8 @@
                     <form action="mail.php" method="POST" class="appointment-form ajax-contact">
                         <div class="row gx-15">
                             <span class="sub-title">Daftar Akun Di Aplikasi BAIK</span>
-                            <form action="{{ router('register.user') }}" method="post">
+                            <form action="{{ route('publikuser.create') }}" method="post">
+                                @method('PUT')
                                 @csrf
 
                                 <div class="form-group col-sm-6">
@@ -154,12 +155,6 @@
                                     <input type="email" class="form-control" name="email" id="email"
                                         placeholder="Email" required>
                                 </div>
-                                <div class="form-group col-sm-6">
-                                    <select name="jenis_kelamin" required>
-                                        <option name="laki-laki" value="laki-laki"> Laki-Laki</option>
-                                        <option name="perempuan" value="perempuan"> Perempuan</option>
-                                    </select>
-                                </div>
                                 {{-- <div class="form-group col-12">
                                 <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
                             </div> --}}
@@ -169,9 +164,10 @@
                                             style="width:20px;height:20px">Register With Google</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="login" type="submit" class="vs-btn wave-btn">Register</a>
+                                    <button type="submit" class="vs-btn wave-btn">Submit</button>
                                 </div>
                             </form>
+
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>
                     </form>
@@ -214,7 +210,7 @@
         All Js File
     ============================== -->
     <!-- Jquery -->
-    <script src="{{ asset('assets/js/jquery-3.5.0.min.js') }}"></script>
+    <script src="{{ asset("assets/js/jquery-3.5.0.min.js") }}"></script>
     <!-- Slick Slider -->
     <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <!-- Bootstrap -->
@@ -239,6 +235,9 @@
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
+    <script type="text/javascript"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
 
 </html>

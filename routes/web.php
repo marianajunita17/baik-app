@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PublikUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,11 @@ Route::get('/home', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+// Route::get('/register', function () {
+//     return view('register.register-base');
+// });
+
+Route::resource("publikuser", PublikUserController::class);
+
+Route::post("/create", [PublikUserController::class, "create"]);
