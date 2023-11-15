@@ -24,11 +24,14 @@ Route::get('/login', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name("home");
 
 Route::get('/register', function () {
     return view('register');
 });
+
+Route::get('google/login', 'Auth\LoginController@redirectToProvider');
+Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 // Route::get('/register', function () {
 //     return view('register.register-base');
