@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PublikUser;
+use App\User;
 use Illuminate\Http\Request;
 
 class PublikUserController extends Controller
@@ -14,7 +15,7 @@ class PublikUserController extends Controller
      */
     public function index()
     {
-
+        return view('login');
     }
 
     /**
@@ -30,14 +31,14 @@ class PublikUserController extends Controller
             'email' => 'required|email|max:255',
         ]);
 
-        PublikUser::create([
+        User::create([
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password')),
             'email' => $request->input('email'),
         ]);
 
-        // Redirect atau berikan respons sesuai kebutuhan Anda
-        return redirect()->route('login')->with('success', 'Pendaftaran berhasil!');
+        // return redirect()->route('publikuser.index')->with('success', 'Pendaftaran berhasil!');
+        return redirect()->back()->with('success', 'Pendaftaran Berhasil');
     }
 
     /**
@@ -59,7 +60,7 @@ class PublikUserController extends Controller
      */
     public function show($id)
     {
-        //
+        // return view('auth.login');
     }
 
     /**
@@ -94,5 +95,26 @@ class PublikUserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    public function login(Request $request){
+
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $user = User::where('username', $request->input('username'))->first();
+
+        if($user && $user->password == $request->input('password')) {
+            return redirect()->route('home');
+        }
+
+        return back()->withErrors(['username' => 'Username atau password salah'])->withInput();
     }
 }
