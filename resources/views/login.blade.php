@@ -264,31 +264,15 @@
                     <form action="mail.php" method="POST" class="appointment-form ajax-contact">
                         <div class="row gx-15">
                             <span class="sub-title">Masuk ke Aplikasi BAIK</span>
-                            {{-- <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="parent-name" id="gurdian-name"
-                                    placeholder="Parent Name">
-                            </div>
                             <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="number" id="number"
-                                    placeholder="Phone No">
+                                <input type="text" class="form-control" name="nama-pasien" id="nama-pasien"
+                                    placeholder="Nama Pasien">
                             </div>
-                            <div class="form-group col-12">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="child-name" id="child-name"
-                                    placeholder="Child Name">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="radio" class="form-control" name="child-age" id="child-age"
-                                    placeholder="Gender of Child">
-                            </div>
-                            <div class="form-group col-12">
+                            {{-- <div class="form-group col-12">
                                 <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
                             </div> --}}
                             <div class="form-group col-12">
-                                <a href="home" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >Login With Google</a>
+                                <a href="home" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >  Login With Google</a>
                             </div>
                             <div class="col-12">
                                 <a href="register" class="vs-btn wave-btn">Register</a>
