@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PublikUserController;
+use App\Http\Controllers\UserController;
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +36,14 @@ Route::get('/register', function () {
 //     return view('register.register-base');
 // });
 
-Route::resource("publikuser", PublikUserController::class);
+Route::resource('publikuser', PublikUserController::class);
 
-Route::post("/create", [PublikUserController::class, "create"]);
+Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
+
+Route::get('/login', [PublikUserController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [PublikUserController::class, 'login']);
+
+Route::middleware(['auth'])->group(function () {
+    // Rute-rute yang hanya dapat diakses oleh pengguna
+    Route::get('/home', [PublikUserController::class, 'home'])->name('home');
+});

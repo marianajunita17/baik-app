@@ -261,18 +261,24 @@
         <div class="container">
             <div class="row gx-60 gy-30 flex-column-reverse flex-lg-row align-items-center">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <form action="mail.php" method="POST" class="appointment-form ajax-contact">
+                    <form action="{{ route('login') }}" method="post"
+                        class="appointment-form ajax-contact">
+                        @csrf
                         <div class="row gx-15">
                             <span class="sub-title">Masuk ke Aplikasi BAIK</span>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="nama-pasien" id="nama-pasien"
-                                    placeholder="Nama Pasien">
+                                <input type="text" class="form-control" name="username" id="username"
+                                    placeholder="Username" required value="{{old('username')}}">
                             </div>
-                            {{-- <div class="form-group col-12">
-                                <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
-                            </div> --}}
+                            <div class="form-group col-sm-6">
+                                <input type="password" class="form-control" name="password" id="password"
+                                    placeholder="Password" required>
+                            </div>
                             <div class="form-group col-12">
                                 <a href="home" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >  Login With Google</a>
+                            </div>
+                            <div class="form-group col-12">
+                                <button type="submit" class="vs-btn wave-btn">Submit</button>
                             </div>
                             <div class="col-12">
                                 <a href="register" class="vs-btn wave-btn">Register</a>

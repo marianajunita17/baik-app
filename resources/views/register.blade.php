@@ -136,52 +136,55 @@
         <div class="container">
             <div class="row gx-60 gy-30 flex-column-reverse flex-lg-row align-items-center">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <form action="mail.php" method="POST" class="appointment-form ajax-contact">
+                    <form action="{{ route('publikuser.create') }}" method="post"
+                        class="appointment-form ajax-contact">
+                        @csrf
                         <div class="row gx-15">
                             <span class="sub-title">Daftar Akun Di Aplikasi BAIK</span>
-                            <form action="{{ route('publikuser.create') }}" method="post">
-                                @method('PUT')
-                                @csrf
 
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control" name="username" id="username"
-                                        placeholder="Username" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="string" minlength="8" class="form-control" name="password"
-                                        id="password" placeholder="Password" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email" required>
-                                </div>
-                                {{-- <div class="form-group col-12">
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" name="username" id="username"
+                                    placeholder="Username" required>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="password" minlength="8" class="form-control" name="password"
+                                    id="password" placeholder="Password" required>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email" required>
+                            </div>
+                            {{-- <div class="form-group col-12">
                                 <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
                             </div> --}}
-                                <div class="form-group col-12">
-                                    <a href="home" class="vs-btn wave-btn"><img
-                                            src="{{ asset('assets/img/icon/icon-google.png') }}"
-                                            style="width:20px;height:20px">Register With Google</a>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="vs-btn wave-btn">Submit</button>
-                                </div>
-                            </form>
+                            <div class="form-group col-12">
+                                <a href="home" class="vs-btn wave-btn"><img
+                                        src="{{ asset('assets/img/icon/icon-google.png') }}"
+                                        style="width:20px;height:20px">Register With Google</a>
+                            </div>
+                            <div class="form-group col-12">
+                                <button type="submit" class="vs-btn wave-btn">Submit</button>
+                            </div>
 
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
+                            <div class="col-12">
+                                <a href="login" class="vs-btn wave-btn">Sudah Punya Akun</a>
+                            </div>
                     </form>
+
                 </div>
-                <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.1s">
-                    <div class="text-center text-lg-start">
-                        <span class="sub-title">Login BAIK</span>
-                        <h2 class="sec-title big-title">Gabung bersama kami!</h2>
-                        <p class="fs-md mb-30">Dokter Psikolog terbaik dengan harga yang terjangkau, tentunya kami akan
-                            memberikan fitur yang menarik dan juga kualitas yang terbaik!</p>
-                        <a href="profil-baik" class="vs-btn wave-btn style-1">Learn More</a>
-                    </div>
+                {{-- <p class="form-messages mb-0 mt-3"></p> --}}
+                </form>
+            </div>
+            <div class="col-lg-5 wow fadeInRight" data-wow-delay="0.1s">
+                <div class="text-center text-lg-start">
+                    <span class="sub-title">Daftar BAIK</span>
+                    <h2 class="sec-title big-title">Gabung bersama kami!</h2>
+                    <p class="fs-md mb-30">Dokter Psikolog terbaik dengan harga yang terjangkau, tentunya kami akan
+                        memberikan fitur yang menarik dan juga kualitas yang terbaik!</p>
+                    <a href="profil-baik" class="vs-btn wave-btn style-1">Learn More</a>
                 </div>
             </div>
+        </div>
         </div>
         <div class="shape-mockup z-index-3 d-none d-hd-block" data-bottom="-8%" data-right="0%"><img
                 src="{{ asset('assets/img/shape/rainbow-star.png') }}" alt="shapes"></div>
@@ -210,7 +213,7 @@
         All Js File
     ============================== -->
     <!-- Jquery -->
-    <script src="{{ asset("assets/js/jquery-3.5.0.min.js") }}"></script>
+    <script src="{{ asset('assets/js/jquery-3.5.0.min.js') }}" type="text/javascript"></script>
     <!-- Slick Slider -->
     <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <!-- Bootstrap -->
@@ -235,9 +238,9 @@
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
-    <script type="text/javascript"></script>
+    {{-- <script type="text/javascript"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> --}}
 </body>
 
 </html>
