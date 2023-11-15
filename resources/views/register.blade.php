@@ -85,131 +85,6 @@
         </form>
     </div>
 
-    <!-- Side menu start -->
-    <div class="sidemenu-wrapper">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget footer-widget">
-                <div class="vs-widget-about">
-                    <div class="about-logo">
-                        <a href="index.html">
-                            <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
-                        </a>
-                    </div>
-                    <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice
-                        gravida isus commodo viverra.</p>
-                    <div class="multi-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="widget footer-widget">
-                <h3 class="widget_title">Contact Us</h3>
-                <div class="vs-widget-contact">
-                    <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave, Brooklyn CA,
-                        United State</p>
-                    <p class="footer-info"><i class="fas fa-envelope"></i><a
-                            href="mailto:info@Knirpseteam.com">info@Knirpseteam.com</a></p>
-                    <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:+25631562156236">+256 (3156)
-                            2156 236</a></p>
-                </div>
-            </div>
-
-            <div class="widget footer-widget">
-                <h4 class="widget_title">News Feed</h4>
-                <div class="recent-post-wrap">
-                    <div class="recent-post">
-                        <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}"
-                                    alt="Blog Image"></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i>
-                                    25th March, 2023</a></div>
-                            <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story Guide Yes</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}"
-                                    alt="Blog Image"></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i>
-                                    25th March, 2023</a></div>
-                            <h4 class="post-title"><a href="blog-details.html">How to prepare child for
-                                    examination</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Side menu end -->
-    <!--vs-mobile-menu start-->
-    <div class="vs-menu-wrapper">
-        <div class="vs-menu-area">
-            <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="logo"></a>
-            </div>
-            <div class="vs-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children">
-                        <a href="index.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home One</a></li>
-                            <li><a href="index-2.html">Home Two</a></li>
-                            <li><a href="index-3.html">Home Three</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Classes</a>
-                        <ul class="sub-menu">
-                            <li><a href="classes.html">Classes</a></li>
-                            <li><a href="class-details.html">Class Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="event.html">Event</a></li>
-                            <li><a href="event-details.html">Event Details</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Services Details</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-with-sidebar.html">Shop Sidebar</a></li>
-                            <li><a href="shop-details.html">Shop Details</a></li>
-                            <li><a href="cart.html">Shopping Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div><!-- Menu Will Append With Javascript -->
-        </div>
-    </div>
-    <!--vs-mobile-menu end-->
-
     <!--======== Header ========-->
     <header class="vs-header">
         <!--header-top-wrapper start-->
@@ -263,31 +138,40 @@
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
                     <form action="mail.php" method="POST" class="appointment-form ajax-contact">
                         <div class="row gx-15">
-                            <span class="sub-title">Masuk ke Aplikasi BAIK</span>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="nama-pasien" id="nama-pasien"
-                                    placeholder="Nama Pasien">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="umur-pasien" id="umur"
-                                    placeholder="Umur Pasien">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <strong>Pilih Jenis Kelamin</strong><br><br>
-                                <input type="radio" name="laki-laki" value="laki-laki"> Laki-Laki<br><br>
-                                <input type="radio" name="perempuan" value="perempuan"> Perempuan<br><br>
-                            </div>
-                            {{-- <div class="form-group col-12">
+                            <span class="sub-title">Daftar Akun Di Aplikasi BAIK</span>
+                            <form action="{{ router('register.user') }}" method="post">
+                                @csrf
+
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control" name="username" id="username"
+                                        placeholder="Username" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="string" minlength="8" class="form-control" name="password"
+                                        id="password" placeholder="Password" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Email" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <select name="jenis_kelamin" required>
+                                        <option name="laki-laki" value="laki-laki"> Laki-Laki</option>
+                                        <option name="perempuan" value="perempuan"> Perempuan</option>
+                                    </select>
+                                </div>
+                                {{-- <div class="form-group col-12">
                                 <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
                             </div> --}}
-                            <div class="form-group col-12">
-                                <a href="home" class="vs-btn wave-btn"><img
-                                        src="{{ asset('assets/img/icon/icon-google.png') }}"
-                                        style="width:20px;height:20px">Login With Google</a>
-                            </div>
-                            <div class="col-12">
-                                <a href="register" class="vs-btn wave-btn">Register</a>
-                            </div>
+                                <div class="form-group col-12">
+                                    <a href="home" class="vs-btn wave-btn"><img
+                                            src="{{ asset('assets/img/icon/icon-google.png') }}"
+                                            style="width:20px;height:20px">Register With Google</a>
+                                </div>
+                                <div class="col-12">
+                                    <a href="login" type="submit" class="vs-btn wave-btn">Register</a>
+                                </div>
+                            </form>
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>
                     </form>
