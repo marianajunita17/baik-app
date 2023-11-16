@@ -11,11 +11,26 @@ class PublikPembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+
+    public function index(){
+        $pembayaran = pembayaran::all();
+
+        return view('pembayaran', ['pembayarans' => $pembayaran]);
+
+        // $janji_temu = janji_temu::find(id)
+        // return view ('halaman pembayaran', compact('janji_temu'));
     }
 
+    public function konselorDetail($id){
+        $bayar = pembayaran::find($id);
+        $konselor = $bayar->konselors;
+        return view('konselor.detailkonselor', ['konselors' => $konselor]);
+    }
+
+    public function detailJanjiTemu($id){
+        // $janji_temu = janjitemu::find(id)
+        // return view('halaman pembayaran', compact('janji_temu'));
+    }
     /**
      * Show the form for creating a new resource.
      *

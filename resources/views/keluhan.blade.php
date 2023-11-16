@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Konsultasi - BAIK</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Knirpse - Kindergarten & Baby Care Template</title>
     <meta name="author" content="vecuro_themes">
     <meta name="description" content="Knirpse - Kindergarten & Baby Care Template">
     <meta name="keywords" content="Knirpse - Kindergarten & Baby Care Template" >
@@ -13,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 
     <!--==============================
 	    All CSS File
@@ -22,15 +23,15 @@
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
+    <link rel="stylesheet" href="assets/css/slick.min.css">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -77,7 +78,7 @@
                 <div class="vs-widget-about">
                     <div class="about-logo">
                         <a href="index.html">
-                            <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
+                            <img src="assets/img/logo.svg" alt="Knirpse">
                         </a>
                     </div>
                     <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
@@ -104,7 +105,7 @@
                 <div class="recent-post-wrap">
                     <div class="recent-post">
                         <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-1.jpg" alt="Blog Image"></a>
                         </div>
                         <div class="media-body">
                             <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -113,7 +114,7 @@
                     </div>
                     <div class="recent-post">
                         <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-2.jpg" alt="Blog Image"></a>
                         </div>
                         <div class="media-body">
                             <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -130,7 +131,7 @@
         <div class="vs-menu-area">
             <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse"></a>
+                <a href="index.html"><img src="assets/img/logo.svg" alt="Knirpse"></a>
             </div>
             <div class="vs-mobile-menu">
                 <ul>
@@ -192,13 +193,21 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-links">
+                            <ul>
+                                <li><i class="fal fa-clock"></i>9:30 am - 6:30 pm - Mon - Sun</li>
+                                <li><i class="fas fa-phone-alt"></i><a href="tel:+25625921589">+256 259 21589</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i>Hilton Street, New York 215 US</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="header-social">
                             <ul>
-                                <li><a href="#">Profil BAIK</a></li>
-                                <li><a href="#">BAIK Edukasi</i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -215,7 +224,7 @@
                             <div class="col-auto">
                                 <div class="header-logo">
                                     <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
+                                        <img src="assets/img/logo.svg" alt="Knirpse">
                                     </a>
                                 </div>
                             </div>
@@ -224,23 +233,62 @@
                                     <ul>
                                         <li class="menu-item-has-children">
                                             <a href="index.html">Home</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="index.html">Home One</a></li>
+                                                <li><a href="index-2.html">Home Two</a></li>
+                                                <li><a href="index-3.html">Home Three</a></li>
+                                            </ul>
                                         </li>
-                                        <li><a href="profile">About Us</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Classes</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="classes.html">Classes</a></li>
+                                                <li><a href="class-details.html">Class Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Pages</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item-has-children">
+                                                    <a href="shop.html">Shop</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="shop.html">Shop</a></li>
+                                                        <li><a href="shop-with-sidebar.html">Shop Sidebar</a></li>
+                                                        <li><a href="shop-details.html">Shop Details</a></li>
+                                                        <li><a href="cart.html">Shopping Cart</a></li>
+                                                        <li><a href="checkout.html">Checkout</a></li>
+                                                        <li><a href="wishlist.html">Wishlist</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="event.html">Event</a></li>
+                                                <li><a href="event-details.html">Event Details</a></li>
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="team-details.html">Team Details</a></li>
+                                                <li><a href="service.html">Services</a></li>
+                                                <li><a href="service-details.html">Services Details</a></li>
+                                                <li><a href="error.html">Error Page</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">Blog</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact</a>
+                                        </li>
                                     </ul>
                                 </nav>
-                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i
-                                        class="far fa-bars"></i> Menu</button>
+                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i> Menu</button>
                             </div>
                             <div class="col-auto d-none d-xl-block">
                                 <div class="header-button">
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <button class="vs-btn wave-btn">Logout</button>
-                                    </form>
-                                    <button type="button" class="searchBoxToggler icon-btn"><i
-                                            class="far fa-search"></i></button>
-                                    <button type="button" class="sideMenuToggler icon-btn"><i
-                                            class="fal fa-bars"></i></button>
+                                    <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
+                                    <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
+                                    <button type="button" class="sideMenuToggler icon-btn"><i class="fal fa-bars"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -252,102 +300,97 @@
     </header>
     <!--======== / Header ========-->
 
-
-
-    <!--======== Checkout Section ========-->
-    <div class="vs-checkout-wrapper space-page">
+    <!--======== About Section ========-->
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg-1.jpg">
         <div class="container">
-            <h4 class="mt-4 pt-lg-2">Ringkasan Pembayaran</h4>
-            <form action="#" class="woocommerce-cart-form">
-                <table class="cart_table mb-20">
-                    <thead>
-                        <tr>
-                            <th class="cart-col-image">Konselor</th>
-                            <th class="cart-col-productname">Nama Konselor</th>
-                            <th class="cart-col-price">Harga</th>
-                            <th class="cart-col-quantity">Sesi(Menit)</th>
-                            <th class="cart-col-total">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="cart_item">
-                            <td data-title="Product">
-                                <a class="cart-productimage" href="shop-details.html"><img width="91" height="91" src="{{ asset('assets/img/product/p-thumb-1.jpg') }}" alt="Image"></a>
-                            </td>
-                            <td data-title="Name">
-                                <a class="cart-productname" href="shop-details.html">{{ $konselors->nama_konselor }}</a>
-                            </td>
-                            <td data-title="Price">
-                                <span class="amount"><bdi><span>$</span>18</bdi></span>
-                            </td>
-                            <td data-title="Quantity">
-                                <strong class="product-quantity">01</strong>
-                            </td>
-                            <td data-title="Total">
-                                <span class="amount"><bdi><span>$</span>18</bdi></span>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="checkout-ordertable">
-                        <tr class="cart-subtotal">
-                            <th>Subtotal</th>
-                            <td data-title="Subtotal" colspan="4"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></td>
-                        </tr>
-                        <tr class="woocommerce-shipping-totals shipping">
-                            <th>Shipping</th>
-                            <td data-title="Shipping" colspan="4">
-                                Enter your address to view shipping options.
-                            </td>
-                        </tr>
-                        <tr class="order-total">
-                            <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></strong>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </form>
-            <div class="mt-lg-3">
-                <div class="woocommerce-checkout-payment">
-                    <ul class="wc_payment_methods payment_methods methods">
-                        <li class="wc_payment_method payment_method_bacs">
-                            <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
-                            <label for="payment_method_bacs">Direct bank transfer</label>
-                            <div class="payment_box payment_method_bacs">
-                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">Contact Us</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Contact Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--======== / About Section ========-->
+
+    <!--======== Contact Us Section ========-->
+    <section class="contact-section space-page">
+        <div class="container">
+            <div class="row gx-50 gy-30">
+                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="contact-form-box">
+                        <h2 class="contact-title">Leave a Message</h2>
+                        <p class="mb-35">Intrinsicly reinvent fully tested portals and performance based scenarios. Phosfluorescently exploit extensive opportunities for future.</p>
+                        <form action="assets/mail.php" method="POST" class="contact-form ajax-contact">
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label for="name" class="form-label">Your Name*</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="David Smith..." required>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="email" class="form-label">Your Email*</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="info@example.com" required>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="message" class="form-label">Your Message*</label>
+                                    <textarea class="form-control" name="message" id="message" placeholder="Describe Your Opinion" required></textarea>
+                                </div>
+                                <div class="form-group col-12">
+                                    <button type="submit" class="vs-btn wave-btn">Send Now</button>
+                                </div>
                             </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cheque">
-                            <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque">
-                            <label for="payment_method_cheque">Cheque Payment</label>
-                            <div class="payment_box payment_method_cheque">
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode. </p>
+                            <p class="form-messages mb-0 mt-3"></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.1s">
+                    <div class="contact-info-box">
+                        <h2 class="contact-title">Our Information</h2>
+                        <div class="info-media">
+                            <div class="media-icon">
+                                <img src="assets/img/icon/location.png" alt="icon">
                             </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cod">
-                            <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method">
-                            <label for="payment_method_cod">Cash On Delivery</label>
-                            <div class="payment_box payment_method_cod">
-                                <p>Pay with cash upon delivery.</p>
+                            <div class="media-body">
+                                <h4 class="info-title">Office Address:</h4>
+                                <p class="info-text">3556 Hartford Way Vlg, Mount Pleasant, <br>SC, 29466, Australia.</p>
                             </div>
-                        </li>
-                    </ul>
-                    <div class="form-row place-order">
-                        <button type="submit" class="vs-btn">Konfirmasi</button>
+                        </div>
+                        <div class="info-media">
+                            <div class="media-icon">
+                                <img src="assets/img/icon/phone.png" alt="icon">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="info-title">Call Us For Help:</h4>
+                                <p class="info-text"><a href="tel:+25925632562">+259-2563-2562</a> (or) <a href="tel:+25636542156">+256-3654-2156</a></p>
+                            </div>
+                        </div>
+                        <div class="info-media">
+                            <div class="media-icon">
+                                <img src="assets/img/icon/email.png" alt="icon">
+                            </div>
+                            <div class="media-body">
+                                <h4 class="info-title">Mail info:</h4>
+                                <p class="info-text"><a href="mailto:example@quera.com">example@quera.com</a> <a href="mailto:info@example.com">info@example.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-location">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.0337709506216!2d8.722988251963706!3d50.14180007933297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0f52ee6af359%3A0x2213de038ec1bd12!2svecuro_themes%20%7C%20Webdesign%20%26%20Development!5e0!3m2!1sde!2sde!4v1648732976877!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--======== / Checkout Section ========-->
+    </section>
+    <!--======== / Contact Us Section ========-->
 
     <!--==============================
 	Footer Area
 	==============================-->
     <footer class="footer-wrapper footer-layout2">
-        <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="{{ asset('assets/img/icon/car-4.png') }}" alt="shapes"></div>
+        <div class="shape-before"><img src="assets/img/shape/footer-before.png" alt="shape"></div>
+        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="assets/img/icon/cloud-2.png" alt="shapes"></div>
+        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="assets/img/icon/car-4.png" alt="shapes"></div>
         <div class="widget-area">
             <div class="container">
                 <div class="row justify-content-between">
@@ -357,7 +400,7 @@
                             <div class="vs-widget-about">
                                 <div class="about-logo">
                                     <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Knirpse">
+                                        <img src="assets/img/logo-white.svg" alt="Knirpse">
                                     </a>
                                 </div>
                                 <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
@@ -390,7 +433,7 @@
                             <div class="recent-post-wrap">
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-1.jpg" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -399,7 +442,7 @@
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-2.jpg" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -442,30 +485,30 @@
         All Js File
     ============================== -->
     <!-- Jquery -->
-    <script src="{{ asset('assets/js/jquery-3.5.0.min.js') }}"></script>
+    <script src="assets/js/jquery-3.5.0.min.js"></script>
     <!-- Slick Slider -->
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="assets/js/slick.min.js"></script>
     <!-- Bootstrap -->
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <!-- Magnific Popup -->
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <!-- Isotope Filter -->
-    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
     <!-- Counter up  -->
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
     <!-- Parallax  -->
-    <script src="{{ asset('assets/js/parallax.min.js') }}"></script>
+    <script src="assets/js/parallax.min.js"></script>
     <!-- Custom Carousel -->
-    <script src="{{ asset('assets/js/vscustom-carousel.min.js') }}"></script>
+    <script src="assets/js/vscustom-carousel.min.js"></script>
     <!-- Range Slider -->
-    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
     <!-- WOW JS (Animation JS) -->
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="assets/js/wow.min.js"></script>
     <!-- Form Js -->
-    <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
+    <script src="assets/js/ajax-mail.js"></script>
     <!-- Main Js File -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 
