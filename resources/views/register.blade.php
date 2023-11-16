@@ -154,9 +154,6 @@
                                 <input type="email" class="form-control" name="email" id="email"
                                     placeholder="Email" required>
                             </div> --}}
-                            {{-- <div class="form-group col-12">
-                                <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
-                            </div> --}}
                             <div class="form-group col-12">
                                 <a href="{{ route('redirectregistergoogle') }}" class="vs-btn wave-btn"><img
                                         src="{{ asset('assets/img/icon/icon-google.png') }}"

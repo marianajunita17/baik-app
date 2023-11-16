@@ -117,44 +117,32 @@
     </header>
     <!--======== / Header ========-->
 
-    <!--======== About Section ========-->
-    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/breadcrumb-bg-1.jpg') }}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Contact Us</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Contact Us</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--======== / About Section ========-->
-
     <!--======== Contact Us Section ========-->
     <section class="contact-section space-page">
         <div class="container">
             <div class="row gx-50 gy-30">
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-form-box">
-                        <h2 class="contact-title">Leave a Message</h2>
-                        <p class="mb-35">Intrinsicly reinvent fully tested portals and performance based scenarios. Phosfluorescently exploit extensive opportunities for future.</p>
+                        <h2 class="contact-title">Isi Data Pasien</h2>
                         <form action="" method="POST" class="contact-form ajax-contact">
                             <div class="row">
                                 <div class="form-group col-12">
-                                    <label for="name" class="form-label">Your Name*</label>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="David Smith..." required>
+                                    <label for="name" class="form-label">Nama Pasien</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Felix Handani..." required>
                                 </div>
                                 <div class="form-group col-12">
-                                    <label for="email" class="form-label">Your Email*</label>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="info@example.com" required>
+                                    <label for="email" class="form-label">Umur</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="felix@gmail.com" required>
                                 </div>
                                 <div class="form-group col-12">
-                                    <label for="message" class="form-label">Your Message*</label>
-                                    <textarea class="form-control" name="message" id="message" placeholder="Describe Your Opinion" required></textarea>
+                                    <label for="message" class="form-label">Jenis Kelamin</label>
+                                    <select>
+                                        <option value="L" name="laki-laki">Laki-Laki</option>
+                                        <option value="P" name="perempuan">Perempuan</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12">
-                                    <button type="submit" class="vs-btn wave-btn">Send Now</button>
+                                    <button type="submit" class="vs-btn wave-btn">Simpan Data</button>
                                 </div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>

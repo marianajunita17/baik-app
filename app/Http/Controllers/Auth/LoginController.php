@@ -36,6 +36,7 @@ class LoginController extends Controller
                 // Login User
                 $existingUser = User::where('email', $user->getEmail())->first();
                 if($existingUser){
+                    if($existingUser)
                     auth()->login($existingUser, true);
                     return redirect()->intended('home');
                 }else{
