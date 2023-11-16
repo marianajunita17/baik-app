@@ -143,7 +143,7 @@
                             data-md-slide-show="1" data-fade="true">
                             <div class="col-12">
                                 <div class="class-img">
-                                    <img src="{{ $konselors->photo }}" alt="class">
+                                    <img src="{{ asset('assets/img/icon/user.png') }}" alt="class">
                                 </div>
                             </div>
                         </div>
