@@ -45,6 +45,10 @@ Route::get('/konselor', function () {
     return view('konselor.konselor');
 });
 
+Route::get('/detailkonselor', function () {
+    return view('konselor.detailkonselor');
+});
+
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
