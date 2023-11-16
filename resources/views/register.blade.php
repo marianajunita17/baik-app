@@ -163,7 +163,7 @@
                                 <button type="submit" class="vs-btn wave-btn">Submit</button>
                             </div> --}}
                             <div class="col-12 text-center">
-                                Sudah Punya Akun<a href="login"> Masuk</a>
+                                Sudah Punya Akun?<a href="login"> Masuk</a>
                             </div>
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>

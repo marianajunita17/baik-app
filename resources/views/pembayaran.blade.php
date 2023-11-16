@@ -257,15 +257,15 @@
     <!--======== Checkout Section ========-->
     <div class="vs-checkout-wrapper space-page">
         <div class="container">
-            <h4 class="mt-4 pt-lg-2">Your Order</h4>
+            <h4 class="mt-4 pt-lg-2">Ringkasan Pembayaran</h4>
             <form action="#" class="woocommerce-cart-form">
                 <table class="cart_table mb-20">
                     <thead>
                         <tr>
-                            <th class="cart-col-image">Image</th>
-                            <th class="cart-col-productname">Product Name</th>
-                            <th class="cart-col-price">Price</th>
-                            <th class="cart-col-quantity">Quantity</th>
+                            <th class="cart-col-image">Konselor</th>
+                            <th class="cart-col-productname">Nama Konselor</th>
+                            <th class="cart-col-price">Harga</th>
+                            <th class="cart-col-quantity">Sesi(Menit)</th>
                             <th class="cart-col-total">Total</th>
                         </tr>
                     </thead>
