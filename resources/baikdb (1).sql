@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 01:56 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Nov 16, 2023 at 03:35 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -171,8 +171,8 @@ CREATE TABLE `cms_email_templates` (
 --
 
 INSERT INTO `cms_email_templates` (`id`, `name`, `slug`, `subject`, `content`, `description`, `from_name`, `from_email`, `cc_email`, `created_at`, `updated_at`) VALUES
-(1, 'Email Template Forgot Password Backend', 'forgot_password_backend', NULL, '<p>Hi,</p><p>Someone requested forgot password, here is your new password : </p><p>[password]</p><p><br></p><p>--</p><p>Regards,</p><p>Admin</p>', '[password]', 'System', 'system@crudbooster.com', NULL, '2023-10-29 13:16:18', NULL),
-(2, 'Email Template Forgot Password Backend', 'forgot_password_backend', NULL, '<p>Hi,</p><p>Someone requested forgot password, here is your new password : </p><p>[password]</p><p><br></p><p>--</p><p>Regards,</p><p>Admin</p>', '[password]', 'System', 'system@crudbooster.com', NULL, '2023-10-30 09:56:49', NULL);
+(1, 'Email Template Forgot Password Backend', 'forgot_password_backend', NULL, '<p>Hi,</p><p>Someone requested forgot password, here is your new password :Â </p><p>[password]</p><p><br></p><p>--</p><p>Regards,</p><p>Admin</p>', '[password]', 'System', 'system@crudbooster.com', NULL, '2023-10-29 13:16:18', NULL),
+(2, 'Email Template Forgot Password Backend', 'forgot_password_backend', NULL, '<p>Hi,</p><p>Someone requested forgot password, here is your new password :Â </p><p>[password]</p><p><br></p><p>--</p><p>Regards,</p><p>Admin</p>', '[password]', 'System', 'system@crudbooster.com', NULL, '2023-10-30 09:56:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -273,7 +273,11 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `d
 (74, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/anaks/add-save', 'Add New Data Danasuta at Anak', '', 1, '2023-11-13 10:02:50', NULL),
 (75, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/logout', 'agdiepratama2020@gmail.com logout', '', 1, '2023-11-15 11:36:43', NULL),
 (76, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/logout', 'trexzepratama99@gmail.com logout', '', 4, '2023-11-15 12:05:10', NULL),
-(77, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/logout', 'agdiepratama2020@gmail.com logout', '', 1, '2023-11-15 17:53:18', NULL);
+(77, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/logout', 'agdiepratama2020@gmail.com logout', '', 1, '2023-11-15 17:53:18', NULL),
+(78, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'katherynatasialiem@gmail.com logout', '', 7, '2023-11-15 19:28:36', NULL),
+(79, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/9', 'Update data Konselor at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>sorting</td><td>9</td><td></td></tr></tbody></table>', 6, '2023-11-15 19:31:53', NULL),
+(80, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/2', 'Update data Spesialisasi at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>sorting</td><td>2</td><td></td></tr></tbody></table>', 6, '2023-11-15 19:32:22', NULL),
+(81, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/menu_management/edit-save/6', 'Update data Janji Temu at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>color</td><td></td><td>normal</td></tr><tr><td>sorting</td><td>6</td><td></td></tr></tbody></table>', 6, '2023-11-15 19:32:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,13 +307,13 @@ CREATE TABLE `cms_menus` (
 
 INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_id`, `is_active`, `is_dashboard`, `id_cms_privileges`, `sorting`, `created_at`, `updated_at`) VALUES
 (1, 'Bidang', 'Route', 'AdminBidangsControllerGetIndex', NULL, 'fa fa-briefcase', 0, 1, 0, 1, 1, '2023-10-29 21:28:20', NULL),
-(2, 'Spesialisasi', 'Route', 'AdminSpesialisasisControllerGetIndex', 'normal', 'fa fa-certificate', 0, 1, 0, 1, 2, '2023-10-29 21:36:50', '2023-10-29 21:39:56'),
+(2, 'Spesialisasi', 'Route', 'AdminSpesialisasisControllerGetIndex', 'normal', 'fa fa-certificate', 0, 1, 0, 1, 2, '2023-10-29 21:36:50', '2023-11-15 19:32:22'),
 (3, 'Pembayaran', 'Route', 'AdminPembayaransControllerGetIndex', NULL, 'fa fa-money', 0, 1, 0, 1, 3, '2023-10-29 22:39:41', NULL),
 (5, 'User', 'Route', 'AdminUsers2ControllerGetIndex', NULL, 'fa fa-user', 0, 1, 0, 1, 5, '2023-10-31 17:58:30', NULL),
-(6, 'Janji Temu', 'Route', 'AdminJanjiTemuControllerGetIndex', NULL, 'fa fa-times', 0, 1, 0, 1, 6, '2023-10-31 18:07:39', NULL),
+(6, 'Janji Temu', 'Route', 'AdminJanjiTemuControllerGetIndex', 'normal', 'fa fa-times', 0, 1, 0, 1, 6, '2023-10-31 18:07:39', '2023-11-15 19:32:33'),
 (7, 'Pasien', 'Route', 'AdminPasiensControllerGetIndex', NULL, 'fa fa-user-times', 0, 1, 0, 1, 7, '2023-10-31 18:15:01', NULL),
 (8, 'Anak', 'Route', 'AdminAnaksControllerGetIndex', NULL, 'fa fa-child', 0, 1, 0, 1, 8, '2023-10-31 19:03:46', NULL),
-(9, 'Konselor', 'Route', 'AdminKonselorsControllerGetIndex', NULL, 'fa fa-ambulance', 0, 1, 0, 1, 9, '2023-10-31 19:07:31', NULL),
+(9, 'Konselor', 'Route', 'AdminKonselorsControllerGetIndex', 'normal', 'fa fa-ambulance', 0, 1, 0, 1, 9, '2023-10-31 19:07:31', '2023-11-15 19:31:53'),
 (10, 'Topik', 'Route', 'AdminTopiksControllerGetIndex', NULL, 'fa fa-hashtag', 0, 1, 0, 1, 10, '2023-10-31 20:36:03', NULL),
 (12, 'Spesialis Konselor', 'Route', 'AdminKonselorSpesialisControllerGetIndex', NULL, 'fa fa-font', 0, 1, 0, 1, 11, '2023-10-31 21:50:20', NULL),
 (13, 'Pasien Konselor', 'Route', 'AdminPasienKonselorControllerGetIndex', NULL, 'fa fa-star', 0, 1, 0, 1, 12, '2023-11-04 21:21:26', NULL),
@@ -333,20 +337,21 @@ CREATE TABLE `cms_menus_privileges` (
 
 INSERT INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) VALUES
 (1, 1, 1),
-(3, 2, 4),
-(4, 2, 1),
 (5, 3, 1),
 (6, 4, 1),
 (7, 5, 1),
-(8, 6, 1),
 (9, 7, 1),
 (10, 8, 1),
-(11, 9, 1),
 (12, 10, 1),
 (13, 11, 1),
 (14, 12, 1),
 (15, 13, 1),
-(16, 14, 1);
+(16, 14, 1),
+(17, 9, 4),
+(18, 9, 1),
+(19, 2, 1),
+(20, 6, 4),
+(21, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -436,9 +441,8 @@ CREATE TABLE `cms_privileges` (
 
 INSERT INTO `cms_privileges` (`id`, `name`, `is_superadmin`, `theme_color`, `created_at`, `updated_at`) VALUES
 (1, 'Super Administrator', 1, 'skin-red', '2023-10-29 13:16:18', NULL),
-(2, 'Pengguna', 0, 'skin-blue', NULL, NULL),
 (3, 'Admin Keuangan', 0, 'skin-blue', NULL, NULL),
-(4, 'Pemilik', 0, 'skin-blue', NULL, NULL);
+(4, 'Konselor', 0, 'skin-blue', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -475,9 +479,7 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 (9, 1, 1, 1, 1, 1, 1, 9, '2023-10-29 13:16:18', NULL),
 (10, 1, 1, 1, 1, 1, 1, 10, '2023-10-29 13:16:18', NULL),
 (11, 1, 0, 1, 0, 1, 1, 11, '2023-10-29 13:16:18', NULL),
-(12, 1, 1, 1, 1, 0, 2, 4, NULL, NULL),
 (13, 1, 1, 1, 1, 1, 3, 4, NULL, NULL),
-(14, 1, 1, 1, 1, 1, 4, 4, NULL, NULL),
 (15, 1, 1, 1, 1, 1, 1, 12, NULL, NULL),
 (16, 1, 1, 1, 1, 1, 1, 13, NULL, NULL),
 (17, 1, 1, 1, 1, 1, 1, 14, NULL, NULL),
@@ -491,7 +493,10 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 (25, 1, 1, 1, 1, 1, 1, 22, NULL, NULL),
 (26, 1, 1, 1, 1, 1, 1, 23, NULL, NULL),
 (27, 1, 1, 1, 1, 1, 1, 24, NULL, NULL),
-(28, 1, 1, 1, 1, 1, 1, 25, NULL, NULL);
+(28, 1, 1, 1, 1, 1, 1, 25, NULL, NULL),
+(32, 1, 1, 1, 1, 0, 4, 17, NULL, NULL),
+(33, 1, 1, 1, 1, 0, 4, 20, NULL, NULL),
+(34, 1, 1, 1, 1, 1, 4, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -590,7 +595,9 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Super Admin', NULL, 'admin@ubayabaik.id', '$2y$10$HblZh1e.lzaLlDhiF5EorOjpJZkJlkSNDgH96l/r7B0hHndlBLBSC', 1, '2023-10-29 13:16:17', NULL, 'Active');
+(1, 'Super Admin', NULL, 'admin@ubayabaik.id', '$2y$10$HblZh1e.lzaLlDhiF5EorOjpJZkJlkSNDgH96l/r7B0hHndlBLBSC', 1, '2023-10-29 13:16:17', NULL, 'Active'),
+(6, 'KATHERYN NATASIA LIEM CHRISLIANTI _', NULL, 's160420038@student.ubaya.ac.id', '$2y$10$JH1LbufFNL8UdgSLW/129OCGyq3R1iCWZ7zW.T.EH2vKEBywQB/dy', 1, NULL, NULL, 'Active'),
+(7, 'Katheryn Natasia', NULL, 'katherynatasialiem@gmail.com', '$2y$10$J9jug6XkOu6cbOYVXDVxGeCcCPCRgeR09y2h75gTHATzEt3BWShze', 4, NULL, NULL, 'Active');
 
 -- --------------------------------------------------------
 
@@ -905,7 +912,9 @@ INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `google_id`
 (2, 'Junita', 'junjun@ubaya.baik', NULL, NULL, '$2y$10$37IoKvncV6lrUArX2mi2suxkPrMeVrWmCIT/6taXPmRUyjYSSFHFG', NULL, '2023-11-04 20:48:41', '2023-11-13 04:56:05'),
 (3, 'Yolenta', 'yola@gmail.com', NULL, NULL, '$2y$10$R9NPhav.qBHSk.S6lEHqaO1NDHVAFT8VerO2CYFzWPiqogwD6l9ii', NULL, '2023-11-04 20:48:57', NULL),
 (4, 'David', 'david@gmail.com', NULL, NULL, '$2y$10$T8pjgfdYGa/8/KqdWo4Uke2KSSuYLDAudZl2LnRUnFgTr0P3JZlhm', NULL, '2023-11-04 21:15:31', NULL),
-(5, 'Adgie', 'adgie@gmail.com', NULL, NULL, '$2y$10$CNsFsuKcZI7rt7whO4n21.YnxiMfWWg98yTWm.LYxFqoTqGiEQ0Ui', NULL, '2023-11-04 21:15:45', NULL);
+(5, 'Adgie', 'adgie@gmail.com', NULL, NULL, '$2y$10$CNsFsuKcZI7rt7whO4n21.YnxiMfWWg98yTWm.LYxFqoTqGiEQ0Ui', NULL, '2023-11-04 21:15:45', NULL),
+(10, 'KATHERYN NATASIA LIEM CHRISLIANTI _', 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$frUEQW5WGQ1Op3VqEqnXN.N5T4N0qNrACyyabH875w0duleFb81pW', 'F3HLeqRtB4h8CRlmjaE4s25U8JKIP4MZGA0Qr4gwvltBQHFtTP5JeE9HF0lj', '2023-11-15 18:53:09', '2023-11-16 02:01:12'),
+(13, 'Katheryn Natasia', 'katherynatasialiem@gmail.com', NULL, '109342889608692761046', '$2y$10$kb/xQ9NKpPv.JGVDVra.r.hr.Q4X1G4mNmKFSJC4/y4r095djmXUu', '73e3hRZYBhmt2s67Y5OBMLzFYkC6PMMb5ZxwWerc2gDigret6AWxoLMeaPRY', '2023-11-15 18:59:27', '2023-11-16 01:59:34');
 
 --
 -- Indexes for dumped tables
@@ -1157,7 +1166,7 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT for table `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `cms_menus`
@@ -1169,7 +1178,7 @@ ALTER TABLE `cms_menus`
 -- AUTO_INCREMENT for table `cms_menus_privileges`
 --
 ALTER TABLE `cms_menus_privileges`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `cms_moduls`
@@ -1193,7 +1202,7 @@ ALTER TABLE `cms_privileges`
 -- AUTO_INCREMENT for table `cms_privileges_roles`
 --
 ALTER TABLE `cms_privileges_roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `cms_settings`
@@ -1217,7 +1226,7 @@ ALTER TABLE `cms_statistic_components`
 -- AUTO_INCREMENT for table `cms_users`
 --
 ALTER TABLE `cms_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1289,7 +1298,7 @@ ALTER TABLE `topik_janji_temu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables

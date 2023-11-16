@@ -48,8 +48,3 @@ Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuse
 // Route::get('/register', function () {
 //     return view('register.register-base');
 // });
-
-// Route::middleware(['auth'])->group(function () {
-//     // Rute-rute yang hanya dapat diakses oleh pengguna
-//     Route::get('/home', [PublikUserController::class, 'home'])->name('home');
-// });
