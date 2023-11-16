@@ -174,10 +174,10 @@
     <!--======== / Header ========-->
 
     <!--======== About Section ========-->
-    <div class="breadcumb-wrapper"  data-bg-src="{{ asset('assets/img/bg/bg-home.jpg') }}">
+    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/bg-home.jpg') }}">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Welcome, {{$pasien->nama_pasien}} </h1>
+                <h1 class="breadcumb-title">Welcome, {{ $pasien->nama_pasien }} </h1>
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
                     <li class="active">Shop Now</li>
@@ -256,9 +256,9 @@
                 <div class="col-xl-9 col-lg-8">
                     <div class="row gy-30">
                         <!-- Single Class -->
-                        <div class="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                            @foreach ($spesialisasis as $s)
-                                <div class="vs-product-box">
+                        @foreach ($spesialisasis as $s)
+                            <div class="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="vs-product-box row col-xl-9">
                                     <div class="product-img">
                                         <a href="shop-details.html">
                                             <img src="{{ asset('assets/img/product/kategori.jpg') }}"
@@ -272,8 +272,8 @@
                                                 href="konselor">{{ $s->nama_spesialisasi }}</a></h2>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                     <!-- Pagination -->
                     <div class="vs-pagination mt-60">

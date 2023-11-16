@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Knirpse - Kindergarten & Baby Care Template</title>
+    <title>Detail konselor BAIK</title>
     <meta name="author" content="vecuro_themes">
     <meta name="description" content="Knirpse - Kindergarten & Baby Care Template">
     <meta name="keywords" content="Knirpse - Kindergarten & Baby Care Template" >
@@ -70,121 +70,6 @@
         </form>
     </div>
 
-    <!-- Side menu start -->
-    <div class="sidemenu-wrapper">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget footer-widget">
-                <div class="vs-widget-about">
-                    <div class="about-logo">
-                        <a href="index.html">
-                            <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
-                        </a>
-                    </div>
-                    <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
-                    <div class="multi-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="widget footer-widget">
-                <h3 class="widget_title">Contact Us</h3>
-                <div class="vs-widget-contact">
-                    <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave, Brooklyn CA, United State</p>
-                    <p class="footer-info"><i class="fas fa-envelope"></i><a href="mailto:info@Knirpseteam.com">info@Knirpseteam.com</a></p>
-                    <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
-                </div>
-            </div>
-
-            <div class="widget footer-widget">
-                <h4 class="widget_title">News Feed</h4>
-                <div class="recent-post-wrap">
-                    <div class="recent-post">
-                        <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}" alt="Blog Image"></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                            <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story Guide Yes</a></h4>
-                        </div>
-                    </div>
-                    <div class="recent-post">
-                        <div class="media-img">
-                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
-                        </div>
-                        <div class="media-body">
-                            <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                            <h4 class="post-title"><a href="blog-details.html">How to prepare child for examination</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Side menu end -->
-    <!--vs-mobile-menu start-->
-    <div class="vs-menu-wrapper">
-        <div class="vs-menu-area">
-            <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse"></a>
-            </div>
-            <div class="vs-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children">
-                        <a href="index.html">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home One</a></li>
-                            <li><a href="index-2.html">Home Two</a></li>
-                            <li><a href="index-3.html">Home Three</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Classes</a>
-                        <ul class="sub-menu">
-                            <li><a href="classes.html">Classes</a></li>
-                            <li><a href="class-details.html">Class Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="event.html">Event</a></li>
-                            <li><a href="event-details.html">Event Details</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Services Details</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-with-sidebar.html">Shop Sidebar</a></li>
-                            <li><a href="shop-details.html">Shop Details</a></li>
-                            <li><a href="cart.html">Shopping Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div><!-- Menu Will Append With Javascript -->
-        </div>
-    </div>
-    <!--vs-mobile-menu end-->
-
     <!--======== Header ========-->
     <header class="vs-header">
         <!--header-top-wrapper start-->
@@ -193,21 +78,13 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-links">
-                            <ul>
-                                <li><i class="fal fa-clock"></i>9:30 am - 6:30 pm - Mon - Sun</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="tel:+25625921589">+256 259 21589</a></li>
-                                <li><i class="fas fa-map-marker-alt"></i>Hilton Street, New York 215 US</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="header-social">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                <li><a href="#">Profil BAIK</a></li>
+                                <li><a href="#">BAIK Edukasi</i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -229,67 +106,8 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <nav class="main-menu menu-style1 d-none d-lg-inline-block">
-                                    <ul>
-                                        <li class="menu-item-has-children">
-                                            <a href="index.html">Home</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Classes</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="classes.html">Classes</a></li>
-                                                <li><a href="class-details.html">Class Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item-has-children">
-                                                    <a href="shop.html">Shop</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="shop-with-sidebar.html">Shop Sidebar</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="event.html">Event</a></li>
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                                <li><a href="gallery.html">Gallery</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                                <li><a href="error.html">Error Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i> Menu</button>
-                            </div>
-                            <div class="col-auto d-none d-xl-block">
-                                <div class="header-button">
-                                    <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
-                                    <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
-                                    <button type="button" class="sideMenuToggler icon-btn"><i class="fal fa-bars"></i></button>
-                                </div>
+                                <button type="button" class="vs-menu-toggle d-block d-lg-none">
+                                    <i class="far fa-bars"></i> Menu</button>
                             </div>
                         </div>
                     </div>
@@ -300,21 +118,10 @@
     </header>
     <!--======== / Header ========-->
 
-    <!--======== About Section ========-->
-    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/breadcrumb-bg-smoke.jpg') }}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Class Details</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Class Details</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--======== / About Section ========-->
-
     <!--======== Class Section ========-->
+    @foreach ($konselors as $k)
+
+
     <section class="class-section bg-smoke space-page">
         <div class="container">
             <div class="row gx-60">
@@ -322,45 +129,10 @@
                     <div class="class-details">
                         <div class="row class-big-img vs-carousel" id="classBig" data-slide-show="1" data-md-slide-show="1" data-fade="true">
                             <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-1.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-2.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-3.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-4.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-5.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-12">
-                                <img src="{{ asset('assets/img/class/class-details-6.jpg') }}" alt="class">
+                                <img src="{{ $k->photo }}" alt="class">
                             </div>
                         </div>
-                        <div class="row class-thumb-img mb-35 vs-carousel" data-slide-show="5" data-lg-slide-show="4" data-md-slide-show="5" data-sm-slide-show="3" data-xs-slide-show="2" data-asnavfor="#classBig">
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-1.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-2.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-3.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-4.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-5.jpg') }}" alt="class">
-                            </div>
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/class/thumb-6.jpg') }}" alt="class">
-                            </div>
-                        </div>
-                        <h2 class="single-title">Pre High School</h2>
+                        <h2 class="single-title">{{$k->nama_konselor}}</h2>
                         <div class="service-content">
                             <p>Continually restore backward-compatible networks for goal-oriented results. Rapidiously provide access to best of breed manufactured products whereas out-of-the-box "outside the box" thinking. Assertively plagiarize error-free "outside the box" thinking rather than optimal supply chains. Proactively benchmark flexible opportunities before out-of-the-box materials. Authoritatively streamline multimedia based...</p>
                             <p>Seize high-quality schemas with clicks-and-mortar initiatives. Collaboratively enhance equity invested value via team building action items. Competently empower strategic niche markets before long-term high-impact initiatives. life Synergistically reintermediate just in time testing procedures vis-a-vis corporate internal</p>
@@ -491,6 +263,7 @@
             </div>
         </div>
     </section>
+    @endforeach
     <!--======== / Class Section ========-->
 
     <!--==============================
@@ -584,7 +357,7 @@
     </footer>
 
     <!--********************************
-			Code End  Here 
+			Code End  Here
 	******************************** -->
 
 

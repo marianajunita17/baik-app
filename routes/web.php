@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataPasienController;
+use App\Http\Controllers\PublikKonselorController;
 use App\Http\Controllers\PublikSpesialisController;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
@@ -46,7 +47,7 @@ Route::get('/konselor', function () {
     return view('konselor.konselor');
 });
 
-Route::get('/detailkonselor', function () {
+Route::get('/konselor/detailkonselor', function () {
     return view('konselor.detailkonselor');
 });
 
@@ -55,7 +56,9 @@ Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
-// Route::get('/home', [DataPasienController::class, 'index'])->name('datapasien.index');
+Route::get('/konselor', [PublikKonselorController::class, 'index'])->name('konselor.index');
+Route::get('/konselor/detailkonselor', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
+// Route::get('/konselor/detailkonselor', PublikKonselorController::class, 'detailKonselor')
 
 Route::post('/data-pasien', 'DataPasienController@addDataPasien')->name('datapasien');
 
