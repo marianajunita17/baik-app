@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Knirpse - Kindergarten & Baby Care Template</title>
+    <title>Konselor</title>
     <meta name="author" content="vecuro_themes">
     <meta name="description" content="Knirpse - Kindergarten & Baby Care Template">
     <meta name="keywords" content="Knirpse - Kindergarten & Baby Care Template" >
@@ -14,24 +14,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}"  type="image/x-icon">
 
     <!--==============================
 	    All CSS File
 	============================== -->
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
 </head>
 
@@ -78,7 +77,7 @@
                 <div class="vs-widget-about">
                     <div class="about-logo">
                         <a href="index.html">
-                            <img src="assets/img/logo.svg" alt="Knirpse">
+                            <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
                         </a>
                     </div>
                     <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
@@ -105,7 +104,7 @@
                 <div class="recent-post-wrap">
                     <div class="recent-post">
                         <div class="media-img">
-                            <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-1.jpg" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}" alt="Blog Image"></a>
                         </div>
                         <div class="media-body">
                             <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -114,7 +113,7 @@
                     </div>
                     <div class="recent-post">
                         <div class="media-img">
-                            <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-2.jpg" alt="Blog Image"></a>
+                            <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
                         </div>
                         <div class="media-body">
                             <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -131,7 +130,7 @@
         <div class="vs-menu-area">
             <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/logo.svg" alt="Knirpse"></a>
+                <a href="index.html"><img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse"></a>
             </div>
             <div class="vs-mobile-menu">
                 <ul>
@@ -224,7 +223,7 @@
                             <div class="col-auto">
                                 <div class="header-logo">
                                     <a href="index.html">
-                                        <img src="assets/img/logo.svg" alt="Knirpse">
+                                        <img src="{{ asset('assets/img/logo.svg') }}"alt="Knirpse">
                                     </a>
                                 </div>
                             </div>
@@ -301,7 +300,7 @@
     <!--======== / Header ========-->
 
     <!--======== About Section ========-->
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcrumb-bg-smoke2.jpg">
+    <div class="breadcumb-wrapper" data-bg-src= "{{ asset('assets/img/bg/breadcrumb-bg-smoke2.jpg') }}">
         <div class="container">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Classes</h1>
@@ -323,7 +322,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-1.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-1.jpg') }}"alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -332,7 +331,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-1.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-1.jpg') }}"alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Romeza Xara</a></h3>
@@ -364,7 +363,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-2.jpg" alt="class">
+                                <img src="{{'asset('assets/img/class/class-2.jpg" alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -373,7 +372,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-2.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-2.jpg') }}"  alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Rose Xara</a></h3>
@@ -405,7 +404,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-3.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-3.jpg') }}" alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -414,7 +413,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-3.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-3.jpg') }}" alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Julia Jelly</a></h3>
@@ -446,7 +445,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-4.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-4.jpg') }}"  alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -455,7 +454,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-2.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-2.jpg') }}" alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Romeza Xara</a></h3>
@@ -487,7 +486,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-5.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-5.jpg') }}"  alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -496,7 +495,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-1.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-1.jpg') }}"  alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Romeza Xara</a></h3>
@@ -528,7 +527,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="assets/img/class/class-6.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-6.jpg') }}" alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -537,7 +536,7 @@
                             <div class="class-profile">
                                 <div class="profile">
                                     <div class="avator">
-                                        <img src="assets/img/blog/author-3.jpg" alt="author">
+                                        <img src="{{ asset('assets/img/blog/author-3.jpg') }}"  alt="author">
                                     </div>
                                     <div class="info">
                                         <h3 class="author-name text-title"><a href="team-details.html">Romeza Xara</a></h3>
@@ -570,7 +569,7 @@
     <!--======== / Classes Section ========-->
 
     <!--======== CTA Section ========-->
-    <section class="cta-section space-shape-plus" data-bg-src="assets/img/bg/cta-4.jpg" data-opacity="8" data-overlay="custom">
+    <section class="cta-section space-shape-plus" data-bg-src="{{ asset('aassets/img/bg/cta-4.jpg') }}" data-opacity="8" data-overlay="custom">
         <div class="container text-center z-index-common">
             <div class="title-area mb-35 wow fadeInUp" data-wow-delay="0.1s">
                 <span class="sub-title text-white">Join Our New Session</span>
@@ -578,8 +577,8 @@
             </div>
             <a href="about.html" class="vs-btn wave-btn">Learn More</a>
         </div>
-        <div class="section-before style-2"><img src="assets/img/shape/main-shape-before-2.png" alt="shape"></div>
-        <div class="section-after style-2"><img src="assets/img/shape/main-shape-after-smoke.png" alt="shape"></div>
+        <div class="section-before style-2"><img src="{{'asset('assets/img/shape/main-shape-before-2.png" alt="shape"></div>
+        <div class="section-after style-2"><img src="{{'asset('assets/img/shape/main-shape-after-smoke.png" alt="shape"></div>
     </section>
     <!--======== / CTA Section ========-->
 
@@ -614,7 +613,7 @@
                                     </div>
                                     <div class="testi-author">
                                         <div class="avater">
-                                            <img src="assets/img/testimonial/avator-1.jpg" alt="avator">
+                                            <img src="{{ asset('assets/img/testimonial/avator-1.jpg') }}"  alt="avator">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="name">Jerzzy Lamot</h5>
@@ -632,7 +631,7 @@
                                     </div>
                                     <div class="testi-author">
                                         <div class="avater">
-                                            <img src="assets/img/testimonial/avator-2.jpg" alt="avator">
+                                            <img src="{{ asset('assets/img/testimonial/avator-2.jpg') }}" alt="avator">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="name">David Smith</h5>
@@ -650,7 +649,7 @@
                                     </div>
                                     <div class="testi-author">
                                         <div class="avater">
-                                            <img src="assets/img/testimonial/avator-3.jpg" alt="avator">
+                                            <img src="{{ asset('assets/img/testimonial/avator-3.jpg) }}"  alt="avator">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="name">John Doe</h5>
@@ -668,7 +667,7 @@
                                     </div>
                                     <div class="testi-author">
                                         <div class="avater">
-                                            <img src="assets/img/testimonial/avator-4.jpg" alt="avator">
+                                            <img src="{{ asset('assets/img/testimonial/avator-4.jpg') }}" alt="avator">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="name">Justin Doe</h5>
@@ -700,9 +699,9 @@
 	Footer Area
 	==============================-->
     <footer class="footer-wrapper footer-layout2">
-        <div class="shape-before"><img src="assets/img/shape/footer-before.png" alt="shape"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="assets/img/icon/cloud-2.png" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="assets/img/icon/car-4.png" alt="shapes"></div>
+        <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
+        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="{{'asset('assets/img/icon/cloud-2.png" alt="shapes"></div>
+        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="{{'asset('assets/img/icon/car-4.png" alt="shapes"></div>
         <div class="widget-area">
             <div class="container">
                 <div class="row justify-content-between">
@@ -712,7 +711,7 @@
                             <div class="vs-widget-about">
                                 <div class="about-logo">
                                     <a href="index.html">
-                                        <img src="assets/img/logo-white.svg" alt="Knirpse">
+                                        <img src="{{'asset('assets/img/logo-white.svg" alt="Knirpse">
                                     </a>
                                 </div>
                                 <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
@@ -745,7 +744,7 @@
                             <div class="recent-post-wrap">
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-1.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}"  alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -754,7 +753,7 @@
                                 </div>
                                 <div class="recent-post">
                                     <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog-thumb-2.jpg" alt="Blog Image"></a>
+                                        <a href="blog-details.html"><img src= "{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
                                     </div>
                                     <div class="media-body">
                                         <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
@@ -797,30 +796,30 @@
         All Js File
     ============================== -->
     <!-- Jquery -->
-    <script src="assets/js/jquery-3.5.0.min.js"></script>
+    <script src="{{'asset('assets/js/jquery-3.5.0.min.js') }}"></script>
     <!-- Slick Slider -->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{{'asset('assets/js/slick.min.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{'asset('assets/js/bootstrap.min.js') }}"></script>
     <!-- Magnific Popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{'asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
     <!-- Isotope Filter -->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="{{'asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{'asset('assets/js/isotope.pkgd.min.js') }}"></script>
     <!-- Counter up  -->
-    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="{{'asset('assets/js/jquery.counterup.min.js') }}"></script>
     <!-- Parallax  -->
-    <script src="assets/js/parallax.min.js"></script>
+    <script src="{{'asset('assets/js/parallax.min.js') }}"></script>
     <!-- Custom Carousel -->
-    <script src="assets/js/vscustom-carousel.min.js"></script>
+    <script src="{{'asset('assets/js/vscustom-carousel.min.js') }}"></script>
     <!-- Range Slider -->
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="{{'asset('assets/js/jquery-ui.min.js') }}"></script>
     <!-- WOW JS (Animation JS) -->
-    <script src="assets/js/wow.min.js"></script>
+    <script src="{{'asset('assets/js/wow.min.js') }}"></script>
     <!-- Form Js -->
-    <script src="assets/js/ajax-mail.js"></script>
+    <script src="{{'asset('assets/js/ajax-mail.js') }}"></script>
     <!-- Main Js File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{'asset('assets/js/main.js') }}"></script>
 
 </body>
 
