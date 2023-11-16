@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataPasienController;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
 use App\User;
@@ -34,19 +35,22 @@ Route::get('/login', function () {
 
 Route::get('/data-pasien', function () {
     return view('data-pasien');
-})->name('data-pasien')->middleware('guest');
+})->name('data-pasien')->middleware('auth');
 
 Route::get('/register', function () {
     return view('register');
 })->middleware('guest');
 
 Route::get('/konselor', function () {
-    return view('konselor');
+    return view('konselor.konselor');
 });
 
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
+
+Route::resource('datapasien', DataPasienController::class);
+Route::post('/data-pasien', [DataPasienController::class, 'addDataPasien'])->name('datapasien.addDataPasien');
 
 Route::resource('publikuser', PublikUserController::class);
 Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');

@@ -8,6 +8,10 @@ class pasien extends Model
 {
     protected $table = 'pasiens';
 
+    protected $fillable = [
+        'nama_pasien', 'umur', 'jenis_kelamin',
+    ];
+
     public function janjitemus(){
         return $this->hasMany('App\janjitemu');
     }

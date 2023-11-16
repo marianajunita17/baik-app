@@ -124,18 +124,18 @@
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Data Pasien</h2>
-                        <form action="" method="POST" class="contact-form ajax-contact">
+                        <form action="{{ route('datapasien.addDataPasien')}}" method="POST" class="contact-form ajax-contact">
                             <div class="row">
                                 <div class="form-group col-12">
-                                    <label for="name" class="form-label">Nama Pasien</label>
+                                    <label class="form-label">Nama Pasien</label>
                                     <input type="text" class="form-control" name="name" id="name" placeholder="Felix Handani..." required>
                                 </div>
                                 <div class="form-group col-12">
-                                    <label for="email" class="form-label">Umur</label>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="felix@gmail.com" required>
+                                    <label class="form-label">Umur</label>
+                                    <input type="number" class="form-control" name="umur" id="umur" placeholder="20" required>
                                 </div>
                                 <div class="form-group col-12">
-                                    <label for="message" class="form-label">Jenis Kelamin</label>
+                                    <label class="form-label">Jenis Kelamin</label>
                                     <select>
                                         <option value="L" name="laki-laki">Laki-Laki</option>
                                         <option value="P" name="perempuan">Perempuan</option>
@@ -149,139 +149,9 @@
                         </form>
                     </div>
                 </div>
-                {{-- <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.1s">
-                    <div class="contact-info-box">
-                        <h2 class="contact-title">Our Information</h2>
-                        <div class="info-media">
-                            <div class="media-icon">
-                                <img src="{{ asset('assets/img/icon/location.png') }}" alt="icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="info-title">Office Address:</h4>
-                                <p class="info-text">3556 Hartford Way Vlg, Mount Pleasant, <br>SC, 29466, Australia.</p>
-                            </div>
-                        </div>
-                        <div class="info-media">
-                            <div class="media-icon">
-                                <img src="{{ asset('assets/img/icon/phone.png') }}" alt="icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="info-title">Call Us For Help:</h4>
-                                <p class="info-text"><a href="tel:+25925632562">+259-2563-2562</a> (or) <a href="tel:+25636542156">+256-3654-2156</a></p>
-                            </div>
-                        </div>
-                        <div class="info-media">
-                            <div class="media-icon">
-                                <img src="{{ asset('assets/img/icon/email.png') }}" alt="icon">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="info-title">Mail info:</h4>
-                                <p class="info-text"><a href="mailto:example@quera.com">example@quera.com</a> <a href="mailto:info@example.com">info@example.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-location">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.0337709506216!2d8.722988251963706!3d50.14180007933297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0f52ee6af359%3A0x2213de038ec1bd12!2svecuro_themes%20%7C%20Webdesign%20%26%20Development!5e0!3m2!1sde!2sde!4v1648732976877!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
-    <!--======== / Contact Us Section ========-->
-
-    <!--==============================
-	Footer Area
-	==============================-->
-    <footer class="footer-wrapper footer-layout2">
-        <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img src="{{ asset('assets/img/icon/car-4.png') }}" alt="shapes"></div>
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <!-- About Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <div class="vs-widget-about">
-                                <div class="about-logo">
-                                    <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Knirpse">
-                                    </a>
-                                </div>
-                                <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrice gravida isus commodo viverra.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget widget_nav_menu">
-                            <h4 class="widget_title">Details Info</h4>
-                            <ul class="menu">
-                                <li><a href="classes.html">Online Class</a></li>
-                                <li><a href="contact.html">Appointment</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="team.html">Our Team</a></li>
-                                <li><a href="event.html">Upcoming Events</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h4 class="widget_title">News Feed</h4>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story Guide Yes</a></h4>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">How to prepare child for examination</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Contact Us</h3>
-                            <div class="vs-widget-contact">
-                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave, Brooklyn CA, United State</p>
-                                <p class="footer-info"><i class="fas fa-envelope"></i><a href="mailto:info@Knirpseteam.com">info@Knirpseteam.com</a></p>
-                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-
-                <p class="copyright">&copy; Copyright 2023 Knirpse. All Rights Reserved by <a href="https://themeforest.net/user/vecuro_themes">Vecuro</a>.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!--********************************
-			Code End  Here
-	******************************** -->
 
 
     <!-- Scroll To Top -->
