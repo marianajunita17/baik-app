@@ -49,7 +49,7 @@ Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("red
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
-Route::post('/data-pasien', [DataPasienController::class, 'addDataPasien'])->name('datapasien');
+Route::post('/data-pasien', 'DataPasienController@addDataPasien')->name('datapasien');
 
 Route::resource('publikuser', PublikUserController::class);
 Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');

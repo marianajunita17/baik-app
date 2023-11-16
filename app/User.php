@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function konselors(){
         return $this->hasMany('App\konselor');
     }
+
+    public function getId(){
+        return $this->id;
+    }
 }
