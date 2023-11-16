@@ -142,7 +142,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="class-box">
                             <div class="class-img">
-                                <img src="{{ asset('assets/img/icon/user.png') }}" alt="class">
+                                <img src="{{ asset('assets/img/icon/user.png') }}" style="width:100px;height:100px" alt="class">
                                 {{-- <a href="class-details.html">
                                     <img src="{{ $k->photo }}" alt="class">
                                 </a> --}}
