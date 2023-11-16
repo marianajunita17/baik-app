@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\konselor;
+use App\spesialisasi;
 use Illuminate\Http\Request;
 
 class PublikKonselorController extends Controller
 {
-    public function index(){
+    public function index($id){
+        // $spesialisasi = spesialisasi::find($id)
+        // if($spesialisasi->id){
+        //     $
+        // }
         $konselor = konselor::all();
 
         return view('konselor.konselor', ['konselors' => $konselor]);

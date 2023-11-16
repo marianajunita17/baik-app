@@ -31,4 +31,14 @@ class DataPasienController extends Controller
 
         return redirect()->route('home')->with('success', 'Simpan Data Pasien Berhasil');
     }
+
+    public function janjiTemu(Request $request) {
+        $pasien = pasien::find($request->user()->id);
+
+        if($pasien->anak->isEmpty()) {
+            return redirect()->route('data-anak');
+        }
+
+        return view('konselor.konselor');
+    }
 }
