@@ -37,7 +37,7 @@ class LoginController extends Controller
                 $existingUser = User::where('email', $user->getEmail())->first();
                 if($existingUser){
                     if($existingUser->id){
-                        $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();;
+                        $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();
                         if($checkdatapasien){
                             // return dd("Data Ditemukan",$checkdatapasien,$existingUser->id);
                             auth()->login($existingUser, true);
@@ -47,7 +47,6 @@ class LoginController extends Controller
                             auth()->login($existingUser, true);
                             return redirect()->intended('data-pasien');
                         }
-                        // auth()->login($existingUser, true);
                     }
 
                 }else{
