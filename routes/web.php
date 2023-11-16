@@ -26,27 +26,30 @@ Route::get('/login', function () {
 
 Route::get('/home', function () {
     return view('home');
-})->name("home");
+})->name("home")->middleware('auth');
+
+Route::get('/login', function () {
+    return view('login');
+})->middleware('guest');
 
 Route::get('/register', function () {
     return view('register');
-});
+})->middleware('guest');
 
-Route::get('google/login', 'Auth\LoginController@redirectToProvider');
+Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
+Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
+
+Route::resource('publikuser', PublikUserController::class);
+Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
+Route::post('/login', [PublikUserController::class, 'login'])->name('login.user');
+Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuser');
 
 // Route::get('/register', function () {
 //     return view('register.register-base');
 // });
 
-Route::resource('publikuser', PublikUserController::class);
-
-Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
-
-Route::get('/login', [PublikUserController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [PublikUserController::class, 'login']);
-
-Route::middleware(['auth'])->group(function () {
-    // Rute-rute yang hanya dapat diakses oleh pengguna
-    Route::get('/home', [PublikUserController::class, 'home'])->name('home');
-});
+// Route::middleware(['auth'])->group(function () {
+//     // Rute-rute yang hanya dapat diakses oleh pengguna
+//     Route::get('/home', [PublikUserController::class, 'home'])->name('home');
+// });

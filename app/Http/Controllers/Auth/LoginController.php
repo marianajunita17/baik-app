@@ -9,13 +9,19 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 
 class LoginController extends Controller
 {
     //
     public function redirectToProvider(){
-        Session::put('loginby', 'user');
+        Session::put('loginby', 'loginuser');
+        return Socialite::driver('google')->with(['loginby' => 'user'])->redirect();
+    }
+
+    public function redirectToProviderRegister(){
+        Session::put('loginby', 'registeruser');
         return Socialite::driver('google')->with(['loginby' => 'user'])->redirect();
     }
 
@@ -25,20 +31,24 @@ class LoginController extends Controller
             $session_check = Session::get('loginby');
             Session::forget('loginby');
             $user = Socialite::driver('google')->user();
-            if($session_check == "user"){
+
+            if($session_check == "loginuser"){
                 // Login User
                 $existingUser = User::where('email', $user->getEmail())->first();
                 if($existingUser){
-                    return redirect()->route('home')->with('user', $user);
+                    auth()->login($existingUser, true);
+                    return redirect()->intended('home');
                 }else{
-                    User::create([
-                        'username' => $user->getName(),
-                        'email' => $user->getEmail(),
-                        'google_id' =>$user->getId(),
-                        'password' => bcrypt("test123"),
-                    ]);
-                    return redirect()->route('home')->with('user', $user);
+                    return redirect()->route('login')->withErrors(['alert' => 'Silahkan Register menggunakan Email anda terlebih dahulu'])->withInput();
                 }
+            }elseif ($session_check == "registeruser") {
+                User::create([
+                    'username' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'google_id' =>$user->getId(),
+                    'password' => bcrypt("test123"),
+                ]);
+                return redirect()->route('login')->with('success', 'Pendaftaran Berhasil');
             }else{
                 // Login Admin
                 $users = DB::table("cms_users")->where("email", $user->getEmail())->first();
@@ -88,5 +98,10 @@ class LoginController extends Controller
             return redirect('/login');
         }
 
+    }
+
+    public function handleLogoutUser(){
+        Auth::logout();
+        return redirect('/login');
     }
 }

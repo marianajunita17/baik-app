@@ -261,7 +261,7 @@
         <div class="container">
             <div class="row gx-60 gy-30 flex-column-reverse flex-lg-row align-items-center">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <form action="{{ route('login') }}" method="post"
+                    <form action="{{ route('login.user') }}" method="post"
                         class="appointment-form ajax-contact">
                         @csrf
                         <div class="row gx-15">
@@ -275,7 +275,7 @@
                                     placeholder="Password" required>
                             </div>
                             <div class="form-group col-12">
-                                <a href="home" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >  Login With Google</a>
+                                <a href="{{route("redirectlogingoogle")}}" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >  Login With Google</a>
                             </div>
                             <div class="form-group col-12">
                                 <button type="submit" class="vs-btn wave-btn">Submit</button>

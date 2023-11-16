@@ -158,7 +158,7 @@
                                 <textarea class="form-control" name="message" id="message" placeholder="Message"></textarea>
                             </div> --}}
                             <div class="form-group col-12">
-                                <a href="home" class="vs-btn wave-btn"><img
+                                <a href="{{route("redirectregistergoogle")}}" class="vs-btn wave-btn"><img
                                         src="{{ asset('assets/img/icon/icon-google.png') }}"
                                         style="width:20px;height:20px">Register With Google</a>
                             </div>

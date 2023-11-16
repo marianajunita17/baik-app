@@ -99,7 +99,7 @@ class PublikUserController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('login');
     }
 
     public function login(Request $request){
@@ -112,6 +112,7 @@ class PublikUserController extends Controller
         $user = User::where('username', $request->input('username'))->first();
 
         if($user && $user->password == $request->input('password')) {
+            return dd("berhasil");
             return redirect()->route('home');
         }
 

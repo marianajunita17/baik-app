@@ -287,6 +287,10 @@
                             <div class="col-auto d-none d-xl-block">
                                 <div class="header-button">
                                     <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button class="vs-btn wave-btn">Logout</button>
+                                    </form>
                                     <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
                                     <button type="button" class="sideMenuToggler icon-btn"><i class="fal fa-bars"></i></button>
                                 </div>
