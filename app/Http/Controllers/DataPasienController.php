@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DataPasienController extends Controller
 {
+    public function index(){
+        $pasien = pasien::all();
+
+        return view('home', ['pasiens' => $pasien]);
+    }
+
     public function addDataPasien(Request $request) {
         $request->validate([
             'name' => 'required|string|max:255',
