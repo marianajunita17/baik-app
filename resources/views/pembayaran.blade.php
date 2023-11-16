@@ -193,21 +193,13 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-links">
-                            <ul>
-                                <li><i class="fal fa-clock"></i>9:30 am - 6:30 pm - Mon - Sun</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="tel:+25625921589">+256 259 21589</a></li>
-                                <li><i class="fas fa-map-marker-alt"></i>Hilton Street, New York 215 US</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="header-social">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                <li><a href="#">Profil BAIK</a></li>
+                                <li><a href="#">BAIK Edukasi</i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -233,62 +225,23 @@
                                     <ul>
                                         <li class="menu-item-has-children">
                                             <a href="index.html">Home</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                            </ul>
                                         </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Classes</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="classes.html">Classes</a></li>
-                                                <li><a href="class-details.html">Class Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item-has-children">
-                                                    <a href="shop.html">Shop</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="shop-with-sidebar.html">Shop Sidebar</a></li>
-                                                        <li><a href="shop-details.html">Shop Details</a></li>
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="event.html">Event</a></li>
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                                <li><a href="gallery.html">Gallery</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="service.html">Services</a></li>
-                                                <li><a href="service-details.html">Services Details</a></li>
-                                                <li><a href="error.html">Error Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
-                                        </li>
+                                        <li><a href="profile">About Us</a></li>
                                     </ul>
                                 </nav>
-                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i> Menu</button>
+                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i
+                                        class="far fa-bars"></i> Menu</button>
                             </div>
                             <div class="col-auto d-none d-xl-block">
                                 <div class="header-button">
-                                    <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
-                                    <button type="button" class="searchBoxToggler icon-btn"><i class="far fa-search"></i></button>
-                                    <button type="button" class="sideMenuToggler icon-btn"><i class="fal fa-bars"></i></button>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button class="vs-btn wave-btn">Logout</button>
+                                    </form>
+                                    <button type="button" class="searchBoxToggler icon-btn"><i
+                                            class="far fa-search"></i></button>
+                                    <button type="button" class="sideMenuToggler icon-btn"><i
+                                            class="fal fa-bars"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -300,165 +253,11 @@
     </header>
     <!--======== / Header ========-->
 
-    <!--======== About Section ========-->
-    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/breadcrumb-bg-1.jpg') }}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Checkout</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Checkout</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--======== / About Section ========-->
+
 
     <!--======== Checkout Section ========-->
     <div class="vs-checkout-wrapper space-page">
         <div class="container">
-            <div class="woocommerce-form-login-toggle">
-                <div class="woocommerce-info">Returning customer? <a href="#" class="showlogin">Click here to login</a>
-                </div>
-                <form action="#" class="woocommerce-form-login bg-smoke">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Username or email">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <div class="custom-checkbox">
-                                    <input type="checkbox" id="remembermylogin">
-                                    <label for="remembermylogin">Remember Me</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="vs-btn">Login</button>
-                                <p class="fs-xs mt-2 mb-0"><a class="text-reset" href="#">Lost your password?</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="woocommerce-form-coupon-toggle">
-                <div class="woocommerce-info">
-                    Have a coupon? <a href="#" class="showcoupon">Click here to enter your code</a>
-                </div>
-            </div>
-            <form action="#" class="woocommerce-form-coupon bg-smoke">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Write your coupon code">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="vs-btn">Apply coupon</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <form action="#" class="woocommerce-checkout mt-40">
-                <div class="row ">
-                    <div class="col-lg-6">
-                        <h2 class="h4">Billing Details</h2>
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <select class="form-select">
-                                    <option>United Kingdom (UK)</option>
-                                    <option>United State (US)</option>
-                                    <option>Equatorial Guinea (GQ)</option>
-                                    <option>Australia (AU)</option>
-                                    <option>Germany (DE)</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="First Name">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Last Name">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Your Company Name">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Street Address">
-                                <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Town / City">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Country">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Postcode / Zip">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Email Address">
-                                <input type="text" class="form-control" placeholder="Phone number">
-                            </div>
-                            <div class="col-12 form-group">
-                                <input type="checkbox" id="accountNewCreate">
-                                <label for="accountNewCreate">Create An Account?</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <p id="ship-to-different-address">
-                            <input id="ship-to-different-address-checkbox" type="checkbox" name="ship_to_different_address" value="1">
-                            <label for="ship-to-different-address-checkbox">
-                                Ship to a different address?
-                                <span class="checkmark"></span>
-                            </label>
-                        </p>
-                        <div class="shipping_address">
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <select class="form-select">
-                                        <option>United Kingdom (UK)</option>
-                                        <option>United State (US)</option>
-                                        <option>Equatorial Guinea (GQ)</option>
-                                        <option>Australia (AU)</option>
-                                        <option>Germany (DE)</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Your Company Name">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Street Address">
-                                    <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Town / City">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="Country">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="Postcode / Zip">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Email Address">
-                                    <input type="text" class="form-control" placeholder="Phone number">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 form-group">
-                            <textarea cols="20" rows="5" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-                        </div>
-                    </div>
-                </div>
-            </form>
             <h4 class="mt-4 pt-lg-2">Your Order</h4>
             <form action="#" class="woocommerce-cart-form">
                 <table class="cart_table mb-20">
@@ -535,7 +334,7 @@
                         </li>
                     </ul>
                     <div class="form-row place-order">
-                        <button type="submit" class="vs-btn">Place order</button>
+                        <button type="submit" class="vs-btn">Konfirmasi</button>
                     </div>
                 </div>
             </div>

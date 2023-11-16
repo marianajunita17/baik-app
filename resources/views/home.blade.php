@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Knirpse - Kindergarten & Baby Care Template</title>
+    <title>BAIK - Bantuan Awal Ibu Untuk Kesehatan</title>
     <meta name="author" content="vecuro_themes">
     <meta name="description" content="Knirpse - Kindergarten & Baby Care Template">
     <meta name="keywords" content="Knirpse - Kindergarten & Baby Care Template">
