@@ -64,7 +64,8 @@ Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("red
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
+// Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
+Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home');
 Route::get('/home/{id}/konselors', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
