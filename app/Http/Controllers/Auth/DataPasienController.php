@@ -14,11 +14,18 @@ class DataPasienController extends Controller
             'jenis_kelamin' => 'required|string|max:255',
         ]);
 
+        // $pasien = new pasien();
+        // $pasien->nama_pasien = $request->input('nama_pasien');
+        // $pasien->umur = $request->input('umur');
+        // $pasien->jenis_kelamin = $request->input('jenis_kelamin');
+        // $pasien->save();
+
         pasien::create([
             'nama_pasien'=> $request->input('nama_pasien'),
             'umur' => $request->input('umur'),
             'jenis_kelamin'=> $request->input('jenis_kelamin')
         ]);
-        return redirect()->route('home')->with('success', 'Simpan Data Pasien Berhasil');
+        return dd();
+        // return redirect()->route('home')->with('success', 'Simpan Data Pasien Berhasil');
     }
 }
