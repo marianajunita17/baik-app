@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataPasienController;
+use App\Http\Controllers\PublikSpesialisController;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
 use App\User;
@@ -53,7 +54,11 @@ Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("red
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
+// Route::get('/home', [DataPasienController::class, 'index'])->name('datapasien.index');
+
 Route::post('/data-pasien', 'DataPasienController@addDataPasien')->name('datapasien');
+
 
 Route::resource('publikuser', PublikUserController::class);
 Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
