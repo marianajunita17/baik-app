@@ -118,7 +118,7 @@
     <!--======== / Header ========-->
 
     <!--======== Contact Us Section ========-->
-    <section class="contact-section space-page">
+    <section class="contact-section ">
         <div class="container">
             <div class="row gx-50 gy-30">
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
@@ -149,7 +149,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.1s">
+                {{-- <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.1s">
                     <div class="contact-info-box">
                         <h2 class="contact-title">Our Information</h2>
                         <div class="info-media">
@@ -183,7 +183,7 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.0337709506216!2d8.722988251963706!3d50.14180007933297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0f52ee6af359%3A0x2213de038ec1bd12!2svecuro_themes%20%7C%20Webdesign%20%26%20Development!5e0!3m2!1sde!2sde!4v1648732976877!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
