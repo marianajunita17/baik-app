@@ -363,7 +363,7 @@
                     <div class="class-box">
                         <div class="class-img">
                             <a href="class-details.html">
-                                <img src="{{'asset('assets/img/class/class-2.jpg" alt="class">
+                                <img src="{{ asset('assets/img/class/class-2.jpg') }}"alt="class">
                             </a>
                         </div>
                         <div class="class-content">
@@ -569,7 +569,7 @@
     <!--======== / Classes Section ========-->
 
     <!--======== CTA Section ========-->
-    <section class="cta-section space-shape-plus" data-bg-src="{{ asset('aassets/img/bg/cta-4.jpg') }}" data-opacity="8" data-overlay="custom">
+    <section class="cta-section space-shape-plus" data-bg-src="{{ asset('aassets/img/bg/cta-4.jpg')}}" data-opacity="8" data-overlay="custom">
         <div class="container text-center z-index-common">
             <div class="title-area mb-35 wow fadeInUp" data-wow-delay="0.1s">
                 <span class="sub-title text-white">Join Our New Session</span>
@@ -577,8 +577,8 @@
             </div>
             <a href="about.html" class="vs-btn wave-btn">Learn More</a>
         </div>
-        <div class="section-before style-2"><img src="{{'asset('assets/img/shape/main-shape-before-2.png" alt="shape"></div>
-        <div class="section-after style-2"><img src="{{'asset('assets/img/shape/main-shape-after-smoke.png" alt="shape"></div>
+        <div class="section-before style-2"><img src="{{asset('assets/img/shape/main-shape-before-2.png')}}" alt="shape"></div>
+        <div class="section-after style-2"><img src="{{asset('assets/img/shape/main-shape-after-smoke.png')}}" alt="shape"></div>
     </section>
     <!--======== / CTA Section ========-->
 
@@ -667,7 +667,7 @@
                                     </div>
                                     <div class="testi-author">
                                         <div class="avater">
-                                            <img src="{{ asset('assets/img/testimonial/avator-4.jpg') }}" alt="avator">
+                                            <img src="{{ asset('assets/img/testimonial/avator-4.jpg) }}" alt="avator">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="name">Justin Doe</h5>
