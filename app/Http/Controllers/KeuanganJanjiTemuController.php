@@ -1,13 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\janjitemu;
-use Carbon\Carbon;
-use Session;
+	use Session;
 	use Request;
 	use DB;
 	use CRUDBooster;
 
-	class KonselorJanjiTemu28Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class KeuanganJanjiTemuController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -37,24 +35,18 @@ use Session;
 			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
-			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
-			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"catatan_kasus"];
-			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"presentase_kesesuaian"];
-			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
-			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"rekomendasi"];
-			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
-			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
+			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"bank_id", "join"=>"pembayarans,jenis_pembayaran"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
+			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
+			$this->form[] = ['label'=>'Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Catatan Kasus','name'=>'catatan_kasus','type'=>'textarea','validation'=>'min:0|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Persentase Kesesuaian (%)','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rekomendasi Konselor','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			$this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'bank_id','type'=>'select2','validation'=>'required|string|min:0','width'=>'col-sm-10','datatable'=>'pembayarans,jenis_pembayaran'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -292,22 +284,8 @@ use Session;
 	    |
 	    */
 	    public function hook_after_add($id) {
-	        $janjitemu = janjitemu::find($id);
+	        //Your code here
 
-            $startDate = Carbon::parse($janjitemu->tgl_konsultasi_mulai);
-            $endDate = Carbon::parse($janjitemu->tgl_konsultasi_selesai);
-
-            $diff = $startDate->diffInMinutes($endDate);
-
-            $different = $startDate->diff($endDate);
-            $second = $different->s;
-
-            if($second > 0){
-                $diff += 1;
-            }
-
-            $janjitemu->durasi_konsultasi = $diff;
-            $janjitemu->save();
 	    }
 
 	    /*

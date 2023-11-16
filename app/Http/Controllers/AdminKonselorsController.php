@@ -30,10 +30,11 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-            $this->col[] = ["label"=>"Nomor Induk","name"=>"nomor_induk"];
+            $this->col[] = ["label"=>"Nomor STR","name"=>"nomor_str"];
 			$this->col[] = ["label"=>"Nama Konselor","name"=>"nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Lahir","name"=>"tgl_lahir"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
+			$this->col[] = ["label"=>"Pengalaman Kerja (Tahun)","name"=>"lama_bekerja"];
 			$this->col[] = ["label"=>"CV","name"=>"CV","image"=>true];
 			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
 			$this->col[] = ["label"=>"KTP","name"=>"KTP","image"=>true];
@@ -46,12 +47,13 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nomor Induk','name'=>'nomor_induk','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nomor STR','name'=>'nomor_str','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'User','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
 			$this->form[] = ['label'=>'Nama Konselor','name'=>'nama_konselor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
 			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialisasis_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi','relationship_table'=>'konselor_spesialis'];
+			$this->form[] = ['label'=>'Pengalaman Bekerja (Tahun)','name'=>'lama_bekerja','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];

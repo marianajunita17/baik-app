@@ -1,18 +1,16 @@
 <?php namespace App\Http\Controllers;
 
-use App\janjitemu;
-use Carbon\Carbon;
-use Session;
+	use Session;
 	use Request;
 	use DB;
 	use CRUDBooster;
 
-	class KonselorJanjiTemu28Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class KeuanganKonselorsController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
-			$this->title_field = "id";
+			$this->title_field = "nama_konselor";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
@@ -27,51 +25,48 @@ use Session;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "janji_temu";
+			$this->table = "konselors";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
-			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
-			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
-            $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
-			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
-			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"catatan_kasus"];
-			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"presentase_kesesuaian"];
-			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
-			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"rekomendasi"];
-			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
-			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
-			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
+			$this->col[] = ["label"=>"Photo","name"=>"photo","image"=>true];
+			$this->col[] = ["label"=>"Nama Konselor","name"=>"nama_konselor"];
+			$this->col[] = ["label"=>"Pengalaman Kerja (Tahun)","name"=>"lama_bekerja"];
+			$this->col[] = ["label"=>"No. Rekening","name"=>"no_rekening"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
-			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Catatan Kasus','name'=>'catatan_kasus','type'=>'textarea','validation'=>'min:0|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Persentase Kesesuaian (%)','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rekomendasi Konselor','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
+			$this->form[] = ['label'=>'Nama Konselor','name'=>'nama_konselor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Pengalaman Bekerja (Tahun)','name'=>'lama_bekerja','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'No Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Keluhan","name"=>"keluhan","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
-			//$this->form[] = ["label"=>"Janji Temu Id","name"=>"janji_temu_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"janji_temu,id"];
-			//$this->form[] = ["label"=>"Pasien Id","name"=>"pasien_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"pasien,id"];
-			//$this->form[] = ["label"=>"Nominal","name"=>"nominal","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Bank Id","name"=>"bank_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"bank,id"];
-			//$this->form[] = ["label"=>"Tgl Konsultasi Mulai","name"=>"tgl_konsultasi_mulai","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
-			//$this->form[] = ["label"=>"Tgl Konsultasi Selesai","name"=>"tgl_konsultasi_selesai","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Durasi Konsultasi","name"=>"durasi_konsultasi","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Catatan Kasus","name"=>"catatan_kasus","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Presentase Kesesuaian","name"=>"presentase_kesesuaian","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Rekomendasi","name"=>"rekomendasi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Perlu Lanjut","name"=>"perlu_lanjut","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Konselor Id","name"=>"konselor_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"konselor,id"];
+			//$this->form[] = ["label"=>"Nama Konselor","name"=>"nama_konselor","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Tgl Lahir","name"=>"tgl_lahir","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"CV","name"=>"CV","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"SIPP","name"=>"SIPP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Ijazah","name"=>"Ijazah","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Surat Sebutan Psi","name"=>"surat_sebutan_psi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"KTP","name"=>"KTP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"NPWP","name"=>"NPWP","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Photo","name"=>"photo","type"=>"upload","required"=>TRUE,"validation"=>"required|image|max:3000","help"=>"File types support : JPG, JPEG, PNG, GIF, BMP"];
+			//$this->form[] = ["label"=>"No Rekening","name"=>"no_rekening","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Verifikasi At","name"=>"verifikasi_at","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
+			//$this->form[] = ["label"=>"Verifikasi By","name"=>"verifikasi_by","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Verifikasi Status","name"=>"verifikasi_status","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Status Aktif","name"=>"status_aktif","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Jadwal","name"=>"jadwal","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Users Id","name"=>"users_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"users,username"];
+			//$this->form[] = ["label"=>"Nomor Str","name"=>"nomor_str","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Lama Bekerja","name"=>"lama_bekerja","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
 			# OLD END FORM
 
 			/*
@@ -292,22 +287,8 @@ use Session;
 	    |
 	    */
 	    public function hook_after_add($id) {
-	        $janjitemu = janjitemu::find($id);
+	        //Your code here
 
-            $startDate = Carbon::parse($janjitemu->tgl_konsultasi_mulai);
-            $endDate = Carbon::parse($janjitemu->tgl_konsultasi_selesai);
-
-            $diff = $startDate->diffInMinutes($endDate);
-
-            $different = $startDate->diff($endDate);
-            $second = $different->s;
-
-            if($second > 0){
-                $diff += 1;
-            }
-
-            $janjitemu->durasi_konsultasi = $diff;
-            $janjitemu->save();
 	    }
 
 	    /*

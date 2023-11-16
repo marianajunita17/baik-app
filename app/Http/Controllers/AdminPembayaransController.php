@@ -31,13 +31,15 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
             $this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Bank","name"=>"bank"];
+            $this->col[] = ["label"=>"Logo","name"=>"logo"];
+			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"jenis_pembayaran"];
 			// $this->col[] = ["label"=>"Kode Janji Temu","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Bank','name'=>'bank','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Logo','name'=>'logo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'jenis_pembayaran','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			// $this->form[] = ['label'=>'Kode Janji Temu','name'=>'janji_temu_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			# END FORM DO NOT REMOVE THIS LINE
 

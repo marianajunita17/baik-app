@@ -46,7 +46,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
 			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
-			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"bank_id", "join"=>"pembayarans,bank"];
+			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"bank_id", "join"=>"pembayarans,jenis_pembayaran"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -63,7 +63,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
 			$this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'bank_id','type'=>'select2','validation'=>'required|string|min:0','width'=>'col-sm-10','datatable'=>'pembayarans,bank'];
+			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'bank_id','type'=>'select2','validation'=>'required|string|min:0','width'=>'col-sm-10','datatable'=>'pembayarans,jenis_pembayaran'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
