@@ -13,10 +13,10 @@ class PublikKonselorController extends Controller
         return view('konselor.konselor', ['konselors' => $konselor]);
     }
 
-    public function detailKonselor(konselor $konselor){
+    public function detailKonselor($id){
         // $this->authorize('get-detail');
         // return json_encode($konselor);
-        $detailkonselor = konselor::all();
+        $detailkonselor = konselor::find($id);
         return view('konselor.detailkonselor', ['konselors' => $detailkonselor]);
     }
 }

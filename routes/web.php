@@ -57,7 +57,7 @@ Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
 Route::get('/konselor', [PublikKonselorController::class, 'index'])->name('konselor.index');
-Route::get('/konselor/detailkonselor', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
+Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
 // Route::get('/konselor/detailkonselor', PublikKonselorController::class, 'detailKonselor')
 
 Route::post('/data-pasien', 'DataPasienController@addDataPasien')->name('datapasien');

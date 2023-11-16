@@ -142,14 +142,15 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="class-box">
                             <div class="class-img">
-                                <a href="class-details.html">
+                                <img src="{{ $k->photo }}" alt="class">
+                                {{-- <a href="class-details.html">
                                     <img src="{{ $k->photo }}" alt="class">
-                                </a>
+                                </a> --}}
                             </div>
                             <div class="class-content">
                                 <h2 class="class-title h4"><a href="class-details.html">{{ $k->nama_konselor }}</a>
                                 </h2>
-                                <a href="{{ route('konselor.detailKonselor', $k->id) }}"
+                                <a href="{{ route('konselor.detailKonselor', ['id' => $k->id]) }}"
                                     class="vs-btn style-1">Detail</a>
                             </div>
                         </div>
