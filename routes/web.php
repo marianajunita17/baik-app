@@ -30,7 +30,7 @@ Route::get('/home', function () {
 
 Route::get('/login', function () {
     return view('login');
-})->middleware('guest');
+})->name('login')->middleware('guest');
 
 Route::get('/register', function () {
     return view('register');
