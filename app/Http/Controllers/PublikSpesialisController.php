@@ -12,4 +12,10 @@ class PublikSpesialisController extends Controller
 
         return view('home', ['spesialisasis' => $spesialisasi]);
     }
+
+    public function showKonselor($id){
+        $spesialis = spesialisasi::find($id);
+        $konselor = $spesialis->konselors;
+        return view('konselor.konselor', ['konselors'=>$konselor]);
+    }
 }

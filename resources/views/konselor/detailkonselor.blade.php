@@ -148,6 +148,7 @@
                             </div>
                         </div>
                         <h2 class="single-title">{{ $konselors->nama_konselor }}</h2>
+                        <a href="pembayaran" class="vs-btn wave-btn">Pesan</a>
                     </div> <!-- / class details -->
                 </div> <!-- / col-8 end -->
                 <!-- Sidebar -->
@@ -159,44 +160,23 @@
                                     <i class="fas fa-calendar-alt"></i>
                                     <div class="info">
                                         <h6 class="title">Tanggal Lahir: </h6>
-                                        <span class="text">{{$konselors->tgl_lahir}}</span>
+                                        <span class="text">{{ $konselors->tgl_lahir }}</span>
                                     </div>
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-user"></i>
                                     <div class="info">
                                         <h6 class="title">Jadwal: </h6>
-                                        <span class="text">{{$konselors->jadwal}}</span>
+                                        <span class="text">{{ $konselors->jadwal }}</span>
                                     </div>
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
                                         <h6 class="title">Nomor Induk: </h6>
-                                        <span class="text">{{$konselors->nomor_induk}}</span>
+                                        <span class="text">{{ $konselors->nomor_induk }}</span>
                                     </div>
                                 </div>
-                                {{-- <div class="info-item">
-                                    <i class="fas fa-clock"></i>
-                                    <div class="info">
-                                        <h6 class="title">Class Time: </h6>
-                                        <span class="text">9:00am - 12:00pm</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-sunrise"></i>
-                                    <div class="info">
-                                        <h6 class="title">Class Day: </h6>
-                                        <span class="text">Monday, Friday</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-language"></i>
-                                    <div class="info">
-                                        <h6 class="title">Language: </h6>
-                                        <span class="text">English</span>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </aside>
@@ -205,111 +185,6 @@
         </div>
     </section>
     <!--======== / Class Section ========-->
-
-    <!--==============================
- Footer Area
- ==============================-->
-    {{-- <footer class="footer-wrapper footer-layout2">
-        <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img
-                src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img
-                src="{{ asset('assets/img/icon/car-4.png') }}" alt="shapes"></div>
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <!-- About Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <div class="vs-widget-about">
-                                <div class="about-logo">
-                                    <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Knirpse">
-                                    </a>
-                                </div>
-                                <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                    ipsum ultrice gravida isus commodo viverra.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget widget_nav_menu">
-                            <h4 class="widget_title">Details Info</h4>
-                            <ul class="menu">
-                                <li><a href="classes.html">Online Class</a></li>
-                                <li><a href="contact.html">Appointment</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="team.html">Our Team</a></li>
-                                <li><a href="event.html">Upcoming Events</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h4 class="widget_title">News Feed</h4>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}"
-                                                alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story
-                                                Guide Yes</a></h4>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}"
-                                                alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">How to prepare child for
-                                                examination</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Contact Us</h3>
-                            <div class="vs-widget-contact">
-                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave,
-                                    Brooklyn CA, United State</p>
-                                <p class="footer-info"><i class="fas fa-envelope"></i><a
-                                        href="mailto:info@Knirpseteam.com">info@Knirpseteam.com</a></p>
-                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a
-                                        href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-
-                <p class="copyright">&copy; Copyright 2023 Knirpse. All Rights Reserved by <a
-                        href="https://themeforest.net/user/vecuro_themes">Vecuro</a>.</p>
-            </div>
-        </div>
-    </footer> --}}
 
     <!--********************************
    Code End  Here

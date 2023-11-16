@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataAnakController;
 use App\Http\Controllers\DataPasienController;
 use App\Http\Controllers\PublikKonselorController;
 use App\Http\Controllers\PublikSpesialisController;
@@ -51,16 +52,21 @@ Route::get('/konselor/detailkonselor', function () {
     return view('konselor.detailkonselor');
 });
 
-Route::get('/pembayaran', function () {
+Route::get('/konselor/detailkonselor/pembayaran', function () {
     return view('pembayaran');
 });
+
+Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
+Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
+
 
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
-Route::get('/konselor', [PublikKonselorController::class, 'index'])->name('konselor.index');
+Route::get('/home/{id}/konselors', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
+
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
 // Route::get('/konselor/detailkonselor', PublikKonselorController::class, 'detailKonselor')
 
