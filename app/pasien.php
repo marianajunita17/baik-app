@@ -9,7 +9,7 @@ class pasien extends Model
     protected $table = 'pasiens';
 
     protected $fillable = [
-        'nama_pasien', 'umur', 'jenis_kelamin',
+        'nama_pasien', 'umur', 'jenis_kelamin','users_id'
     ];
 
     public function janjitemus(){

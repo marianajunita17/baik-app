@@ -38,13 +38,13 @@ class LoginController extends Controller
                 if($existingUser){
                     if($existingUser->id){
                         $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();
+                        auth()->login($existingUser, true);
                         if($checkdatapasien){
                             // return dd("Data Ditemukan",$checkdatapasien,$existingUser->id);
-                            auth()->login($existingUser, true);
                             return redirect()->intended('home');
                         }else{
                             // return dd("Data Tidak ktmu",$checkdatapasien,$existingUser->id);
-                            auth()->login($existingUser, true);
+
                             return redirect()->intended('data-pasien');
                         }
                     }

@@ -124,7 +124,8 @@
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Data Pasien</h2>
-                        <form action="{{ route('datapasien.addDataPasien')}}" method="POST" class="contact-form ajax-contact">
+                        <form action="{{ route('datapasien')}}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label class="form-label">Nama Pasien</label>
@@ -136,9 +137,9 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label class="form-label">Jenis Kelamin</label>
-                                    <select>
-                                        <option value="L" name="laki-laki">Laki-Laki</option>
-                                        <option value="P" name="perempuan">Perempuan</option>
+                                    <select id="jeniskelamin" name="jeniskelamin">
+                                        <option value="Laki-Laki" name="laki-laki">Laki-Laki</option>
+                                        <option value="Perempuan" name="perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-12">

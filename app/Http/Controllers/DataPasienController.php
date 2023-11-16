@@ -4,21 +4,25 @@ namespace App\Http\Controllers;
 
 use App\pasien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataPasienController extends Controller
 {
     public function addDataPasien(Request $request) {
         $request->validate([
-            'nama_pasien' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'umur' => 'required|integer|min:8',
-            'jenis_kelamin' => 'required|string|max:255',
+            'jeniskelamin' => 'required|string|max:255',
         ]);
 
+        $iduser = auth()->user()->id;
         pasien::create([
-            'nama_pasien'=> $request->input('nama_pasien'),
+            'nama_pasien'=> $request->input('name'),
             'umur' => $request->input('umur'),
-            'jenis_kelamin'=> $request->input('jenis_kelamin')
+            'jenis_kelamin'=> $request->input('jeniskelamin'),
+            'users_id' => $iduser,
         ]);
+
         return redirect()->route('home')->with('success', 'Simpan Data Pasien Berhasil');
     }
 }
