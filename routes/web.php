@@ -40,6 +40,10 @@ Route::get('/register', function () {
     return view('register');
 })->middleware('guest');
 
+Route::get('/konselor', function () {
+    return view('konselor');
+});
+
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
