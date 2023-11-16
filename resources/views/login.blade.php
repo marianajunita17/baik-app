@@ -257,7 +257,7 @@
     </header>
 
     <!--======== Appointment Section ========-->
-    <section class="appointment-section space-bottom space-top-shape-plus">
+    <section class="appointment-section space-bottom ">
         <div class="container">
             <div class="row gx-60 gy-30 flex-column-reverse flex-lg-row align-items-center">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
@@ -266,22 +266,20 @@
                         @csrf
                         <div class="row gx-15">
                             <span class="sub-title">Masuk ke Aplikasi BAIK</span>
-                            <div class="form-group col-sm-6">
+                            {{-- <div class="form-group col-sm-6">
                                 <input type="text" class="form-control" name="username" id="username"
                                     placeholder="Username" required value="{{old('username')}}">
                             </div>
                             <div class="form-group col-sm-6">
                                 <input type="password" class="form-control" name="password" id="password"
                                     placeholder="Password" required>
-                            </div>
+                            </div> --}}
                             <div class="form-group col-12">
                                 <a href="{{route("redirectlogingoogle")}}" class="vs-btn wave-btn"><img src="{{ asset('assets/img/icon/icon-google.png') }}" style="width:20px;height:20px" >  Login With Google</a>
                             </div>
-                            <div class="form-group col-12">
-                                <button type="submit" class="vs-btn wave-btn">Submit</button>
-                            </div>
-                            <div class="col-12">
-                                <a href="register" class="vs-btn wave-btn">Register</a>
+                            <br>
+                            <div class="col-12 text-center">
+                                Belum Punya Akun?<a href="register"> Register</a>
                             </div>
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>

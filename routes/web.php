@@ -32,6 +32,10 @@ Route::get('/login', function () {
     return view('login');
 })->name('login')->middleware('guest');
 
+Route::get('/data-pasien', function () {
+    return view('data-pasien');
+})->name('data-pasien')->middleware('guest');
+
 Route::get('/register', function () {
     return view('register');
 })->middleware('guest');
@@ -45,6 +49,3 @@ Route::post('/register', [PublikUserController::class, 'create'])->name('publiku
 Route::post('/login', [PublikUserController::class, 'login'])->name('login.user');
 Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuser');
 
-// Route::get('/register', function () {
-//     return view('register.register-base');
-// });
