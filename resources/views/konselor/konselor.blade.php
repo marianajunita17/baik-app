@@ -355,7 +355,7 @@
                                     <span>30 Kids</span>
                                 </li>
                             </ul>
-                            <a href="class-details.html" class="vs-btn style-1">Read More</a>
+                            <a href="detailkonselor.blade.php" class="vs-btn style-1">Read More</a>
                         </div>
                     </div>
                 </div>
