@@ -60,6 +60,7 @@ Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasie
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 
 
+
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\janjitemu;
 use App\konselor;
 use App\spesialisasi;
 use Illuminate\Http\Request;
