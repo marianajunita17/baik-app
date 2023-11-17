@@ -174,7 +174,14 @@
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
                                         <h6 class="title">Nomor Induk: </h6>
-                                        <span class="text">{{ $konselors->nomor_induk }}</span>
+                                        <span class="text">{{ $konselors->nomor_str }}</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-users-class"></i>
+                                    <div class="info">
+                                        <h6 class="title">Lama Bekerja: </h6>
+                                        <span class="text">{{ $konselors->lama_bekerja }}</span>
                                     </div>
                                 </div>
                             </div>

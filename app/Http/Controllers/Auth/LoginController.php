@@ -17,7 +17,7 @@ class LoginController extends Controller
     //
     public function redirectToProvider(){
         Session::put('loginby', 'loginuser');
-        return Socialite::driver('google')->with(['loginby' => 'user'])->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
     public function redirectToProviderRegister(){

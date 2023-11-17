@@ -152,7 +152,7 @@
         <div class="container">
             <div class="row gx-60 gy-30 flex-column-reverse flex-lg-row align-items-center">
                 <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.1s">
-                    <form action="{{ route('login.user') }}" method="post" class="appointment-form ajax-contact">
+                    <form action="" method="post" class="appointment-form ajax-contact">
                         @csrf
                         <div class="row gx-15">
                             <span class="sub-title">Masuk ke Aplikasi BAIK</span>
