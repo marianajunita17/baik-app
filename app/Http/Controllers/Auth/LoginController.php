@@ -50,7 +50,7 @@ class LoginController extends Controller
                     }
 
                 }else{
-                    return redirect()->route('login')->withErrors(['alert' => 'Silahkan Register menggunakan Email anda terlebih dahulu'])->withInput();
+                    return redirect()->route('login')->with('message' , 'Silahkan Register menggunakan Email anda terlebih dahulu')->withInput();
                 }
             }elseif ($session_check == "registeruser") {
                 User::create([
@@ -59,7 +59,7 @@ class LoginController extends Controller
                     'google_id' =>$user->getId(),
                     'password' => bcrypt("test123"),
                 ]);
-                return redirect()->route('login')->with('success', 'Pendaftaran Berhasil');
+                return redirect()->route('login')->with('message', 'Registrasi Akun Berhasil, Silahkan Login!');
             }else{
                 // Login Admin
                 $users = DB::table("cms_users")->where("email", $user->getEmail())->first();

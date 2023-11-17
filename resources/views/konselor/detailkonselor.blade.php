@@ -181,7 +181,7 @@
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
                                         <h6 class="title">Lama Bekerja: </h6>
-                                        <span class="text">{{ $konselors->lama_bekerja }}</span>
+                                        <span class="text">{{ $konselors->lama_bekerja }} Tahun</span>
                                     </div>
                                 </div>
                             </div>
