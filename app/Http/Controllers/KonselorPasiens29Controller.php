@@ -245,6 +245,8 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+            $query->join('janji_temu','janji_temu.pasien_id','=','pasiens.id');
+            $query->where('janji_temu.konselor_id', CRUDBooster::myId());
 
 	    }
 

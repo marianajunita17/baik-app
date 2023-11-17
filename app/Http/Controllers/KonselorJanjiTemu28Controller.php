@@ -259,6 +259,7 @@ use Session;
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+            $query->where('janji_temu.konselor_id', CRUDBooster::myId());
 
 	    }
 

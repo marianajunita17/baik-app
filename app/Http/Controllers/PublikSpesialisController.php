@@ -13,11 +13,11 @@ class PublikSpesialisController extends Controller
         $spesialisasi = spesialisasi::all();
         $priv = DB::table("pasiens")->where("id", auth()->user()->id)->first();
 
-        if($priv) {
-            return view('home', ['spesialisasis' => $spesialisasi]);
-        }
+        // if($priv) {
+        return view('home', ['spesialisasis' => $spesialisasi]);
+        // }
 
-        return view('data-pasien');
+        // return view('data-pasien');
     }
 
     public function showKonselor($id){
