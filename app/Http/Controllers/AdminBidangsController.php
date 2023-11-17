@@ -51,7 +51,7 @@ class AdminBidangsController extends \crocodicstudio\crudbooster\controllers\CBC
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
         $this->form[] = ["label" => "Nama Bidang", "name" => "nama_bidang", "type" => "text", "required" => TRUE, "validation" => "required|min:1|max:255"];
-        $this->form[] = ["label" => "Keterangan Bidang", "name" => "keterangan_bidang", "type" => "wysiwyg", "validation" => "min:0|max:255"];
+        $this->form[] = ["label" => "Keterangan Bidang", "name" => "keterangan_bidang", "type" => "wysiwyg", "validation" => "min:0|max:3000"];
 
         # END FORM DO NOT REMOVE THIS LINE
 

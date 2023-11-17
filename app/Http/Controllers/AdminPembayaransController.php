@@ -30,24 +30,22 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-            $this->col[] = ["label"=>"Kode","name"=>"id"];
-            $this->col[] = ["label"=>"Logo","name"=>"logo"];
+			$this->col[] = ["label"=>"Kode","name"=>"id"];
+			$this->col[] = ["label"=>"Logo","name"=>"logo","image"=>true];
 			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"jenis_pembayaran"];
-			// $this->col[] = ["label"=>"Kode Janji Temu","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Logo','name'=>'logo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Logo','name'=>'Logo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
 			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'jenis_pembayaran','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			// $this->form[] = ['label'=>'Kode Janji Temu','name'=>'janji_temu_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Bank","name"=>"bank","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Janji Temu Id","name"=>"janji_temu_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"janji_temu,id"];
-			//$this->form[] = ["label"=>"Janji Temu Konselor Id","name"=>"janji_temu_konselor_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"janji_temu_konselor,id"];
+			//$this->form[] = ['label'=>'Logo','name'=>'Logo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
+			//$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'jenis_pembayaran','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//// $this->form[] = ['label'=>'Kode Janji Temu','name'=>'janji_temu_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			# OLD END FORM
 
 			/*
