@@ -30,8 +30,8 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-            $this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Logo","name"=>"logo"];
+			$this->col[] = ["label"=>"Kode","name"=>"id"];
+			$this->col[] = ["label"=>"Logo","name"=>"logo","image"=>true];
 			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"jenis_pembayaran"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -43,8 +43,8 @@
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Logo","name"=>"logo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Jenis Pembayaran","name"=>"jenis_pembayaran","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ['label'=>'Logo','name'=>'logo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
+			//$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'jenis_pembayaran','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/*
