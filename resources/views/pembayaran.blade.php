@@ -237,8 +237,8 @@
                                         @csrf
                                         <button class="vs-btn wave-btn">Logout</button>
                                     </form>
-                                    <button type="button" class="searchBoxToggler icon-btn"><i
-                                            class="far fa-search"></i></button>
+                                    <!-- <button type="button" class="searchBoxToggler icon-btn"><i
+                                            class="far fa-search"></i></button> -->
                                     <button type="button" class="sideMenuToggler icon-btn"><i
                                             class="fal fa-bars"></i></button>
                                 </div>
@@ -289,7 +289,7 @@
                         </tr>
                     </tbody>
                     <tfoot class="checkout-ordertable">
-                        <tr class="cart-subtotal">
+                        <!-- <tr class="cart-subtotal">
                             <th>Subtotal</th>
                             <td data-title="Subtotal" colspan="4"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></td>
                         </tr>
@@ -298,7 +298,7 @@
                             <td data-title="Shipping" colspan="4">
                                 Enter your address to view shipping options.
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr class="order-total">
                             <th>Total</th>
                             <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></strong>
@@ -309,7 +309,7 @@
             </form>
             <div class="mt-lg-3">
                 <div class="woocommerce-checkout-payment">
-                    <ul class="wc_payment_methods payment_methods methods">
+                    <!-- <ul class="wc_payment_methods payment_methods methods">
                         <li class="wc_payment_method payment_method_bacs">
                             <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
                             <label for="payment_method_bacs">Direct bank transfer</label>
@@ -331,7 +331,7 @@
                                 <p>Pay with cash upon delivery.</p>
                             </div>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="form-row place-order">
                         <button type="submit" class="vs-btn">Konfirmasi</button>
                     </div>

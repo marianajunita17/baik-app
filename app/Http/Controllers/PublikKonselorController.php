@@ -18,4 +18,9 @@ class PublikKonselorController extends Controller
         $detailkonselor = konselor::find($id);
         return view('konselor.detailkonselor', ['konselors' => $detailkonselor]);
     }
+
+    public function pembayaranKonselor($id) {
+        // $detailPembayaran = pembayaran::find($id)
+        // return view('');
+    }
 }

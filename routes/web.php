@@ -56,6 +56,10 @@ Route::get('/konselor/detailkonselor/pembayaran', function () {
     return view('pembayaran');
 });
 
+Route::get('/booking', function () {
+    return view('keluhan');
+});
+
 Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 
