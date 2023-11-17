@@ -28,9 +28,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->name("home")->middleware('auth');
+// Route::get('/home', function () {
+//     return view('home');
+// })->name("home")->middleware('auth');
 
 Route::get('/login', function () {
     return view('login');
@@ -65,7 +65,7 @@ Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 // Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
-Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home');
+Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/home/{id}/konselors', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
