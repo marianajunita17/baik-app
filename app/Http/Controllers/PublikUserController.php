@@ -38,7 +38,7 @@ class PublikUserController extends Controller
         ]);
 
         // return redirect()->route('publikuser.index')->with('success', 'Pendaftaran berhasil!');
-        return redirect()->back()->with('success', 'Pendaftaran Berhasil');
+        // return redirect()->back()->with('success', 'Pendaftaran Berhasil');
     }
 
     /**

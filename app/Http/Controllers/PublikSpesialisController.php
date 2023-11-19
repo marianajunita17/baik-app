@@ -11,7 +11,7 @@ class PublikSpesialisController extends Controller
 {
     public function index(){
         $spesialisasi = spesialisasi::all();
-        $priv = DB::table("pasiens")->where("id", auth()->user()->id)->first();
+        // $priv = DB::table("pasiens")->where("id", auth()->user()->id)->first();
 
         // if($priv) {
         return view('home', ['spesialisasis' => $spesialisasi]);
@@ -22,7 +22,7 @@ class PublikSpesialisController extends Controller
 
     public function showKonselor($id){
         $spesialis = spesialisasi::find($id);
-        $konselor = $spesialis->konselors;
-        return view('konselor.konselor', ['konselors'=>$konselor]);
+        $cms_users = $spesialis->cms_users;
+        return view('konselor.konselor', ['cms_users'=>$cms_users]);
     }
 }

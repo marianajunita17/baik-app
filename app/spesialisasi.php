@@ -13,6 +13,6 @@ class spesialisasi extends Model
     }
 
     public function konselors(){
-        return $this->belongsToMany('App\konselor', 'konselor_spesialis', 'spesialisasis_id', 'konselors_id');
+        return $this->belongsToMany('App\konselor', 'konselor_spesialis', 'spesialisasis_id', 'cms_users_id');
     }
 }

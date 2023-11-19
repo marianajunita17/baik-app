@@ -138,24 +138,29 @@
         <div class="container">
             <div class="row ">
                 <!-- Single Class -->
-                @foreach ($konselors as $k)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="class-box">
-                            <div class="class-img">
-                                <img src="{{ asset('assets/img/icon/user.png') }}" style="width:100px;height:100px" alt="class">
-                                {{-- <a href="class-details.html">
+                @if (is_array($cms_users) || is_object($cu))
+                    @foreach ($cms_users as $cu)
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="class-box">
+                                <div class="class-img">
+                                    <img src="{{ asset('assets/img/icon/user.png') }}"
+                                        style="width:100px;height:100px" alt="class">
+                                    {{-- <a href="class-details.html">
                                     <img src="{{ $k->photo }}" alt="class">
                                 </a> --}}
-                            </div>
-                            <div class="class-content">
-                                <h2 class="class-title h4"><a href="class-details.html">{{ $k->nama_konselor }}</a>
-                                </h2>
-                                <a href="{{ route('konselor.detailKonselor', ['id' => $k->id]) }}"
-                                    class="vs-btn style-1">Detail</a>
+                                </div>
+                                <div class="class-content">
+                                    <h2 class="class-title h4"><a
+                                            href="class-details.html">{{ $cu->nama_konselor }}</a>
+                                    </h2>
+                                    <a href="{{ route('konselor.detailKonselor', ['id' => $cu->id]) }}"
+                                        class="vs-btn style-1">Detail</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+
+                @endif
             </div>
         </div>
     </section>

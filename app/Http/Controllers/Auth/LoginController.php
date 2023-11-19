@@ -36,18 +36,20 @@ class LoginController extends Controller
                 // Login User
                 $existingUser = User::where('email', $user->getEmail())->first();
                 if($existingUser){
-                    if($existingUser->id){
-                        $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();
-                        auth()->login($existingUser, true);
-                        if($checkdatapasien){
-                            // return dd("Data Ditemukan",$checkdatapasien,$existingUser->id);
-                            return redirect()->intended('home');
-                        }else{
-                            // return dd("Data Tidak ktmu",$checkdatapasien,$existingUser->id);
+                    auth()->login($existingUser, true);
+                    return redirect()->intended('home');
+                    // if($existingUser->id){
+                    //     $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();
+                    //     auth()->login($existingUser, true);
+                    //     if($checkdatapasien){
+                    //         // return dd("Data Ditemukan",$checkdatapasien,$existingUser->id);
+                    //         return redirect()->intended('home');
+                    //     }else{
+                    //         // return dd("Data Tidak ktmu",$checkdatapasien,$existingUser->id);
 
-                            return redirect()->intended('data-pasien');
-                        }
-                    }
+                    //         return redirect()->intended('data-pasien');
+                    //     }
+                    // }
 
                 }else{
                     return redirect()->route('login')->with('message' , 'Silahkan Register menggunakan Email anda terlebih dahulu')->withInput();

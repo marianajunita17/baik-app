@@ -12,11 +12,11 @@ class konselor extends Model
         return $this->hasMany('App\janjitemu');
     }
 
-    public function user(){
-        return $this->belongsTo('App\User', 'users_id');
-    }
+    // public function user(){
+    //     return $this->belongsTo('App\User', 'users_id');
+    // }
 
     public function spesialisasis(){
-        return $this->belongsToMany('App\janjitemu', 'konselor_spesialis', 'konselors_id', 'spesialisasis_id');
+        return $this->belongsToMany('App\spesialisasi', 'konselor_spesialis', 'cms_users_id', 'spesialisasis_id');
     }
 }
