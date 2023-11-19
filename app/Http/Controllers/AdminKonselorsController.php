@@ -25,12 +25,13 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "konselors";
+			$this->table = "cms_users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
             $this->col[] = ["label"=>"Nomor STR","name"=>"nomor_str"];
+			$this->col[] = ["label"=>"Username","name"=>"name"];
 			$this->col[] = ["label"=>"Nama Konselor","name"=>"nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Lahir","name"=>"tgl_lahir"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
@@ -41,14 +42,13 @@
 			$this->col[] = ["label"=>"NPWP","name"=>"NPWP","image"=>true];
 			$this->col[] = ["label"=>"Ijazah","name"=>"Ijazah","image"=>true];
 			$this->col[] = ["label"=>"SIPP","name"=>"SIPP","image"=>true];
-			$this->col[] = ["label"=>"Surat Sebutan Psi","name"=>"surat_sebutan_psi","image"=>true];
+			$this->col[] = ["label"=>"Nominal Pembayaran","name"=>"nominal_bayar"];
 			$this->col[] = ["label"=>"No. Rekening","name"=>"no_rekening"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nomor STR','name'=>'nomor_str','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'User','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
 			$this->form[] = ['label'=>'Nama Konselor','name'=>'nama_konselor','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Lahir','name'=>'tgl_lahir','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
@@ -61,7 +61,7 @@
 			$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Ijazah','name'=>'Ijazah','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Surat Sebutan Psi','name'=>'surat_sebutan_psi','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nominal Pembayaran','name'=>'nominal_bayar','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'No. Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
 			# END FORM DO NOT REMOVE THIS LINE

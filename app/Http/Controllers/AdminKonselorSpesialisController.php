@@ -30,13 +30,13 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselors_id","join"=>"konselors,nama_konselor"];
+			$this->col[] = ["label"=>"Nama Konselor","name"=>"konselors_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Spesialisasi","name"=>"spesialisasis_id","join"=>"spesialisasis,nama_spesialisasi"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselors_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+			$this->form[] = ['label'=>'Nama Konselor','name'=>'konselors_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cms_users,nama_konselor'];
 			$this->form[] = ['label'=>'Spesialisasi','name'=>'spesialisasis_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'spesialisasis,nama_spesialisasi'];
 			# END FORM DO NOT REMOVE THIS LINE
 

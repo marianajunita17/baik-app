@@ -20,10 +20,6 @@ class pasien extends Model
         return $this->hasOne('App\User', 'users_id');
     }
 
-    public function konselors(){
-        return $this->belongsToMany('App\konselor', 'pasien_konselor', 'pasiens_id', 'konselors_id');
-    }
-
     public function anaks(){
         return $this->hasMany('App\anak');
     }

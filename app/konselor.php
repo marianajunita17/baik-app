@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class konselor extends Model
 {
-    protected $table = 'konselors';
+    protected $table = 'cms_users';
 
     public function janjitemus(){
         return $this->hasMany('App\janjitemu');
@@ -14,10 +14,6 @@ class konselor extends Model
 
     public function user(){
         return $this->belongsTo('App\User', 'users_id');
-    }
-
-    public function pasiens(){
-        return $this->belongsToMany('App\pasien', 'pasien_konselor', 'konselors_id', 'pasiens_id');
     }
 
     public function spesialisasis(){

@@ -32,7 +32,7 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Kode","name"=>"id"];
 			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
-			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"konselors,nama_konselor"];
+			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
@@ -42,7 +42,7 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
-			$this->form[] = ['label'=>'Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'konselors,nama_konselor'];
+			$this->form[] = ['label'=>'Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'cms_users,nama_konselor'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];

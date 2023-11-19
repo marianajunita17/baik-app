@@ -25,7 +25,7 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "konselors";
+			$this->table = "cms_users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -35,6 +35,8 @@
 			$this->col[] = ["label"=>"Tanggal Lahir","name"=>"tgl_lahir"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
             $this->col[] = ["label"=>"Pengalaman Kerja (Tahun)","name"=>"lama_bekerja"];
+			$this->col[] = ["label"=>"Nominal Pembayaran","name"=>"nominal_bayar"];
+			$this->col[] = ["label"=>"No. Rekening","name"=>"no_rekening"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -48,6 +50,8 @@
 			$this->form[] = ['label'=>'Pengalaman Bekerja (Tahun)','name'=>'lama_bekerja','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nominal Pembayaran','name'=>'nominal_bayar','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'No. Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -253,7 +257,7 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
-
+            $query->where('id', CRUDBooster::myId());
 	    }
 
 	    /*

@@ -73,6 +73,7 @@
 	        |
 	        */
 	        $this->sub_module = array();
+            $this->sub_module[] = ['label'=>'Anak','path'=>'anaks','parent_columns'=>'nama_pasien','icon'=>'fa fa-bars','foreign_key'=>'pasien_id'];
 
 
 	        /*
@@ -247,7 +248,6 @@
 	        //Your code here
             $query->join('janji_temu','janji_temu.pasien_id','=','pasiens.id');
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
-
 	    }
 
 	    /*
