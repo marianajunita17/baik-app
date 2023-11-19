@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2023 at 06:39 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Nov 19, 2023 at 08:16 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -985,8 +985,12 @@ CREATE TABLE `pasiens` (
   `id` int(11) NOT NULL,
   `jenis_kelamin` varchar(255) NOT NULL,
   `umur` int(11) NOT NULL,
-  `nama_pasien` varchar(255) NOT NULL,
-  `users_id` int(11) NOT NULL,
+  `nama_pasien` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `google_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `passowrd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -995,13 +999,13 @@ CREATE TABLE `pasiens` (
 -- Dumping data for table `pasiens`
 --
 
-INSERT INTO `pasiens` (`id`, `jenis_kelamin`, `umur`, `nama_pasien`, `users_id`, `created_at`, `updated_at`) VALUES
-(2, 'Perempuan', 45, 'Noventa Ladeta', 3, '2023-11-10 06:57:17', '2023-11-16 17:15:16'),
-(3, 'Perempuan', 31, 'Mariana Junita Mawuntu', 2, '2023-11-10 06:57:17', '2023-11-16 17:14:48'),
-(4, 'Laki-Laki', 44, 'David Herlambang', 4, '2023-11-13 10:01:22', '2023-11-16 17:15:23'),
-(5, 'Perempuan', 30, 'Mariana Junita', 14, '2023-11-16 08:00:55', '2023-11-16 08:00:55'),
-(7, 'Laki-Laki', 45, 'Felix', 15, '2023-11-16 19:27:35', '2023-11-16 19:27:35'),
-(8, 'Perempuan', 56, 'Sarah Wijayanto', 17, '2023-11-16 20:23:05', '2023-11-16 20:23:05');
+INSERT INTO `pasiens` (`id`, `jenis_kelamin`, `umur`, `nama_pasien`, `email`, `email_verified_at`, `google_id`, `passowrd`, `remember_token`, `created_at`, `updated_at`) VALUES
+(2, 'Perempuan', 45, 'Noventa Ladeta', '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:15:16'),
+(3, 'Perempuan', 31, 'Mariana Junita Mawuntu', '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:14:48'),
+(4, 'Laki-Laki', 44, 'David Herlambang', '', NULL, NULL, '', NULL, '2023-11-13 10:01:22', '2023-11-16 17:15:23'),
+(5, 'Perempuan', 30, 'Mariana Junita', '', NULL, NULL, '', NULL, '2023-11-16 08:00:55', '2023-11-16 08:00:55'),
+(7, 'Laki-Laki', 45, 'Felix', '', NULL, NULL, '', NULL, '2023-11-16 19:27:35', '2023-11-16 19:27:35'),
+(8, 'Perempuan', 56, 'Sarah Wijayanto', '', NULL, NULL, '', NULL, '2023-11-16 20:23:05', '2023-11-16 20:23:05');
 
 -- --------------------------------------------------------
 
@@ -1134,7 +1138,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `google_id`
 (13, 'Katheryn Natasia', 'katherynatasialiem@gmail.com', NULL, '109342889608692761046', '$2y$10$kb/xQ9NKpPv.JGVDVra.r.hr.Q4X1G4mNmKFSJC4/y4r095djmXUu', '73e3hRZYBhmt2s67Y5OBMLzFYkC6PMMb5ZxwWerc2gDigret6AWxoLMeaPRY', '2023-11-15 18:59:27', '2023-11-16 01:59:34'),
 (14, 'Mariana Yunita', 'ymawuntu14@gmail.com', NULL, '104493692090950621833', '$2y$10$sdq./aQWg4TkS.qvoYddSuM4XJP7dklzATBAn8cq1YY8o3YGnrgJ6', 'mxECDJRVJQH5BqwG7bibLlbtXtJupbwaS0AMNx0sosU2PvQwZww4VNaMPWXL', '2023-11-16 07:59:18', '2023-11-16 14:59:26'),
 (15, 'Mbo Bebas', 'mbobebas@gmail.com', NULL, '112145646681532680706', '$2y$10$Xe1CRqPYl/76duSkMlno1ucgyx/nrcviT2p9Te1.1mjQlICZMV8Pe', 'ayTtK3iUZaOkhLSrXbNflFRTABbtq7vGkUXJybta2KdRUwGtcM7JW7Etp1aI', '2023-11-16 19:26:21', '2023-11-17 03:51:07'),
-(16, 'Evelyn Liem', 'evelynliemchrist@gmail.com', NULL, '106835611833216764683', '$2y$10$ZCPzo5kmqOzDhu9fWJ.c5eE.LW2hXWcl9DHmHkzh0IuxBGmdFcxum', '4AQSL6AtmErSqs1dRgGGsgL5mfK0dBvE6G7RCbmTXLnpEN7hiio4iZnXYqKj', '2023-11-16 20:03:23', '2023-11-17 03:03:33'),
+(16, 'Evelyn Liem', 'evelynliemchrist@gmail.com', NULL, '106835611833216764683', '$2y$10$ZCPzo5kmqOzDhu9fWJ.c5eE.LW2hXWcl9DHmHkzh0IuxBGmdFcxum', 'swsxME6KRozDR4ZPWLTQ0opzMb8rMiX4CWb98s9PsmRgzj3Qq8LsGtRLv0ba', '2023-11-16 20:03:23', '2023-11-19 18:04:21'),
 (17, 'Kalong MeLife', 'kalongmelife@gmail.com', NULL, '110503399047046502243', '$2y$10$WDnYD85RQ9KfNL5lutRDm.W8u/6beOv5zZXYott0ISJk9pq82p/3.', 'py3Kb2Baxc4ReJJwVmfeptiRQnreyqenqDxXpNqd2AyEhxIdiB9CPmAYjuHm', '2023-11-16 20:21:50', '2023-11-17 03:22:01');
 
 --
@@ -1292,8 +1296,7 @@ ALTER TABLE `migrations`
 -- Indexes for table `pasiens`
 --
 ALTER TABLE `pasiens`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_pasiens_users` (`users_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pembayarans`
@@ -1538,12 +1541,6 @@ ALTER TABLE `konselors`
 ALTER TABLE `konselor_spesialis`
   ADD CONSTRAINT `FK__spesialisasis` FOREIGN KEY (`spesialisasis_id`) REFERENCES `spesialisasis` (`id`),
   ADD CONSTRAINT `konselor_spesialis_ibfk_1` FOREIGN KEY (`cms_users_id`) REFERENCES `cms_users` (`id`);
-
---
--- Constraints for table `pasiens`
---
-ALTER TABLE `pasiens`
-  ADD CONSTRAINT `pasiens_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `spesialisasis`
