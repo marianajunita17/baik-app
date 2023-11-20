@@ -152,23 +152,24 @@
                             </div>
                             <form method="POST" action="{{ route('profile.update')}}">
                             @csrf
-                            @method('PUT')
+                            {{-- @method('PUT') --}}
+                            {{ method_field('PUT') }}
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" placeholder="{{$users->nama_pasien}}" name="nama_pasien" id="nama_pasien" class="form-control style2">
+                                    <input type="text" value="{{$users->nama_pasien}}" name="nama_pasien" id="nama_pasien" class="form-control style2">
                                     <i class="fal fa-user"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="email" placeholder="{{$users->email}}" name="email" id="email" class="form-control style2">
+                                    <input type="email" value="{{$users->email}}" name="email" id="email" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="number" placeholder="Umur" name="{{$users->umur}}" id="umur" class="form-control style2">
+                                    <input type="number" placeholder="Umur" name="umur" id="umur" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">
                                     <select name="jenis_kelamin" id="jenis_kelamin" class="form-select style2">
-                                        <option value="" disabled selected hidden>Pilih Jenis kelamin</option>
+                                        {{-- <option value="" disabled selected hidden>Pilih Jenis kelamin</option> --}}
                                         <option value="Laki-Laki">Laki-Laki</option>
                                         <option value="Laki-Laki">Perempuan</option>
                                     </select>
