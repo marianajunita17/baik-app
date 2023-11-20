@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\pasien;
+use App\User;
 use App\spesialisasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,9 @@ class PublikSpesialisController extends Controller
 {
     public function index(){
         $spesialisasi = spesialisasi::all();
-        return view('home', ['spesialisasis' => $spesialisasi]);
+        $uid = auth()->user()->id;
+        $user = User::findOrFail($uid);
+        return view('home', ['spesialisasis' => $spesialisasi,'cms_users' => $user]);
     }
 
     public function showKonselor($id){

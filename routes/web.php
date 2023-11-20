@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('about-us.index');
 });
 
+Route::get('/test', function () {
+    return view('layouts.main');
+});
+
 Route::get('/profile', function() {
     return view('profile-pasien.profile');
 });
