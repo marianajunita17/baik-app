@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\PublikUser;
 use App\User;
+use FontLib\Table\Type\post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PublikUserController extends Controller
 {
@@ -15,7 +17,8 @@ class PublikUserController extends Controller
      */
     public function index()
     {
-        return view('login');
+        $user = auth()->user();
+        return view('profile-pasien.profile', ['users'=>$user]);
     }
 
     /**
@@ -58,9 +61,10 @@ class PublikUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        // return view('auth.login');
+        $user = auth()->user();
+        return view('profile-pasien.profile', ['users'=>$user]);
     }
 
     /**
@@ -69,9 +73,11 @@ class PublikUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $user = auth()->user();
+        // return dd($user);
+        return view('profile-pasien.edit', ['users' => $user]);
     }
 
     /**
@@ -81,9 +87,43 @@ class PublikUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'nama_pasien' => 'required|string|max:255',
+            'email'=>'required|min:1|max:255|email|unique:users',
+            'umur'=>'required|integer|min:8',
+            'jenis_kelamin'=>'required|string|max:255'
+        ]);
+
+        $user = auth()->user()->id;
+        User::updated([
+            'nama_pasien'=>$request->nama_pasien,
+            'email'=>$request->email,
+            'umur'=>$request->umur,
+            'jenis_kelamin'=>$request->jenis_kelamin
+        ]);
+        // $user->nama_pasien = $request['nama_pasien'];
+        // $user->email = $request['email'];
+        // $user->umur = $request['umur'];
+        // $user->jenis_kelamin = $request['jenis_kelamin'];
+        // $user->save();
+
+        return dd($user);
+        // $user->update($request->all());
+
+        // $this->validate($request, [
+        //     'nama_pasien' => 'required|string|min:3|max:70',
+        //     'email'=>'required|min:1|max:255|email|unique:users',
+        //     'umur'=>'required|integer|min:0',
+        //     'jenis_kelamin'=>'required|min:1|max:255'
+        // ]);
+
+        // $user = User::find($id);
+
+
+
+        // return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui');
     }
 
     /**
