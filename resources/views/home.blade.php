@@ -56,44 +56,47 @@
                     <div class="widget widget_categories">
                         <h4 class="widget_title">Categories</h4>
                         <ul>
-                            <li><a href="shop.html">Wooden Toys</a> <span>(10)</span></li>
-                            <li><a href="shop.html">Rattle Rectangle</a> <span>(07)</span></li>
-                            <li><a href="shop.html">Kids Products</a> <span>(05)</span></li>
-                            <li><a href="shop.html">Outdoor Playing</a> <span>(02)</span></li>
+                            @foreach ($spesialisasis as $sp)
+                            <li>
+                                <a href="shop.html">{{$sp->nama_spesialisasi}}</a></span>
+                            </li>
+                            @endforeach
                         </ul>
-                    </div>
-                    <div class="widget widget_tag_cloud wow fadeInUp" data-wow-delay="0.1s">
-                        <h4 class="widget_title">Tags</h4>
-                        <div class="tagcloud">
-                            <a href="shop.html">Bunny</a>
-                            <a href="shop.html">Doll</a>
-                            <a href="shop.html">Dogy</a>
-                            <a href="shop.html">Cars</a>
-                            <a href="shop.html">Puppet</a>
-                            <a href="shop.html">Toys</a>
-                            <a href="shop.html">Wooden</a>
-                            <a href="shop.html">Learning</a>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-9 col-lg-8">
                 <div class="row gy-30">
                     <!-- Single Class -->
-                    @foreach ($spesialisasis as $s)
+                    @foreach ($konselor as $ks)
+                        @if($ks->nama_konselor != null)
                         <div class="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="vs-product-box row col-xl-9">
                                 <div class="product-img">
-                                    <a href="{{ route('spesialisasi.konselor', ['id' => $s->id]) }}">
-                                        <img src="{{ asset('assets/img/product/kategori.png') }}"
+                                    {{-- <a href="{{ route('spesialisasi.konselor', ['id' => $s->id]) }}"> --}}
+                                        <img src="{{ asset('assets/img/icon/psiko.png') }}"
                                             alt="Product Image" class="w-100">
-                                    </a>
-                                    <div class="product-content">
-                                        <h2 class="product-title h4">{{ $s->nama_spesialisasi }}</a></h2>
+                                    {{-- </a> --}}
+                                    <div class="class-content">
+                                        <h2 class="class-title h4">{{ $ks->nama_konselor }}</h2>
+                                        <ul class="class-info">
+                                            <li>
+                                                <p>Lama Bekerja :</p>
+                                                <span>{{ $ks->lama_bekerja }} Tahun</span>
+                                            </li>
+                                            <li>
+                                                <p>Harga :</p>
+                                                <span>Rp. {{$ks->nominal_bayar}}</span>
+                                            </li>
+                                        </ul>
+                                        <a href="{{ route('konselor.detailKonselor', ['id' => $ks->id]) }}"
+                                            class="vs-btn style-1">Read More</a>
+                                        {{-- <h2 class="product-title h4">{{ $s->nama_spesialisasi }}</a></h2> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endif
                     @endforeach
                 </div>
                 <!-- Pagination -->
