@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
             $this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
+			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"users,nama_pasien"];
 			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
@@ -51,7 +51,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
+			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,nama_pasien'];
 			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
@@ -62,7 +62,7 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->form[] = ['label'=>'Persentase Kesesuaian','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
-			$this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			// $this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'bank_id','type'=>'select2','validation'=>'required|string|min:0','width'=>'col-sm-10','datatable'=>'pembayarans,jenis_pembayaran'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -320,6 +320,11 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
             $janjitemu->durasi_konsultasi = $diff;
             $janjitemu->save();
+
+            $konselor = $janjitemu->konselor_id;
+            $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
+                    ->where('cms_users.id', $konselor)->select('nominal_bayar')->get();
+            // dd($janjitemu);
 	    }
 
 	    /*

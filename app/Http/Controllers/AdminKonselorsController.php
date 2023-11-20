@@ -31,7 +31,6 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
             $this->col[] = ["label"=>"Nomor STR","name"=>"nomor_str"];
-			$this->col[] = ["label"=>"Username","name"=>"name"];
 			$this->col[] = ["label"=>"Nama Konselor","name"=>"nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Lahir","name"=>"tgl_lahir"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
@@ -63,6 +62,7 @@
 			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nominal Pembayaran','name'=>'nominal_bayar','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'No. Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];
 			# END FORM DO NOT REMOVE THIS LINE
 
