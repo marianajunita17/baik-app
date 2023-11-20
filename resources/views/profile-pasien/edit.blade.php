@@ -152,23 +152,19 @@
                             </div>
                             <form method="POST" action="{{ route('profile.update')}}">
                             @csrf
-                            {{-- @method('PUT') --}}
                             {{ method_field('PUT') }}
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" value="{{$users->nama_pasien}}" name="nama_pasien" id="nama_pasien" class="form-control style2">
+                                    <input type="text" value="{{$users->nama_pasien}}" placeholder="Nama Pasien" name="nama_pasien" id="nama_pasien" class="form-control style2">
                                     <i class="fal fa-user"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="email" value="{{$users->email}}" name="email" id="email" class="form-control style2">
+                                    <input type="email" value="{{$users->email}}" placeholder="Email" name="email" id="email" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-<<<<<<< HEAD
+
                                     <input type="number" placeholder="Umur" name="umur" id="umur" class="form-control style2" value="{{$users->umur}}">
-=======
-                                    <input type="number" value="{{$users->umur}}" placeholder="Umur" name="umur" id="umur" class="form-control style2">
->>>>>>> b11aa58e1ff357501b91bdd220fbc3223e209b7b
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">

@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <h2 class="single-title">{{ $cms_users->nama_konselor }}</h2>
-                        <a href="pembayaran" class="vs-btn wave-btn">Pesan</a>
+                        <a href="booking" class="vs-btn wave-btn">Pesan</a>
                     </div> <!-- / class details -->
                 </div> <!-- / col-8 end -->
                 <!-- Sidebar -->

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\janjitemu;
+use App\topik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PublikPembayaranController extends Controller
 {
@@ -13,24 +16,29 @@ class PublikPembayaranController extends Controller
      */
 
     public function index(){
-        $pembayaran = pembayaran::all();
+        $topik = DB::table("topiks")->first();
 
-        return view('pembayaran', ['pembayarans' => $pembayaran]);
-
-        // $janji_temu = janji_temu::find(id)
-        // return view ('halaman pembayaran', compact('janji_temu'));
+        return dd($topik);
+        // return view('booking', ['topiks' => $topik]);
     }
 
-    public function konselorDetail($id){
-        $bayar = pembayaran::find($id);
-        $konselor = $bayar->konselors;
-        return view('konselor.detailkonselor', ['konselors' => $konselor]);
+    public function booking(Request $request){
+        $request->validate([
+            'topik' => 'required|string|max:255',
+            'spesialisasi'=>'required|string|max:255',
+            'keluhan'=>'required|string|max:255'
+        ]);
+
+        $iduser = auth()->user()->id;
+        janjitemu::create([
+            // 'pasien_id'=>$iduser,
+            // topik()->attach($request->input('topik')),
+            // 'keluhan'=> $request->input('keluhan')
+        ]);
+
+        // return redirect()->route('detailpembayaran')->with('sucess', 'Booking Berhasil');
     }
 
-    public function detailJanjiTemu($id){
-        // $janji_temu = janjitemu::find(id)
-        // return view('halaman pembayaran', compact('janji_temu'));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,7 +46,8 @@ class PublikPembayaranController extends Controller
      */
     public function create()
     {
-        //
+        // $topik = topik::all();
+        // return view('pembayaran', compact('topiks'));
     }
 
     /**
@@ -49,7 +58,24 @@ class PublikPembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = auth()->user()->nama_pasien;
+        $konselor = $request->input('cms_users_id');
+        $nominal = $request->input('nominal_bayar');
+        $keluhan = $request->input('keluhan');
+        $topik = $request->input('nama_topik');
+        $spesialisasi = $request->input('nama_spesialisasi');
+        // $topik_keluhan = $request->input('keluhan');
+
+        $janji_temu = new janjitemu();
+        $janji_temu->users_id = $user;
+        $janji_temu->keluhan = $keluhan;
+        $janji_temu->nominal=$nominal;
+        $janji_temu->konselor_id=$konselor;
+        $janji_temu->save();
+
+        $janji_temu->topiks()->attach($request->input('topiks_id'));
+
+        // return view('pembayaran');
     }
 
     /**

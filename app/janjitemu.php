@@ -27,4 +27,8 @@ class janjitemu extends Model
     public function pembayarans(){
         return $this->hasMany('App\pembayaran');
     }
+
+    public function topiks(){
+        return $this->belongsToMany('App\topik', 'topik_janji_temu', 'janji_temu_id', 'topiks_id');
+    }
 }
