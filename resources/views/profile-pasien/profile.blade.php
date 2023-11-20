@@ -138,8 +138,29 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button type="button" class="vs-menu-toggle d-block d-lg-none">
-                                    <i class="far fa-bars"></i> Menu</button>
+                                <nav class="main-menu menu-style1 d-none d-lg-inline-block">
+                                    <ul>
+                                        <li class="menu-item-has-children">
+                                            <a href="home">Home</a>
+                                        </li>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="profile">Profile</a></li>
+                                    </ul>
+                                </nav>
+                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i
+                                        class="far fa-bars"></i> Menu</button>
+                            </div>
+                            <div class="col-auto d-none d-xl-block">
+                                <div class="header-button">
+                                    {{-- <form action="/logout" method="POST">
+                                        @csrf
+                                        <button class="vs-btn wave-btn">Logout</button>
+                                    </form> --}}
+                                    <button type="button" class="searchBoxToggler icon-btn"><i
+                                            class="far fa-search"></i></button>
+                                    <button type="button" class="sideMenuToggler icon-btn"><i
+                                            class="fal fa-bars"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,274 +204,6 @@
     <!--======== / Team Section ========-->
 
     <!--======== Team Section ========-->
-    <section class="team-section bg-smoke space-extra">
-        <div class="container">
-            <div class="row text-center justify-content-center">
-                <div class="col-xl-6 col-lg-7 col-md-8 col-sm-9">
-                    <div class="title-area">
-                        <span class="sub-title">Our Expert Staff</span>
-                        <h2 class="sec-title">Most Dedicated Staff For Your Child</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row  slider-shadow vs-carousel" data-slide-show="3" data-lg-slide-show="2">
-                <!-- Single Team -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-card">
-                        <div class="team-img" data-mask-src="{{ asset('assets/img/team/t-mask.png') }}">
-                            <img src="{{ asset('assets/img/team/t-1.jpg') }}" alt="team">
-                            <div class="team-content">
-                                <p class="team-text">Assertively repurpose orthogonal architectures through just in
-                                    time manufactured products.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="icon-btn expand-btn"><i class="fas fa-share-alt"></i></button>
-                        <div class="team-info">
-                            <h4 class="team-title"><a href="team-details.html">Bableo Dablo</a></h4>
-                            <span class="team-desig">Kids Specialist</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Team -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-card">
-                        <div class="team-img" data-mask-src="{{ asset('assets/img/team/t-mask.png') }}">
-                            <img src="{{ asset('assets/img/team/t-2.jpg') }}" alt="team">
-                            <div class="team-content">
-                                <p class="team-text">Assertively repurpose orthogonal architectures through just in
-                                    time manufactured products.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="icon-btn expand-btn"><i class="fas fa-share-alt"></i></button>
-                        <div class="team-info">
-                            <h4 class="team-title"><a href="team-details.html">Rose Marry</a></h4>
-                            <span class="team-desig">Drawing Teacher</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Team -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-card">
-                        <div class="team-img" data-mask-src="{{ asset('assets/img/team/t-mask.png') }}">
-                            <img src="{{ asset('assets/img/team/t-3.jpg') }}" alt="team">
-                            <div class="team-content">
-                                <p class="team-text">Assertively repurpose orthogonal architectures through just in
-                                    time manufactured products.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="icon-btn expand-btn"><i class="fas fa-share-alt"></i></button>
-                        <div class="team-info">
-                            <h4 class="team-title"><a href="team-details.html">Jabian Joe</a></h4>
-                            <span class="team-desig">Kids Teacher</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Team -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-card">
-                        <div class="team-img" data-mask-src="{{ asset('assets/img/team/t-mask.png') }}">
-                            <img src="{{ asset('assets/img/team/t-4.jpg') }}" alt="team">
-                            <div class="team-content">
-                                <p class="team-text">Assertively repurpose orthogonal architectures through just in
-                                    time manufactured products.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="icon-btn expand-btn"><i class="fas fa-share-alt"></i></button>
-                        <div class="team-info">
-                            <h4 class="team-title"><a href="team-details.html">Sonia Khan</a></h4>
-                            <span class="team-desig">Kids Specialist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="shape-before"><img src="{{ asset('assets/img/shape/before-shape-5.png') }}" alt="shape">
-        </div>
-        <div class="shape-after"><img src="{{ asset('assets/img/shape/after-shape-5.png') }}" alt="shape"></div>
-
-        <div class="shape-mockup movingX d-none d-hd-block" data-top="12%" data-left="6%"><img
-                src="{{ asset('assets/img/icon/doll-1.png') }}" alt="shapes"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="9%" data-left="5%"><img
-                src="{{ asset('assets/img/icon/shoe-1.png') }}" alt="shapes"></div>
-        <div class="shape-mockup shapePulse d-none d-hd-block" data-top="12%" data-right="5%"><img
-                src="{{ asset('assets/img/icon/dog-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="12%" data-right="3%"><img
-                src="{{ asset('assets/img/icon/plane-1.png') }}" alt="shapes"></div>
-    </section>
-    <!--======== / Team Section ========-->
-
-    <!--======== Simple Section ========-->
-    <section class="mockup2 space-top-shape2-plus space-bottom-page">
-        <div class="container">
-            <div class="row gx-60 gy-30 align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                    <div class="img-box-1">
-                        <img src="{{ asset('assets/img/normal/img-1.jpg') }}" alt="photo">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                    <span class="sub-title">Service Benefits</span>
-                    <h2 class="sec-title">We Are Here To Bring Your Child Next Level</h2>
-                    <p class="mb-50">Monotonectally conceptualize economically sound value after accurate growth
-                        strategies. Quickly parallel task client-centric materials with worldwide technologies.
-                        Assertively re-engineer interoperable customer</p>
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/t-1.png') }}" alt="icon">
-                        </div>
-                        <div class="feature-info">
-                            <h4 class="feature-title">Full Care Of Your Child</h4>
-                            <p class="feature-text">Proactively myocardinate high-quality quality vectors rather than
-                                collaborative best practices. Continually create go forward total linkage vis-a-vis
-                                wireless mindshare.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <img src="{{ asset('assets/img/icon/t-2.png') }}" alt="icon">
-                        </div>
-                        <div class="feature-info">
-                            <h4 class="feature-title">Professional Teachers</h4>
-                            <p class="feature-text">Proactively myocardinate high-quality quality vectors rather than
-                                collaborative best practices. Continually create go forward total linkage vis-a-vis
-                                wireless mindshare.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--======== / Simple Section ========-->
-
-    <!--==============================
- Footer Area
- ==============================-->
-    <footer class="footer-wrapper footer-layout2">
-        <div class="shape-before"><img src="{{ asset('assets/img/shape/footer-before.png') }}" alt="shape"></div>
-        <div class="shape-mockup movingX d-none d-hd-block" data-bottom="37%" data-left="6%"><img
-                src="{{ asset('assets/img/icon/cloud-2.png') }}" alt="shapes"></div>
-        <div class="shape-mockup moving d-none d-lg-block" data-top="17%" data-right="7%"><img
-                src="{{ asset('assets/img/icon/car-4.png') }}" alt="shapes"></div>
-        <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <!-- About Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <div class="vs-widget-about">
-                                <div class="about-logo">
-                                    <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Knirpse">
-                                    </a>
-                                </div>
-                                <p class="about-text">Eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                    ipsum ultrice gravida isus commodo viverra.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget-->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget widget_nav_menu">
-                            <h4 class="widget_title">Details Info</h4>
-                            <ul class="menu">
-                                <li><a href="classes.html">Online Class</a></li>
-                                <li><a href="contact.html">Appointment</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="team.html">Our Team</a></li>
-                                <li><a href="event.html">Upcoming Events</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h4 class="widget_title">News Feed</h4>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('assets/img/blog/blog-thumb-1.jpg') }}"
-                                                alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">User’s Pepare Using Story
-                                                Guide Yes</a></h4>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img
-                                                src="{{ asset('assets/img/blog/blog-thumb-2.jpg') }}"
-                                                alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-alt"></i> 25th March, 2023</a></div>
-                                        <h4 class="post-title"><a href="blog-details.html">How to prepare child for
-                                                examination</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget -->
-                    <div class="col-xl-auto col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Contact Us</h3>
-                            <div class="vs-widget-contact">
-                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>256 Lonely Street Ave,
-                                    Brooklyn CA, United State</p>
-                                <p class="footer-info"><i class="fas fa-envelope"></i><a
-                                        href="mailto:info@Knirpseteam.com">info@Knirpseteam.com</a></p>
-                                <p class="footer-info"><i class="fas fa-phone-alt"></i><a
-                                        href="tel:+25631562156236">+256 (3156) 2156 236</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-
-                <p class="copyright">&copy; Copyright 2023 Knirpse. All Rights Reserved by <a
-                        href="https://themeforest.net/user/vecuro_themes">Vecuro</a>.</p>
-            </div>
-        </div>
-    </footer>
 
     <!--********************************
    Code End  Here

@@ -163,7 +163,7 @@
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="number" placeholder="Umur" name="{{$users->umur}}" id="umur" class="form-control style2" value="{{$users->umur}}">
+                                    <input type="number" placeholder="Umur" name="umur" id="umur" class="form-control style2" value="{{$users->umur}}">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">
