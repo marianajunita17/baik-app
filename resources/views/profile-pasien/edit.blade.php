@@ -155,15 +155,15 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" placeholder="Nama pasien" name="nama_pasien" id="nama_pasien" class="form-control style2" value="{{$users->nama_pasien}}">
+                                    <input type="text" placeholder="{{$users->nama_pasien}}" name="nama_pasien" id="nama_pasien" class="form-control style2">
                                     <i class="fal fa-user"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="email" placeholder="Email" name="email" id="email" class="form-control style2" value="{{$users->email}}">
+                                    <input type="email" placeholder="{{$users->email}}" name="email" id="email" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="number" placeholder="Umur" name="umur" id="umur" class="form-control style2" value="{{$users->umur}}">
+                                    <input type="number" placeholder="Umur" name="{{$users->umur}}" id="umur" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">
