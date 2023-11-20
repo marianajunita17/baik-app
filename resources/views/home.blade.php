@@ -56,9 +56,18 @@
                     <div class="widget widget_categories">
                         <h4 class="widget_title">Categories</h4>
                         <ul>
+                            <li>
+
+                                <a href="/home"> All</a></span>
+
+                            </li>
                             @foreach ($spesialisasis as $sp)
                             <li>
-                                <a href="home/category/{{$sp->id}}">{{$sp->nama_spesialisasi}}</a></span>
+
+                                <a><form action="/home">
+                                    <button type="submit" class="btn" name="category" value="{{$sp->id}}">{{$sp->nama_spesialisasi}}</button>
+                                </form></a></span>
+                                {{-- <a href="home/category/{{$sp->id}}">{{$sp->nama_spesialisasi}}</a></span> --}}
                             </li>
                             @endforeach
                         </ul>
