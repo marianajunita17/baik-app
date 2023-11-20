@@ -25,7 +25,7 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "pasiens";
+			$this->table = "users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -34,9 +34,9 @@
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Umur","name"=>"umur"];
             $this->col[] = ["label"=>"Jumlah Anak","name"=>"id","callback"=>function($row){
-                $db = DB::table('pasiens')
-                    ->join('anaks','pasiens.id','=','anaks.pasien_id')
-                    ->where('pasiens.id', $row->id)->count();
+                $db = DB::table('users')
+                    ->join('anaks','users.id','=','anaks.pasien_id')
+                    ->where('users.id', $row->id)->count();
 
                 $res = "";
                 $res = $db;
@@ -49,7 +49,7 @@
 			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Umur','name'=>'umur','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nama Pasien','name'=>'nama_pasien','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Users Id','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
+			// $this->form[] = ['label'=>'Users Id','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,username'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -246,7 +246,7 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
-            $query->join('janji_temu','janji_temu.pasien_id','=','pasiens.id');
+            $query->join('janji_temu','janji_temu.pasien_id','=','users.id');
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
 	    }
 

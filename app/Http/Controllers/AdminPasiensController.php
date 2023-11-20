@@ -30,7 +30,7 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-            $this->col[] = ["label"=>"User","name"=>"users_id","join"=>"users,username"];
+            // $this->col[] = ["label"=>"User","name"=>"users_id","join"=>"users,username"];
 			$this->col[] = ["label"=>"Nama","name"=>"nama_pasien"];
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Umur","name"=>"umur"];
@@ -53,7 +53,7 @@
 			$this->form[] = ['label'=>'Jenis Kelamin','name'=>'jenis_kelamin','type'=>'radio','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Laki-Laki;Perempuan'];
 			$this->form[] = ['label'=>'Umur','name'=>'umur','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nama','name'=>'nama_pasien','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			$this->form[] = ['label'=>'Users','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
+			// $this->form[] = ['label'=>'Users','name'=>'users_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10', 'datatable'=>'users,username'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
