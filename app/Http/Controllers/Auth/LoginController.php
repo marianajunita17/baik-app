@@ -34,19 +34,20 @@ class LoginController extends Controller
 
             if($session_check == "loginuser"){
                 // Login User
-                $existingUser = User::where('email', $user->getEmail())->first();
+                $existingUser = User::where('google_id', $user->getId())->first();
                 if($existingUser){
                     auth()->login($existingUser, true);
                     return redirect()->intended('home');
+                    // if (Auth::attempt(['email' => $existingUser->email, 'password' => $existingUser->password])) {
+                    //     // The user is active, not suspended, and exists.
+
+                    // }
+
                     // if($existingUser->id){
                     //     $checkdatapasien = DB::table("pasiens")->where("users_id", $existingUser->id)->first();
-                    //     auth()->login($existingUser, true);
                     //     if($checkdatapasien){
-                    //         // return dd("Data Ditemukan",$checkdatapasien,$existingUser->id);
                     //         return redirect()->intended('home');
                     //     }else{
-                    //         // return dd("Data Tidak ktmu",$checkdatapasien,$existingUser->id);
-
                     //         return redirect()->intended('data-pasien');
                     //     }
                     // }
@@ -56,7 +57,7 @@ class LoginController extends Controller
                 }
             }elseif ($session_check == "registeruser") {
                 User::create([
-                    'username' => $user->getName(),
+                    'nama_pasien' => $user->getName(),
                     'email' => $user->getEmail(),
                     'google_id' =>$user->getId(),
                     'password' => bcrypt("test123"),

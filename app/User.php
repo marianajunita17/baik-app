@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'google_id',
+        'nama_pasien', 'email', 'password', 'google_id',
     ];
 
     /**
@@ -37,13 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function pasien(){
-        return $this->hasOne('App\pasien');
-    }
+    // public function pasien(){
+    //     return $this->hasOne('App\pasien');
+    // }
 
-    public function konselors(){
-        return $this->hasMany('App\konselor');
-    }
+    // public function konselors(){
+    //     return $this->hasMany('App\konselor');
+    // }
 
     public function getId(){
         return $this->id;

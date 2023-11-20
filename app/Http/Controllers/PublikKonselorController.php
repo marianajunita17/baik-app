@@ -35,7 +35,7 @@ class PublikKonselorController extends Controller
         //     'spesialisasis'=>$spesialisasi,
         // ]);
 
-        return view('konselor.konselor', ['cms_users' => $cms_users]);
+        return dd($cms_users);
     }
 
     public function detailKonselor($id){
