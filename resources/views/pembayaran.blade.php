@@ -252,7 +252,105 @@
     </header>
     <!--======== / Header ========-->
 
-
+    <!-- keluhan -->
+    <section class="class-section bg-smoke space-page">
+        <div class="container">
+            <div class="row gx-60">
+                <div class="col-xl-8 col-lg-7">
+                    <!-- <div class="class-details">
+                        <div class="row class-big-img vs-carousel" id="classBig" data-slide-show="1"
+                            data-md-slide-show="1" data-fade="true">
+                            <div class="col-12">
+                                <div class="class-img">
+                                    <img src="{{ asset('assets/img/icon/user.png') }}" style="width:100px;height:100px" alt="class">
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="single-title">{{ $konselors->nama_konselor }}</h2>
+                        <a href="pembayaran" class="vs-btn wave-btn">Pesan</a>
+                    </div> / class details -->
+                    <div class="contact-form-box">
+                        <h2 class="contact-title">Isi Keluhan</h2>
+                        <form method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label class="form-label">Nama Pasien</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Felix Handani..." required>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Topik Keluhan</label>
+                                    <select id="jeniskelamin" name="jeniskelamin">
+                                        <option value="Stress" name="stress">Stress</option>
+                                        <option value="Depresi" name="depresi">Depresi</option>
+                                        <option value="Pekerjaan" name="pekerjaan">Pekerjaan</option>
+                                        <option value="Kecemasan" name="kecemasan">Kecemasan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Area Keluhan</label>
+                                    <select id="jeniskelamin" name="jeniskelamin">
+                                        <option value="Trauma" name="trauma">Trauma</option>
+                                        <option value="Bullying" name="bullying">Bullying</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Keluhan</label>
+                                    <input type="text" class="form-control" name="keluhan" id="keluhan" placeholder="isi keluhan anda" required>
+                                </div>
+                                <div class="form-group col-12">
+                                    <button type="pembayaran" class="vs-btn wave-btn">Simpan Data</button>
+                                </div>
+                            </div>
+                            <p class="form-messages mb-0 mt-3"></p>
+                        </form>
+                    </div>
+                </div> <!-- / col-8 end -->
+                <!-- Sidebar -->
+                <div class="col-xl-4 col-lg-5">
+                    <aside class="sidebar-area class-sidebar">
+                        <div class="widget wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="class-info-wrap">
+                            <div class="info-item">
+                                    <div class="class-img">
+                                        <h6 class="title">Konselor </h6>
+                                        <img src="{{ asset('assets/img/icon/user.png') }}" style="width:100px;height:100px" alt="class">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info">
+                                        <h6 class="title">Nama  </h6>
+                                        <span class="text">Mariana Junita</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-user"></i>
+                                    <div class="info">
+                                        <h6 class="title">Jadwal: </h6>
+                                        <span class="text">{{ $konselors->jadwal }}</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-users-class"></i>
+                                    <div class="info">
+                                        <h6 class="title">Nomor Induk: </h6>
+                                        <span class="text">{{ $konselors->nomor_str }}</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-users-class"></i>
+                                    <div class="info">
+                                        <h6 class="title">Lama Bekerja: </h6>
+                                        <span class="text">{{ $konselors->lama_bekerja }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--======== Checkout Section ========-->
     <div class="vs-checkout-wrapper space-page">
