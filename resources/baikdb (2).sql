@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2023 at 08:16 PM
+-- Generation Time: Nov 20, 2023 at 07:13 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.28
 
@@ -788,7 +788,7 @@ CREATE TABLE `cms_users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nama_konselor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_lahir` date DEFAULT NULL,
-  `jenis_kelamin` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `jenis_kelamin` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `CV` blob DEFAULT NULL,
   `SIPP` blob DEFAULT NULL,
   `ijazah` blob DEFAULT NULL,
@@ -814,10 +814,10 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `name`, `email`, `password`, `nama_konselor`, `tgl_lahir`, `jenis_kelamin`, `CV`, `SIPP`, `ijazah`, `ktp`, `npwp`, `photo`, `jadwal`, `lama_bekerja`, `no_rekening`, `nomor_str`, `nominal_bayar`, `id_cms_privileges`, `verifikasi_at`, `verifikasi_status`, `status_aktif`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Super Admin', 'admin@ubayabaik.id', '$2y$10$HblZh1e.lzaLlDhiF5EorOjpJZkJlkSNDgH96l/r7B0hHndlBLBSC', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '0', '0', 1, NULL, NULL, NULL, '2023-10-29 13:16:17', NULL, 'Active'),
-(6, 'KATHERYN NATASIA LIEM CHRISLIANTI _', 's160420038@student.ubaya.ac.id', '$2y$10$JH1LbufFNL8UdgSLW/129OCGyq3R1iCWZ7zW.T.EH2vKEBywQB/dy', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '0', '0', 1, NULL, NULL, NULL, NULL, NULL, 'Active'),
-(7, 'Katheryn Natasia', 'katherynatasialiem@gmail.com', '$2y$10$J9jug6XkOu6cbOYVXDVxGeCcCPCRgeR09y2h75gTHATzEt3BWShze', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '0', '0', 4, NULL, NULL, NULL, NULL, NULL, 'Active'),
-(8, 'Mariana Yunita', 'ymawuntu14@gmail.com', '$2y$10$8qjjdQvr.n7plArb9tCpN.A7VPVy96AqLlaUohamo3SRQ6e9j9Ue2', 'Mariana Junita Mawuntu S.Psi, MM, M.Psi, Psikolog', '1972-11-17', 'Perempuan', 0x75706c6f6164732f312f323032332d31312f6376312e6a7067, 0x75706c6f6164732f312f323032332d31312f736970702e6a7067, 0x75706c6f6164732f312f323032332d31312f696a617a61682e706e67, 0x75706c6f6164732f312f323032332d31312f6b74702e6a7067, 0x75706c6f6164732f312f323032332d31312f6e7077702e6a7067, 'uploads/1/2023-11/hot_air_balloon_basket_stock_illustrations_royalty_free_vector_graphics_clip_art.png', 'Setiap Hari Selasa, Kamis, dan Jumat. Pukul 09.00 - 14.00', 7, '73919836', '158329037-4661009', '0', 4, NULL, NULL, 'Online', NULL, '2023-11-19 15:05:07', 'Active'),
+(1, 'Super Admin', 'admin@ubayabaik.id', '$2y$10$HblZh1e.lzaLlDhiF5EorOjpJZkJlkSNDgH96l/r7B0hHndlBLBSC', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '382910465', '0', '0', 1, NULL, NULL, NULL, '2023-10-29 13:16:17', '2023-11-20 03:36:31', 'Active'),
+(6, 'KATHERYN NATASIA LIEM CHRISLIANTI _', 's160420038@student.ubaya.ac.id', '$2y$10$JH1LbufFNL8UdgSLW/129OCGyq3R1iCWZ7zW.T.EH2vKEBywQB/dy', '', NULL, 'Perempuan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '74830294', '0', '0', 1, NULL, NULL, NULL, NULL, '2023-11-20 03:37:35', 'Active'),
+(7, 'Katheryn Natasia', 'katherynatasialiem@gmail.com', '$2y$10$J9jug6XkOu6cbOYVXDVxGeCcCPCRgeR09y2h75gTHATzEt3BWShze', 'Katheryn Natasia S.Psi, M.Psi, Psikolog', '1993-01-12', 'Perempuan', NULL, NULL, NULL, NULL, NULL, NULL, 'Setiap Hari Selasa, Kamis, dan Jumat. Pukul 09.00 - 14.00', 5, '193858027', '158082037-4626909', '75000', 4, NULL, NULL, NULL, NULL, '2023-11-20 04:25:36', 'Active'),
+(8, 'Mariana Yunita', 'ymawuntu14@gmail.com', '$2y$10$8qjjdQvr.n7plArb9tCpN.A7VPVy96AqLlaUohamo3SRQ6e9j9Ue2', 'Mariana Junita Mawuntu S.Psi, MM, M.Psi, Psikolog', '1972-11-17', 'Perempuan', 0x75706c6f6164732f312f323032332d31312f6376312e6a7067, 0x75706c6f6164732f312f323032332d31312f736970702e6a7067, 0x75706c6f6164732f312f323032332d31312f696a617a61682e706e67, 0x75706c6f6164732f312f323032332d31312f6b74702e6a7067, 0x75706c6f6164732f312f323032332d31312f6e7077702e6a7067, 'uploads/1/2023-11/hot_air_balloon_basket_stock_illustrations_royalty_free_vector_graphics_clip_art.png', 'Setiap Hari Selasa, Kamis, dan Jumat. Pukul 09.00 - 14.00', 7, '73919836', '158329037-4661009', '100000', 4, NULL, NULL, 'Online', NULL, '2023-11-20 04:10:42', 'Active'),
 (9, 'Mbo Bebas', 'mbobebas@gmail.com', '$2y$10$W4MrRauM8k2700d2TBN52usdUbQhJ/HPwglpCVGCWRBmXNYcS1szS', 'Agdie Tama S.Psi, M.Psi, Psikolog', '1970-06-16', 'Laki-Laki', 0x75706c6f6164732f312f323032332d31312f6376312e6a7067, 0x75706c6f6164732f312f323032332d31312f736970702e6a7067, 0x75706c6f6164732f312f323032332d31312f696a617a61682e706e67, 0x75706c6f6164732f312f323032332d31312f6b74702e6a7067, 0x75706c6f6164732f312f323032332d31312f6e7077702e6a7067, 'uploads/1/2023-11/sea_island_shore_palm_leaves_on_foreground_vector_image_on_vectorstock.jpg', 'Setiap Hari Senin, Kamis, dan Jumat. Pukul 07.00 - 11.00', 10, '09876541', '158329037-4661009', '50000', 4, NULL, NULL, 'Offline', '2023-11-17 02:24:40', '2023-11-19 07:54:37', 'Active');
 
 -- --------------------------------------------------------
@@ -1115,6 +1115,8 @@ INSERT INTO `topik_janji_temu` (`id`, `topiks_id`, `janji_temu_id`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `umur` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1128,18 +1130,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Katheryn', 'admin@ubayabaik', NULL, NULL, '$2y$10$O2rqAl..QMVc/w4j9OR/YecQqSj6L/EMAC/AJdo66SNsebrFnaDxG', NULL, '2023-10-31 20:51:37', NULL),
-(2, 'Junita', 'junjun@ubaya.baik', NULL, NULL, '$2y$10$37IoKvncV6lrUArX2mi2suxkPrMeVrWmCIT/6taXPmRUyjYSSFHFG', NULL, '2023-11-04 20:48:41', '2023-11-13 04:56:05'),
-(3, 'Yolenta', 'yola@gmail.com', NULL, NULL, '$2y$10$R9NPhav.qBHSk.S6lEHqaO1NDHVAFT8VerO2CYFzWPiqogwD6l9ii', NULL, '2023-11-04 20:48:57', NULL),
-(4, 'David', 'david@gmail.com', NULL, NULL, '$2y$10$T8pjgfdYGa/8/KqdWo4Uke2KSSuYLDAudZl2LnRUnFgTr0P3JZlhm', NULL, '2023-11-04 21:15:31', NULL),
-(5, 'Adgie', 'adgie@gmail.com', NULL, NULL, '$2y$10$CNsFsuKcZI7rt7whO4n21.YnxiMfWWg98yTWm.LYxFqoTqGiEQ0Ui', NULL, '2023-11-04 21:15:45', NULL),
-(10, 'KATHERYN NATASIA LIEM CHRISLIANTI _', 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$frUEQW5WGQ1Op3VqEqnXN.N5T4N0qNrACyyabH875w0duleFb81pW', 'F3HLeqRtB4h8CRlmjaE4s25U8JKIP4MZGA0Qr4gwvltBQHFtTP5JeE9HF0lj', '2023-11-15 18:53:09', '2023-11-16 02:01:12'),
-(13, 'Katheryn Natasia', 'katherynatasialiem@gmail.com', NULL, '109342889608692761046', '$2y$10$kb/xQ9NKpPv.JGVDVra.r.hr.Q4X1G4mNmKFSJC4/y4r095djmXUu', '73e3hRZYBhmt2s67Y5OBMLzFYkC6PMMb5ZxwWerc2gDigret6AWxoLMeaPRY', '2023-11-15 18:59:27', '2023-11-16 01:59:34'),
-(14, 'Mariana Yunita', 'ymawuntu14@gmail.com', NULL, '104493692090950621833', '$2y$10$sdq./aQWg4TkS.qvoYddSuM4XJP7dklzATBAn8cq1YY8o3YGnrgJ6', 'mxECDJRVJQH5BqwG7bibLlbtXtJupbwaS0AMNx0sosU2PvQwZww4VNaMPWXL', '2023-11-16 07:59:18', '2023-11-16 14:59:26'),
-(15, 'Mbo Bebas', 'mbobebas@gmail.com', NULL, '112145646681532680706', '$2y$10$Xe1CRqPYl/76duSkMlno1ucgyx/nrcviT2p9Te1.1mjQlICZMV8Pe', 'ayTtK3iUZaOkhLSrXbNflFRTABbtq7vGkUXJybta2KdRUwGtcM7JW7Etp1aI', '2023-11-16 19:26:21', '2023-11-17 03:51:07'),
-(16, 'Evelyn Liem', 'evelynliemchrist@gmail.com', NULL, '106835611833216764683', '$2y$10$ZCPzo5kmqOzDhu9fWJ.c5eE.LW2hXWcl9DHmHkzh0IuxBGmdFcxum', 'swsxME6KRozDR4ZPWLTQ0opzMb8rMiX4CWb98s9PsmRgzj3Qq8LsGtRLv0ba', '2023-11-16 20:03:23', '2023-11-19 18:04:21'),
-(17, 'Kalong MeLife', 'kalongmelife@gmail.com', NULL, '110503399047046502243', '$2y$10$WDnYD85RQ9KfNL5lutRDm.W8u/6beOv5zZXYott0ISJk9pq82p/3.', 'py3Kb2Baxc4ReJJwVmfeptiRQnreyqenqDxXpNqd2AyEhxIdiB9CPmAYjuHm', '2023-11-16 20:21:50', '2023-11-17 03:22:01');
+INSERT INTO `users` (`id`, `username`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Katheryn', '', 0, 'admin@ubayabaik', NULL, NULL, '$2y$10$O2rqAl..QMVc/w4j9OR/YecQqSj6L/EMAC/AJdo66SNsebrFnaDxG', NULL, '2023-10-31 20:51:37', NULL),
+(2, 'Junita', '', 0, 'junjun@ubaya.baik', NULL, NULL, '$2y$10$37IoKvncV6lrUArX2mi2suxkPrMeVrWmCIT/6taXPmRUyjYSSFHFG', NULL, '2023-11-04 20:48:41', '2023-11-13 04:56:05'),
+(3, 'Yolenta', '', 0, 'yola@gmail.com', NULL, NULL, '$2y$10$R9NPhav.qBHSk.S6lEHqaO1NDHVAFT8VerO2CYFzWPiqogwD6l9ii', NULL, '2023-11-04 20:48:57', NULL),
+(4, 'David', '', 0, 'david@gmail.com', NULL, NULL, '$2y$10$T8pjgfdYGa/8/KqdWo4Uke2KSSuYLDAudZl2LnRUnFgTr0P3JZlhm', NULL, '2023-11-04 21:15:31', NULL),
+(5, 'Adgie', '', 0, 'adgie@gmail.com', NULL, NULL, '$2y$10$CNsFsuKcZI7rt7whO4n21.YnxiMfWWg98yTWm.LYxFqoTqGiEQ0Ui', NULL, '2023-11-04 21:15:45', NULL),
+(10, 'KATHERYN NATASIA LIEM CHRISLIANTI _', '', 0, 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$frUEQW5WGQ1Op3VqEqnXN.N5T4N0qNrACyyabH875w0duleFb81pW', 'F3HLeqRtB4h8CRlmjaE4s25U8JKIP4MZGA0Qr4gwvltBQHFtTP5JeE9HF0lj', '2023-11-15 18:53:09', '2023-11-16 02:01:12'),
+(13, 'Katheryn Natasia', '', 0, 'katherynatasialiem@gmail.com', NULL, '109342889608692761046', '$2y$10$kb/xQ9NKpPv.JGVDVra.r.hr.Q4X1G4mNmKFSJC4/y4r095djmXUu', '73e3hRZYBhmt2s67Y5OBMLzFYkC6PMMb5ZxwWerc2gDigret6AWxoLMeaPRY', '2023-11-15 18:59:27', '2023-11-16 01:59:34'),
+(14, 'Mariana Yunita', '', 0, 'ymawuntu14@gmail.com', NULL, '104493692090950621833', '$2y$10$sdq./aQWg4TkS.qvoYddSuM4XJP7dklzATBAn8cq1YY8o3YGnrgJ6', 'mxECDJRVJQH5BqwG7bibLlbtXtJupbwaS0AMNx0sosU2PvQwZww4VNaMPWXL', '2023-11-16 07:59:18', '2023-11-16 14:59:26'),
+(15, 'Mbo Bebas', '', 0, 'mbobebas@gmail.com', NULL, '112145646681532680706', '$2y$10$Xe1CRqPYl/76duSkMlno1ucgyx/nrcviT2p9Te1.1mjQlICZMV8Pe', 'ayTtK3iUZaOkhLSrXbNflFRTABbtq7vGkUXJybta2KdRUwGtcM7JW7Etp1aI', '2023-11-16 19:26:21', '2023-11-17 03:51:07'),
+(17, 'Kalong MeLife', '', 0, 'kalongmelife@gmail.com', NULL, '110503399047046502243', '$2y$10$WDnYD85RQ9KfNL5lutRDm.W8u/6beOv5zZXYott0ISJk9pq82p/3.', 'py3Kb2Baxc4ReJJwVmfeptiRQnreyqenqDxXpNqd2AyEhxIdiB9CPmAYjuHm', '2023-11-16 20:21:50', '2023-11-17 03:22:01');
 
 --
 -- Indexes for dumped tables
@@ -1518,14 +1519,14 @@ ALTER TABLE `users`
 -- Constraints for table `anaks`
 --
 ALTER TABLE `anaks`
-  ADD CONSTRAINT `anaks_ibfk_1` FOREIGN KEY (`pasien_id`) REFERENCES `pasiens` (`id`);
+  ADD CONSTRAINT `anaks_ibfk_1` FOREIGN KEY (`pasien_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `janji_temu`
 --
 ALTER TABLE `janji_temu`
   ADD CONSTRAINT `janji_temu_ibfk_1` FOREIGN KEY (`janji_temu_id`) REFERENCES `janji_temu` (`id`),
-  ADD CONSTRAINT `janji_temu_ibfk_2` FOREIGN KEY (`pasien_id`) REFERENCES `pasiens` (`id`),
+  ADD CONSTRAINT `janji_temu_ibfk_2` FOREIGN KEY (`pasien_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `janji_temu_ibfk_4` FOREIGN KEY (`bank_id`) REFERENCES `pembayarans` (`id`),
   ADD CONSTRAINT `janji_temu_ibfk_5` FOREIGN KEY (`konselor_id`) REFERENCES `cms_users` (`id`);
 

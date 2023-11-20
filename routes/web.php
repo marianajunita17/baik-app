@@ -69,7 +69,7 @@ Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
-Route::get('/home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
+Route::get('/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
 
