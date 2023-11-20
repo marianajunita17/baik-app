@@ -125,7 +125,7 @@
                                 <nav class="main-menu menu-style1 d-none d-lg-inline-block">
                                     <ul>
                                         <li class="menu-item-has-children">
-                                            <a href="home">Home</a>
+                                            <a href="{{route('home')}}">Home</a>
                                         </li>
                                         <li><a href="profile">About Us</a></li>
                                     </ul>

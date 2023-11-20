@@ -94,11 +94,6 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-links">
-                            <ul>
-                                <li><i class="fal fa-clock"></i>9:30 am - 6:30 pm - Mon - Sun</li>
-                                <li><i class="fas fa-phone-alt"></i><a href="tel:+25625921589">+256 259 21589</a></li>
-                                <li><i class="fas fa-map-marker-alt"></i>Hilton Street, New York 215 US</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-auto">
