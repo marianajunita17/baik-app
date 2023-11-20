@@ -4,9 +4,9 @@ use App\janjitemu;
 use Carbon\Carbon;
 use Session;
 	use Request;
-	use DB;
+	// use DB;
 	use CRUDBooster;
-use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\DB;
 
 	class AdminJanjiTemuController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -62,7 +62,6 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 			$this->form[] = ['label'=>'Persentase Kesesuaian','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
-			// $this->form[] = ['label'=>'Nominal','name'=>'nominal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jenis Pembayaran','name'=>'bank_id','type'=>'select2','validation'=>'required|string|min:0','width'=>'col-sm-10','datatable'=>'pembayarans,jenis_pembayaran'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -323,8 +322,12 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
             $konselor = $janjitemu->konselor_id;
             $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
-                    ->where('cms_users.id', $konselor)->select('nominal_bayar')->get();
-            // dd($janjitemu);
+                    ->where('cms_users.id', $konselor)
+                    ->where('janji_temu.id', $janjitemu->id)
+                    ->value('nominal_bayar');
+
+            $janjitemu->nominal = $getNominal;
+            $janjitemu->save();
 	    }
 
 	    /*

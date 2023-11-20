@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+use Mockery\Matcher\Not;
 
 	class KeuanganKonselorsController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -25,7 +26,7 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "konselors";
+			$this->table = "cms_users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -254,7 +255,7 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
-
+            $query->whereNotNull('nama_konselor'); 
 	    }
 
 	    /*
