@@ -251,12 +251,14 @@
         <!--vs-main-menu-wrapper end-->
     </header>
     <!--======== / Header ========-->
+    
 
     <!-- keluhan -->
-    <section class="class-section bg-smoke space-page">
+    <section class="vs-checkout-wrapper space-page">
         <div class="container">
             <div class="row gx-60">
                 <div class="col-xl-8 col-lg-7">
+                    
                     <!-- <div class="class-details">
                         <div class="row class-big-img vs-carousel" id="classBig" data-slide-show="1"
                             data-md-slide-show="1" data-fade="true">
@@ -269,6 +271,7 @@
                         <h2 class="single-title">{{ $konselors->nama_konselor }}</h2>
                         <a href="pembayaran" class="vs-btn wave-btn">Pesan</a>
                     </div> / class details -->
+                    
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Keluhan</h2>
                         <form method="POST">
@@ -350,10 +353,9 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!--======== Checkout Section ========-->
-    <div class="vs-checkout-wrapper space-page">
+         <!--======== Checkout Section ========-->
+    
+        <div class="vs-checkout-wrapper space-page">
         <div class="container">
             <h4 class="mt-4 pt-lg-2">Ringkasan Pembayaran</h4>
             <form action="#" class="woocommerce-cart-form">
@@ -437,6 +439,10 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <!--======== Checkout Section ========-->
+    
     <!--======== / Checkout Section ========-->
 
     <!--==============================

@@ -170,7 +170,6 @@
                                 <li><strong>Jenis kelamin: </strong>{{$users->jenis_kelamin}}</li>
                                 <li><strong>Email:</strong>{{$users->email}}
                                 </li>
-                                <li><strong>Mobile:</strong><a href="tel:+82012345678">+820-123-456-78</a></li>
                             </ul>
                         </div>
                         <div class="form-group col-12">

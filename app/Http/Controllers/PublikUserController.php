@@ -75,7 +75,10 @@ class PublikUserController extends Controller
      */
     public function edit()
     {
-        $user = auth()->user();
+        $user = auth()->user()->id;
+        $userData = DB::table('users')
+        ->where('id', $user)
+        ->first();
         // return dd($user);
         return view('profile-pasien.edit', ['users' => $user]);
     }

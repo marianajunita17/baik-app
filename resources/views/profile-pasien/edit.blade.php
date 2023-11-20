@@ -164,14 +164,14 @@
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="number" placeholder="Umur" name="umur" id="umur" class="form-control style2">
+                                    <input type="number" value="{{$users->umur}}" placeholder="Umur" name="umur" id="umur" class="form-control style2">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">
                                     <select name="jenis_kelamin" id="jenis_kelamin" class="form-select style2">
                                         {{-- <option value="" disabled selected hidden>Pilih Jenis kelamin</option> --}}
                                         <option value="Laki-Laki">Laki-Laki</option>
-                                        <option value="Laki-Laki">Perempuan</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="col-12 form-group">
