@@ -155,22 +155,22 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" placeholder="{{$users->nama_pasien}}" name="nama_pasien" id="nama_pasien" class="form-control style2">
+                                    <input type="text" placeholder="Nama Pasien" name="nama_pasien" id="nama_pasien" class="form-control style2" value="{{$users->nama_pasien}}">
                                     <i class="fal fa-user"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="email" placeholder="{{$users->email}}" name="email" id="email" class="form-control style2">
+                                    <input type="email" placeholder="Email" name="email" id="email" class="form-control style2" value="{{$users->email}}">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="number" placeholder="Umur" name="{{$users->umur}}" id="umur" class="form-control style2">
+                                    <input type="number" placeholder="Umur" name="{{$users->umur}}" id="umur" class="form-control style2" value="{{$users->umur}}">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="form-group col-12">
                                     <select name="jenis_kelamin" id="jenis_kelamin" class="form-select style2">
                                         <option value="" disabled selected hidden>Pilih Jenis kelamin</option>
                                         <option value="Laki-Laki">Laki-Laki</option>
-                                        <option value="Laki-Laki">Perempuan</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="col-12 form-group">
