@@ -92,47 +92,21 @@ class PublikUserController extends Controller
      */
     public function update(Request $request)
     {
-        $user = auth()->user()->id;
-
-        DB::table('users')
-        ->where('id', $user)
-        ->update([
-            'nama_pasien'=> $request->input('nama_pasien'),
-            'email'=>$request->input('email'),
-            'umur'=>$request->input('umur'),
-            'jenis_kelamin'=>$request->input('jenis_kelamin')
+        $request->validate([
+            'nama_pasien' => 'required|string|max:255',
+            'email' => 'required|max:255|email',
+            'umur' => 'required|integer|min:8',
+            'jenis_kelamin' => 'required|string|max:255',
         ]);
-        // $request->validate([
-        //     'nama_pasien' => 'required|string|max:255',
-        //     'email' => 'required|max:255|email',
-        //     'umur' => 'required|integer|min:8',
-        //     'jenis_kelamin' => 'required|string|max:255',
-        // ]);
 
-        // $user = auth()->user()->id;
-        // User::updated([
-        //     'nama_pasien'=>$request->nama_pasien,
-        //     'email'=>$request->email,
-        //     'umur'=>$request->umur,
-        //     'jenis_kelamin'=>$request->jenis_kelamin
-        // ]);
-        // $user->nama_pasien = $request['nama_pasien'];
-        // $user->email = $request['email'];
-        // $user->umur = $request['umur'];
-        // $user->jenis_kelamin = $request['jenis_kelamin'];
-        // $user->save();
+        $uid = auth()->user()->id;
 
-        // return dd($user);
-        // $user->update($request->all());
-
-        // $this->validate($request, [
-        //     'nama_pasien' => 'required|string|min:3|max:70',
-        //     'email'=>'required|min:1|max:255|email|unique:users',
-        //     'umur'=>'required|integer|min:0',
-        //     'jenis_kelamin'=>'required|min:1|max:255'
-        // ]);
-
-        // $user = User::find($id);
+        $user = User::findOrFail($uid);
+        $user->nama_pasien = $request->nama_pasien;
+        $user->email = $request->email;
+        $user->umur = $request->umur;
+        $user->jenis_kelamin = $request->jenis_kelamin;
+        $user->save();
 
         return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui');
     }
