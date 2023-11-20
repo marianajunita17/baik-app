@@ -138,29 +138,34 @@
         <div class="container">
             <div class="row ">
                 <!-- Single Class -->
-                {{-- @if (is_array($cms_users) || is_object($cu)) --}}
-                    @foreach ($cms_users as $cu)
-                        {{-- @dd($cu) --}}
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="class-box">
-                                <div class="class-img">
-                                    <img src="{{ asset('assets/img/icon/user.png') }}"
-                                        style="width:100px;height:100px" alt="class">
-                                    {{-- <a href="class-details.html">
-                                    <img src="{{ $k->photo }}" alt="class"> --}}
-                                </a>
+                @foreach ($cms_users as $cu)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="class-box">
+                            <div class="class-img">
+                                <img src="{{ asset('assets/img/icon/psiko.png') }}"  width="70%" height="70%" alt="class">
+                            </div>
+                            <div class="class-content">
+                                <h2 class="class-title h4">{{ $cu->nama_konselor }}</h2>
+                                <ul class="class-info">
+                                    <li>
+                                        <p>Lama Bekerja:</p>
+                                        <span>{{ $cu->lama_bekerja }} Tahun</span>
+                                    </li>
+                                    <li>
+                                        <p>Jadwal:</p>
+                                        <span>{{ $cu->jadwal }}</span>
+                                    </li>
+                                </ul>
+                                <div>
+                                <span class="price">Rp. {{$cu->nominal_bayar}},-</span>
                                 </div>
-                                <div class="class-content">
-                                    <h2 class="class-title h4"><a
-                                            href="class-details.html">{{ $cu->nama_konselor }}</a>
-                                    </h2>
-                                    <a href="{{ route('konselor.detailKonselor', ['id' => $cu->id]) }}"
-                                        class="vs-btn style-1">Detail</a>
-                                </div>
+
+                                <a href="{{ route('konselor.detailKonselor', ['id' => $cu->id]) }}"
+                                    class="vs-btn style-1">Read More</a>
                             </div>
                         </div>
-                    @endforeach
-                {{-- @endif --}}
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

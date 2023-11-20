@@ -260,7 +260,7 @@
                             <div class="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="vs-product-box row col-xl-9">
                                     <div class="product-img">
-                                        <a href="{{route('spesialisasi.konselor', ['id' => $s->id]) }}">
+                                        <a href="{{ route('spesialisasi.konselor', ['id' => $s->id]) }}">
                                             <img src="{{ asset('assets/img/product/kategori.png') }}"
                                                 alt="Product Image" class="w-100">
                                         </a>
@@ -268,7 +268,6 @@
                                             <h2 class="product-title h4">{{ $s->nama_spesialisasi }}</a></h2>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         @endforeach
