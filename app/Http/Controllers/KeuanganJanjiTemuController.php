@@ -35,7 +35,7 @@
 			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
-			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
+			$this->col[] = ["label"=>"Nominal Pembayaran","name"=>"nominal"];
 			$this->col[] = ["label"=>"Jenis Pembayaran","name"=>"bank_id", "join"=>"pembayarans,jenis_pembayaran"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 

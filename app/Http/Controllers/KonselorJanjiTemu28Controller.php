@@ -34,7 +34,6 @@ use Session;
 			$this->col = [];
 			$this->col[] = ["label"=>"Kode","name"=>"id"];
 			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
-			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
