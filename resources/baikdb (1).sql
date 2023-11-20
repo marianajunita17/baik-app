@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2023 at 07:13 AM
+-- Generation Time: Nov 20, 2023 at 08:20 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.28
 
@@ -1114,9 +1114,9 @@ INSERT INTO `topik_janji_temu` (`id`, `topiks_id`, `janji_temu_id`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `umur` int(11) NOT NULL,
+  `nama_pasien` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `umur` int(11) DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1130,7 +1130,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO `users` (`id`, `nama_pasien`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Katheryn', '', 0, 'admin@ubayabaik', NULL, NULL, '$2y$10$O2rqAl..QMVc/w4j9OR/YecQqSj6L/EMAC/AJdo66SNsebrFnaDxG', NULL, '2023-10-31 20:51:37', NULL),
 (2, 'Junita', '', 0, 'junjun@ubaya.baik', NULL, NULL, '$2y$10$37IoKvncV6lrUArX2mi2suxkPrMeVrWmCIT/6taXPmRUyjYSSFHFG', NULL, '2023-11-04 20:48:41', '2023-11-13 04:56:05'),
 (3, 'Yolenta', '', 0, 'yola@gmail.com', NULL, NULL, '$2y$10$R9NPhav.qBHSk.S6lEHqaO1NDHVAFT8VerO2CYFzWPiqogwD6l9ii', NULL, '2023-11-04 20:48:57', NULL),
