@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Konselor - BAIK</title>
+    <title>BAIK - Bantuan Awal Ibu Untuk Kesehatan Mental Anak</title>
     <meta name="author" content="vecuro_themes">
     <meta name="description" content="Knirpse - Kindergarten & Baby Care Template">
     <meta name="keywords" content="Knirpse - Kindergarten & Baby Care Template">
@@ -85,6 +85,24 @@
         </form>
     </div>
 
+    <!-- Side menu start -->
+    <div class="sidemenu-wrapper">
+        <div class="sidemenu-content">
+            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+            <div class="widget footer-widget">
+                <div class="vs-widget-about">
+                    <div class="about-logo">
+                        <a href="index.html">
+                            <img src="{{ asset('assets/img/logo.svg') }}" alt="Knirpse">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Side menu end -->
+    <!--vs-mobile-menu start-->
+    <!--vs-mobile-menu end-->
+
     <!--======== Header ========-->
     <header class="vs-header">
         <!--header-top-wrapper start-->
@@ -121,8 +139,25 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button type="button" class="vs-menu-toggle d-block d-lg-none">
-                                    <i class="far fa-bars"></i> Menu</button>
+                                <nav class="main-menu menu-style1 d-none d-lg-inline-block">
+                                    <ul>
+                                        <li class="menu-item-has-children">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li><a href="profile">About Us</a></li>
+                                    </ul>
+                                </nav>
+                                <button type="button" class="vs-menu-toggle d-block d-lg-none"><i
+                                        class="far fa-bars"></i> Menu</button>
+                            </div>
+                            <div class="col-auto d-none d-xl-block">
+                                <div class="header-button">
+                                    <a href="contact.html" class="vs-btn wave-btn">Book a visit</a>
+                                    <button type="button" class="searchBoxToggler icon-btn"><i
+                                            class="far fa-search"></i></button>
+                                    <button type="button" class="sideMenuToggler icon-btn"><i
+                                            class="fal fa-bars"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,69 +168,60 @@
     </header>
     <!--======== / Header ========-->
 
-    <!--======== Class Section ========-->
-    <section class="class-section bg-smoke space-page">
+    <!--======== About Section ========-->
+    <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/breadcrumb-bg-1.jpg') }}">
         <div class="container">
-            <div class="row gx-60">
-                <div class="col-xl-8 col-lg-7">
-                    <div class="class-details">
-                        <div class="row class-big-img vs-carousel" id="classBig" data-slide-show="1"
-                            data-md-slide-show="1" data-fade="true">
-                            <div class="col-12">
-                                <div class="class-img">
-                                    <img src="{{ asset('assets/img/icon/user.png') }}" style="width:100px;height:100px" alt="class">
-                                </div>
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">Welcome, {{ $cms_user->nama_pasien }} </h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">Shop Now</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--======== / About Section ========-->
+
+    <!--======== Shop Section ========-->
+    <section class="vs-product-wrapper space-page">
+        <div class="container">
+            <div class="row gy-30">
+                <!-- Single Class -->
+                @foreach ($spesialisasis as $s)
+                    <div class="col-xl-3 col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="vs-product-box">
+                            <div class="product-img">
+                                <a href="{{ route('spesialisasi.konselor', ['id' => $s->id]) }}">
+                                    <img src="{{ asset('assets/img/product/kategori.png') }}" alt="Product Image"
+                                        class="w-100">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h2 class="product-title h4">{{ $s->nama_spesialisasi }}</a></h2>
                             </div>
                         </div>
-                        <h2 class="single-title">{{ $cms_users->nama_konselor }}</h2>
-                        <a href="pembayaran" class="vs-btn wave-btn">Pesan</a>
-                    </div> <!-- / class details -->
-                </div> <!-- / col-8 end -->
-                <!-- Sidebar -->
-                <div class="col-xl-4 col-lg-5">
-                    <aside class="sidebar-area class-sidebar">
-                        <div class="widget wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="class-info-wrap">
-                                <div class="info-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <div class="info">
-                                        <h6 class="title">Tanggal Lahir: </h6>
-                                        <span class="text">{{ $cms_users->tgl_lahir }}</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user"></i>
-                                    <div class="info">
-                                        <h6 class="title">Jadwal: </h6>
-                                        <span class="text">{{ $cms_users->jadwal }}</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-users-class"></i>
-                                    <div class="info">
-                                        <h6 class="title">Nomor Induk: </h6>
-                                        <span class="text">{{ $cms_users->nomor_str }}</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-users-class"></i>
-                                    <div class="info">
-                                        <h6 class="title">Lama Bekerja: </h6>
-                                        <span class="text">{{ $cms_users->lama_bekerja }} Tahun</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
+                    </div>
+                @endforeach
+            </div>
+            <!-- Pagination -->
+            <div class="vs-pagination mt-60">
+                <ul>
+                    <li>
+                        <a href="blog.html"><i class="fas fa-chevron-left"></i></a>
+                    </li>
+                    <li><a href="blog.html" class="active">1</a></li>
+                    <li><a href="blog.html">2</a></li>
+                    <li><a href="blog.html">3</a></li>
+                    <li><a href="blog.html">...</a></li>
+                    <li><a href="blog.html">10</a></li>
+                    <li>
+                        <a href="blog.html"><i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
-    <!--======== / Class Section ========-->
-
-    <!--********************************
-   Code End  Here
- ******************************** -->
+    <!--======== / Shop Section ========-->
 
 
     <!-- Scroll To Top -->
