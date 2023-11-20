@@ -14,6 +14,8 @@ class PublikSpesialisController extends Controller
     }
 
     public function showKonselor($id){
+        $spesialisasi = spesialisasi::find($id);
+        $cms_users = $spesialisasi->cms_users;
         // $spesialis = spesialisasi::find($id);
         // $spesialis = DB::table('spesialisasis')->where('id', $id)->first();
         // $spesialis = DB::table('spesialisasis')->join('konselor_spesialis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
@@ -27,11 +29,12 @@ class PublikSpesialisController extends Controller
 
         // $cms_users = $spesialis->cms_users;
         // return dd($cms_users);
-        $cms_users = DB::table('cms_users')
-        ->join('konselor_spesialis','konselor_spesialis.cms_users_id','=','cms_users.id')
-        ->join('spesialisasis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
-        ->where('konselor_spesialis.spesialisasis_id',$id)
-        ->first();
+
+        // $cms_users = DB::table('cms_users')
+        // ->join('konselor_spesialis','konselor_spesialis.cms_users_id','=','cms_users.id')
+        // ->join('spesialisasis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
+        // ->where('konselor_spesialis.spesialisasis_id',$id)
+        // ->first();
 
         return dd($cms_users);
         // return view('konselor.konselor', ['cms_users'=>$cms_users]);
