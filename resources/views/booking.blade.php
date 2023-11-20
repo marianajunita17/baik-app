@@ -231,13 +231,13 @@
                                 <a class="cart-productname" href="shop-details.html">{{ $konselor }}</a>
                             </td>
                             <td data-title="Price">
-                                <span class="amount"><bdi><span>Rp.</span>{{$nominal}}</bdi></span>
+                                <span class="amount"><bdi><span>Rp.</span>100.000,-</bdi></span>
                             </td>
                             <td data-title="Quantity">
-                                <strong class="product-quantity">01</strong>
+                                <strong class="product-quantity">60 Menit</strong>
                             </td>
                             <td data-title="Total">
-                                <span class="amount"><bdi><span>Rp.</span>{{$nominal}}</bdi></span>
+                                <span class="amount"><bdi><span>Rp.</span>100.000,-</bdi></span>
                             </td>
                         </tr>
                     </tbody>
@@ -254,7 +254,7 @@
                         </tr> -->
                         <tr class="order-total">
                             <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></strong>
+                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">Rp.</span>100.000,-</bdi></span></strong>
                             </td>
                         </tr>
                     </tfoot>
