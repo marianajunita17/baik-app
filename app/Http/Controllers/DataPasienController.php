@@ -39,6 +39,6 @@ class DataPasienController extends Controller
             return redirect()->route('data-anak');
         }
 
-        return view('konselor.konselor');
+        // return view('konselor.konselor');
     }
 }

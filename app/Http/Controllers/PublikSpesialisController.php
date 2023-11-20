@@ -21,8 +21,11 @@ class PublikSpesialisController extends Controller
     }
 
     public function showKonselor($id){
-        $spesialis = spesialisasi::find($id);
+        // $spesialis = spesialisasi::where('id',$id);
+        $spesialis = DB::table('spesialisasis')->join('konselor_spesialis','spesialisasis.id','=','konselor_spesialis.spesialisasis_id')
+        ->where('spesialisasis.id', $id)->first();
         $cms_users = $spesialis->cms_users;
-        return view('konselor.konselor', ['cms_users'=>$cms_users]);
+        return dd($cms_users);
+        // return view('konselor.konselor', ['cms_users'=>$cms_users]);
     }
 }

@@ -68,14 +68,10 @@ Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("red
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
-// Route::get('/home', [PublikSpesialisController::class, 'index'])->name('spesialisasi.index');
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
-Route::get('/home/{id}/konselors', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
+Route::get('/home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
-// Route::get('/konselor/detailkonselor', PublikKonselorController::class, 'detailKonselor');
-
-// Route::post('/data-pasien', 'DataPasienController@addDataPasien')->name('datapasien');
 
 Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
 Route::post('/login', [PublikUserController::class, 'login'])->name('login.user');

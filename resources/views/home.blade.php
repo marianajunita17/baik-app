@@ -177,7 +177,7 @@
     <div class="breadcumb-wrapper" data-bg-src="{{ asset('assets/img/bg/bg-home.jpg') }}">
         <div class="container">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Welcome, {{ $pasien->nama_pasien }} </h1>
+                <h1 class="breadcumb-title">Welcome, {{ $cms_user->nama_pasien }} </h1>
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
                     <li class="active">Shop Now</li>
