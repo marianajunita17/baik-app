@@ -10,12 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class PublikKonselorController extends Controller
 {
-    public function index($id){
-        // $id_privileges = 4;
-        // $cms_users = DB::table("cms_users")->where('id_cms_privileges', $id_privileges)->first();
+    public function index(){
         $cms_users = konselor::all();
-        // return dd($cms_users);
-
 
         // filter spesialisasi
         // if($request->has('spesialisasi')) {

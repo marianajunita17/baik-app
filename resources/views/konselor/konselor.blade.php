@@ -138,16 +138,17 @@
         <div class="container">
             <div class="row ">
                 <!-- Single Class -->
-                @if (is_array($cms_users) || is_object($cu))
+                {{-- @if (is_array($cms_users) || is_object($cu)) --}}
                     @foreach ($cms_users as $cu)
+                        {{-- @dd($cu) --}}
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="class-box">
                                 <div class="class-img">
                                     <img src="{{ asset('assets/img/icon/user.png') }}"
                                         style="width:100px;height:100px" alt="class">
                                     {{-- <a href="class-details.html">
-                                    <img src="{{ $k->photo }}" alt="class">
-                                </a> --}}
+                                    <img src="{{ $k->photo }}" alt="class"> --}}
+                                </a>
                                 </div>
                                 <div class="class-content">
                                     <h2 class="class-title h4"><a
@@ -159,7 +160,7 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
+                {{-- @endif --}}
             </div>
         </div>
     </section>

@@ -60,7 +60,7 @@ Route::get('/booking', function () {
     return view('keluhan');
 });
 
-Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
+// Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 
 
@@ -70,6 +70,7 @@ Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
 Route::get('home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
+// Route::get('home/{id}/konselor', [PublikKonselorController::class, 'index']);
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
 
