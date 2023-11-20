@@ -24,6 +24,14 @@ Route::get('/', function () {
     return view('about-us.index');
 });
 
+Route::get('/profile', function() {
+    return view('profile-pasien.profile');
+});
+
+Route::get('/profile/edit', function() {
+    return view('profile-pasien.edit');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -67,6 +75,10 @@ Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dat
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
 Route::get('google/redirect', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/profile', [PublikUserController::class, 'show'])->name('profile')->middleware('auth');
+Route::get('/profile/edit', [PublikUserController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::put('/profile/update', [PublikUserController::class, 'update'])->name('profile.update')->middleware('auth');
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
 Route::get('home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');

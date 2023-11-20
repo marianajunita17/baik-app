@@ -98,12 +98,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <!-- Side menu end -->
-    <!--vs-mobile-menu start-->
-
 
     <!--======== Header ========-->
     <header class="vs-header">
@@ -144,9 +141,10 @@
                                 <nav class="main-menu menu-style1 d-none d-lg-inline-block">
                                     <ul>
                                         <li class="menu-item-has-children">
-                                            <a href="index.html">Home</a>
+                                            <a href="home">Home</a>
                                         </li>
-                                        <li><a href="profile">About Us</a></li>
+                                        <li><a href="">About Us</a></li>
+                                        <li><a href="profile">Profile</a></li>
                                     </ul>
                                 </nav>
                                 <button type="button" class="vs-menu-toggle d-block d-lg-none"><i

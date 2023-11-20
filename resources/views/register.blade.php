@@ -165,9 +165,11 @@
                             <div class="col-12 text-center">
                                 Sudah Punya Akun?<a href="login"> Masuk</a>
                             </div>
-                            @if (session('message'))
-                                <label>{{session('message')}}</label>
-                            @endif
+                            <div class="fs-md mb-30">
+                                @if (session('message'))
+                                    <label style="color: red">{{session('message')}}</label>
+                                @endif
+                                </div>
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>
                     </form>
