@@ -86,7 +86,6 @@ Route::put('/profile/update', [PublikUserController::class, 'update'])->name('pr
 
 Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->middleware('auth');
 Route::get('home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
-Route::get('/home/category/{slug}', 'PublikSpesialisController@categoryPsikolog')->name('front.category');
 // Route::get('home/{id}/konselor', [PublikKonselorController::class, 'index']);
 
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');

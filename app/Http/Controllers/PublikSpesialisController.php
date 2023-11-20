@@ -11,22 +11,17 @@ use Illuminate\Support\Facades\DB;
 class PublikSpesialisController extends Controller
 {
     public function index(){
+
         $spesialisasi = spesialisasi::all();
         $uid = auth()->user()->id;
         $user = User::findOrFail($uid);
         $konselor = konselor::all();
+        if (request('category')) {
+            $spesialisasi2 = spesialisasi::find(request('category'));
+            $konselor = $spesialisasi2->konselors()->get();
+        }
+
         return view('home', ['spesialisasis' => $spesialisasi,'cms_users' => $user, 'konselor' => $konselor]);
-    }
-
-    public function categoryPsikolog($slug){
-        $spesialisasi = spesialisasi::all();
-        $spesialisasi2 = spesialisasi::find($slug);
-        $uid = auth()->user()->id;
-        $user = User::findOrFail($uid);
-        // return dd($spesialisasi);
-        $cms_users = $spesialisasi2->konselors()->get();
-
-        return view('home', ['spesialisasis' => $spesialisasi,'cms_users' => $user,'konselor' => $cms_users]);
     }
 
     public function showKonselor($id){
