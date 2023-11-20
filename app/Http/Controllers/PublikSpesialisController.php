@@ -18,6 +18,17 @@ class PublikSpesialisController extends Controller
         return view('home', ['spesialisasis' => $spesialisasi,'cms_users' => $user, 'konselor' => $konselor]);
     }
 
+    public function categoryPsikolog($slug){
+        $spesialisasi = spesialisasi::all();
+        $spesialisasi2 = spesialisasi::find($slug);
+        $uid = auth()->user()->id;
+        $user = User::findOrFail($uid);
+        // return dd($spesialisasi);
+        $cms_users = $spesialisasi2->konselors()->get();
+
+        return view('home', ['spesialisasis' => $spesialisasi,'cms_users' => $user,'konselor' => $cms_users]);
+    }
+
     public function showKonselor($id){
         $spesialisasi = spesialisasi::find($id);
         $cms_users = $spesialisasi->konselors()->get();

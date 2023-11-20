@@ -58,7 +58,7 @@
                         <ul>
                             @foreach ($spesialisasis as $sp)
                             <li>
-                                <a href="shop.html">{{$sp->nama_spesialisasi}}</a></span>
+                                <a href="home/category/{{$sp->id}}">{{$sp->nama_spesialisasi}}</a></span>
                             </li>
                             @endforeach
                         </ul>
