@@ -44,7 +44,7 @@ Version: 1.0.0
     4.6. Blog
     4.7. Comments
     4.8. Hero Area
-    4.9. Error    
+    4.9. Error
     4.10. Popup Search
     4.11. Popup Side Menu
     4.12. Wocommerce
@@ -9318,6 +9318,14 @@ span.select2-selection.select2-selection--single:focus {
   max-width: 490px;
 }
 
+.team-content {
+    --border-gap: 30px;
+    padding: 75px 80px 75px 270px;
+    border-radius: 100px;
+    margin: var(--border-gap);
+    position: relative;
+  }
+
 .team-content-card {
   --border-gap: 30px;
   padding: 75px 80px 75px 270px;
@@ -9325,6 +9333,8 @@ span.select2-selection.select2-selection--single:focus {
   margin: var(--border-gap);
   position: relative;
 }
+
+
 .team-content-card:after {
   content: "";
   width: calc(100% + var(--border-gap) * 2);
