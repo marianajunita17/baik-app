@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="widget widget_categories">
-                        <h4 class="widget_title">Categories</h4>
+                        <h4 class="widget_title">Spesialisasi</h4>
                         <ul>
                             <li>
 

@@ -181,7 +181,7 @@
                             <span>Spesialisasi: <a href="shop.html">Gangguan Mental</a></span>
                             <span>Tags: <a href="shop.html">baby</a><a href="shop.html">Boys</a><a href="shop.html">Children</a></span>
                         </div>
-                        <a href="home" class="vs-btn wave-btn">Back To Home</a>
+                        <a href="{{route('home')}}" class="vs-btn wave-btn">Back To Home</a>
                     </div>
                 </div>
             </div>
