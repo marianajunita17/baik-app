@@ -166,6 +166,13 @@
                                 <div class="info-item">
                                     <i class="fas fa-user"></i>
                                     <div class="info">
+                                        <h6 class="title">Usia: </h6>
+                                        <span class="text">28 tahun</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <div class="info">
                                         <h6 class="title">Jadwal: </h6>
                                         <span class="text">{{ $cms_users->jadwal }}</span>
                                     </div>
