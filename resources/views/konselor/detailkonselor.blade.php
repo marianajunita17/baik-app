@@ -157,11 +157,11 @@
                         <div class="widget wow fadeInUp" data-wow-delay="0.1s">
                             <div class="class-info-wrap">
                                 <div class="info-item">
-                                    <i class="fas fa-calendar-alt"></i>
+                                    <!-- <i class="fas fa-calendar-alt"></i>
                                     <div class="info">
                                         <h6 class="title">Tanggal Lahir: </h6>
                                         <span class="text">{{ $cms_users->tgl_lahir }}</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-user"></i>
@@ -173,7 +173,7 @@
                                 <div class="info-item">
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
-                                        <h6 class="title">Nomor Induk: </h6>
+                                        <h6 class="title">Nomor STR: </h6>
                                         <span class="text">{{ $cms_users->nomor_str }}</span>
                                     </div>
                                 </div>
