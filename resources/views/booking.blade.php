@@ -187,20 +187,23 @@
                             </div>
                             <div class="form-group col-12">
                                 <label class="form-label">Topik Keluhan</label>
-                                <select name="topik_id">
-                                    @foreach ($topik as $key => $value)
+                                <select name="topik_id" id="topik">
+                                    @foreach ($topiks as $key=>$value)
                                         <option value="{{ $key }}">{{ $value }}</option>
                                     @endforeach
                                     {{-- <option value="topik">Stress</option>
-                                        <option value="topik">Depresi</option>
-                                        <option value="topik">Pekerjaan</option>
-                                        <option value="topik">Pengasuhan</option>
-                                        <option value="topik">Kecemasan</option> --}}
+                                    <option value="topik">Depresi</option>
+                                    <option value="topik">Pekerjaan</option>
+                                    <option value="topik">Pengasuhan</option>
+                                    <option value="topik">Kecemasan</option> --}}
                                 </select>
                             </div>
                             <div class="form-group col-12">
                                 <label class="form-label">Spesialisasi:</label>
-                                <select id="topik" name="spesialisasi">
+                                @foreach ($spesialisasis as $s)
+                                    <p>{{ $s->nama_spesialisasi }}</p>
+                                @endforeach
+                                {{-- <select id="topik" name="spesialisasi">
                                     <option value="topik">Trauma</option>
                                     <option value="topik">Bullying</option>
                                     <option value="topik">Stress</option>
@@ -208,7 +211,7 @@
                                     <option value="topik">Keluarga & Hubungan</option>
                                     <option value="topik">Gangguan & Kecemasan</option>
                                     <option value="topik">Gangguan Kepribadian</option>
-                                </select>
+                                </select> --}}
                             </div>
                             <div class="form-group col-12">
                                 <label class="form-label">Keluhan</label>

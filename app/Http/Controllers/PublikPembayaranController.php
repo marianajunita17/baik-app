@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\janjitemu;
+use App\konselor;
 use App\topik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,11 +16,13 @@ class PublikPembayaranController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index(){
-        $topik =topik::pluck('nama_topik', 'id')->toArray();
+    public function index($id){
+        $konselor = konselor::find($id);
+        $spesialisasi = $konselor->spesialisasis()->get();
+        $topiks = topik::pluck('nama_topik', 'id');
 
         // return dd($topik);
-        return view('booking', compact('topik'));
+        return view('booking', ['cms_users'=>$konselor, 'spesialisasis'=>$spesialisasi, 'topiks'=>$topiks]);
     }
 
     public function booking(Request $request){
