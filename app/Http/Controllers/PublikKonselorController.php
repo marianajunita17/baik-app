@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\janjitemu;
 use App\konselor;
 use App\spesialisasi;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,8 +40,13 @@ class PublikKonselorController extends Controller
     }
 
     public function detailKonselor($id){
-        $detailkonselor = DB::table("cms_users")->where('id', $id)->first();
-        return view('konselor.detailkonselor', ['cms_users' => $detailkonselor]);
+        $konselor = DB::table("cms_users")->where('id', $id)->first();
+
+        $tgllahir = Carbon::parse($konselor->tgl_lahir);
+        $usia = $tgllahir->diffInYears(Carbon::now());
+
+
+        return view('konselor.detailkonselor', compact('konselor', 'usia'));
     }
 
     public function pembayaranKonselor($id) {

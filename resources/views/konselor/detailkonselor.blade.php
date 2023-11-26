@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <h2 class="single-title">{{ $cms_users->nama_konselor }}</h2>
+                        <h2 class="single-title">{{ $konselor->nama_konselor }}</h2>
                         <a href="booking" class="vs-btn wave-btn">Pesan</a>
                     </div> <!-- / class details -->
                 </div> <!-- / col-8 end -->
@@ -157,38 +157,31 @@
                         <div class="widget wow fadeInUp" data-wow-delay="0.1s">
                             <div class="class-info-wrap">
                                 <div class="info-item">
-                                    <!-- <i class="fas fa-calendar-alt"></i>
-                                    <div class="info">
-                                        <h6 class="title">Tanggal Lahir: </h6>
-                                        <span class="text">{{ $cms_users->tgl_lahir }}</span>
-                                    </div> -->
-                                </div>
-                                <div class="info-item">
                                     <i class="fas fa-user"></i>
                                     <div class="info">
                                         <h6 class="title">Usia: </h6>
-                                        <span class="text">28 tahun</span>
+                                        <span class="text">{{$usia}}</span>
                                     </div>
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-calendar-alt"></i>
                                     <div class="info">
                                         <h6 class="title">Jadwal: </h6>
-                                        <span class="text">{{ $cms_users->jadwal }}</span>
+                                        <span class="text">{{ $konselor->jadwal }}</span>
                                     </div>
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
                                         <h6 class="title">Nomor STR: </h6>
-                                        <span class="text">{{ $cms_users->nomor_str }}</span>
+                                        <span class="text">{{ $konselor->nomor_str }}</span>
                                     </div>
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-users-class"></i>
                                     <div class="info">
                                         <h6 class="title">Lama Bekerja: </h6>
-                                        <span class="text">{{ $cms_users->lama_bekerja }} Tahun</span>
+                                        <span class="text">{{ $konselor->lama_bekerja }} Tahun</span>
                                     </div>
                                 </div>
                             </div>

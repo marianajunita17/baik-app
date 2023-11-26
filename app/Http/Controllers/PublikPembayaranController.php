@@ -16,10 +16,10 @@ class PublikPembayaranController extends Controller
      */
 
     public function index(){
-        $topik = DB::table("topiks")->first();
+        $topik =topik::pluck('nama_topik', 'id')->toArray();
 
-        return dd($topik);
-        // return view('booking', ['topiks' => $topik]);
+        // return dd($topik);
+        return view('booking', compact('topik'));
     }
 
     public function booking(Request $request){
