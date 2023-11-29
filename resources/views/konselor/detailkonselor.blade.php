@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <h2 class="single-title">{{ $konselor->nama_konselor }}</h2>
-                        <a href="booking" class="vs-btn wave-btn">Pesan</a>
+                        <a href="{{ route('booking', ['id' => $konselor->id]) }}" class="vs-btn wave-btn">Pesan</a>
                     </div> <!-- / class details -->
                 </div> <!-- / col-8 end -->
                 <!-- Sidebar -->

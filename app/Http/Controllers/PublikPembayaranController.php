@@ -21,7 +21,7 @@ class PublikPembayaranController extends Controller
         $spesialisasi = $konselor->spesialisasis()->get();
         $topiks = topik::pluck('nama_topik', 'id');
 
-        // return dd($topik);
+        // return dd($topiks, $spesialisasi, $konselor);
         return view('booking', ['cms_users'=>$konselor, 'spesialisasis'=>$spesialisasi, 'topiks'=>$topiks]);
     }
 
