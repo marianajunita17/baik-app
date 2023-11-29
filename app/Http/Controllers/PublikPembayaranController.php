@@ -34,12 +34,12 @@ class PublikPembayaranController extends Controller
 
         $iduser = auth()->user()->id;
         janjitemu::create([
-            // 'pasien_id'=>$iduser,
+            'pasien_id'=>$iduser,
             // topik()->attach($request->input('topik')),
             // 'keluhan'=> $request->input('keluhan')
         ]);
 
-        // return redirect()->route('detailpembayaran')->with('sucess', 'Booking Berhasil');
+        return redirect()->route('detailpembayaran')->with('sucess', 'Booking Berhasil');
     }
 
     /**

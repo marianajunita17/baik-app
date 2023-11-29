@@ -178,36 +178,41 @@
 
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Keluhan</h2>
-                        {{-- <form method="POST" action="{{ route('pembayaran.booking')}}">
-                            @csrf --}}
-                        <div class="row">
-                            <div class="form-group col-12">
-                                <label class="form-label">Nama Pasien:</label>
-                                <label class="form-label">{{ auth()->user()->nama_pasien }}</label>
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="form-label">Topik Keluhan</label>
-                                <select name="topik_id" id="topik">
-                                    @foreach ($topiks as $key => $value)
-                                        <option value="{{ $key }}">{{ $value }}</option>
+                        <form method="POST" action="{{ route('pembayaran.booking') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label class="form-label">Nama Pasien:</label>
+                                    <label class="form-label">{{ auth()->user()->nama_pasien }}</label>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Topik Keluhan</label>
+                                    <select name="topik_id" id="topik">
+                                        @foreach ($topiks as $key => $value)
+                                            <option value="{{ $key }}">{{ $value }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Spesialisasi:</label>
+                                    @foreach ($spesialisasis as $s)
+                                        <ul>
+                                            <li>{{ $s->nama_spesialisasi }}</li>
+                                        </ul>
                                     @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="form-label">Spesialisasi:</label>
-                                @foreach ($spesialisasis as $s)
-                                    <ul>
-                                        <li>{{ $s->nama_spesialisasi }}</li>
-                                    </ul>
-                                @endforeach
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="form-label">Keluhan</label>
+                                </div>
+                                <div class="form-group col-12">
+                                    <form onsubmit="return validateTextArea()">
+                                        <label for="keluhan">Keluhan Pasien</label><br>
+                                        <textarea id="keluhan" class="form-control" name="keluhan" rows="4" cols="50" oninput="countWords(this)" required></textarea><br>
+                                        <span id="wordCount">0 kata</span><br><br>
+                                    </form>
+                                    {{-- <label class="form-label">Keluhan</label>
                                 <input type="text" class="form-control" name="keluhan" id="keluhan"
-                                    placeholder="isi keluhan anda"  required>
+                                    placeholder="isi keluhan anda"  required> --}}
+                                </div>
                             </div>
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
+                            <p class="form-messages mb-0 mt-3"></p>
                         </form>
                     </div>
                 </div> <!-- / col-8 end -->
@@ -225,7 +230,7 @@
                                 <th class="cart-col-image">Konselor</th>
                                 <th class="cart-col-productname">Nama Konselor</th>
                                 <th class="cart-col-price">Harga</th>
-                                <th class="cart-col-quantity">Sesi(Menit)</th>
+                                {{-- <th class="cart-col-quantity">Sesi(Menit)</th> --}}
                                 <th class="cart-col-total">Total</th>
                             </tr>
                         </thead>
@@ -233,34 +238,24 @@
                             <tr class="cart_item">
                                 <td data-title="Product">
                                     <a class="cart-productimage" href="shop-details.html"><img width="91"
-                                            height="91" src="{{ asset('assets/img/product/p-thumb-1.jpg') }}"
+                                            height="91" src="{{ asset('assets/img/icon/psiko.png') }}"
                                             alt="Image"></a>
                                 </td>
                                 <td data-title="Name">
-                                    <a class="cart-productname" href="shop-details.html">{{ $konselor }}</a>
+                                    <a class="cart-productname"
+                                        href="shop-details.html">{{ $cms_users->nama_konselor }}</a>
                                 </td>
                                 <td data-title="Price">
-                                    <span class="amount"><bdi><span>Rp.</span>100.000,-</bdi></span>
-                                </td>
-                                <td data-title="Quantity">
-                                    <strong class="product-quantity">60 Menit</strong>
+                                    <span
+                                        class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
                                 </td>
                                 <td data-title="Total">
-                                    <span class="amount"><bdi><span>Rp.</span>100.000,-</bdi></span>
+                                    <span
+                                        class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot class="checkout-ordertable">
-                            <!-- <tr class="cart-subtotal">
-                            <th>Subtotal</th>
-                            <td data-title="Subtotal" colspan="4"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>120</bdi></span></td>
-                        </tr>
-                        <tr class="woocommerce-shipping-totals shipping">
-                            <th>Shipping</th>
-                            <td data-title="Shipping" colspan="4">
-                                Enter your address to view shipping options.
-                            </td>
-                        </tr> -->
                             <tr class="order-total">
                                 <th>Total</th>
                                 <td data-title="Total" colspan="4"><strong><span
@@ -273,31 +268,8 @@
                 </form>
                 <div class="mt-lg-3">
                     <div class="woocommerce-checkout-payment">
-                        <!-- <ul class="wc_payment_methods payment_methods methods">
-                        <li class="wc_payment_method payment_method_bacs">
-                            <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
-                            <label for="payment_method_bacs">Direct bank transfer</label>
-                            <div class="payment_box payment_method_bacs">
-                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                            </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cheque">
-                            <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque">
-                            <label for="payment_method_cheque">Cheque Payment</label>
-                            <div class="payment_box payment_method_cheque">
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode. </p>
-                            </div>
-                        </li>
-                        <li class="wc_payment_method payment_method_cod">
-                            <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method">
-                            <label for="payment_method_cod">Cash On Delivery</label>
-                            <div class="payment_box payment_method_cod">
-                                <p>Pay with cash upon delivery.</p>
-                            </div>
-                        </li>
-                    </ul> -->
                         <div class="form-row place-order">
-                            <a href="detail-pembayaran"><button type="submit" class="vs-btn">Konfirmasi</button></a>
+                            <a href="{{ route('pembayaran.booking')}}"><button type="submit" class="vs-btn">Konfirmasi</button></a>
                         </div>
                     </div>
                 </div>
@@ -343,3 +315,25 @@
 </body>
 
 </html>
+
+<script>
+    function countWords(element) {
+        const keluhan = element.value.trim();
+        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
+
+        const wordCount = words.length;
+        document.getElementById('wordCount').innerHTML = wordCount + " kata";
+    }
+
+    function validateTextArea() {
+        const keluhan = document.getElementById('keluhan').value.trim();
+        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
+
+        if (words.length < 100) {
+            alert('Keluhan harus minimal 100 kata.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
