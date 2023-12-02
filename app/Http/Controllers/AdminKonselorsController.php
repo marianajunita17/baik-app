@@ -55,12 +55,12 @@
 			$this->form[] = ['label'=>'Pengalaman Bekerja (Tahun)','name'=>'lama_bekerja','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Status Aktif','name'=>'status_aktif','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Jadwal','name'=>'jadwal','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'CV','name'=>'CV','type'=>'upload','validation'=>'required|image|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Photo','name'=>'photo','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
-			$this->form[] = ['label'=>'KTP','name'=>'KTP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'NPWP','name'=>'NPWP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ijazah','name'=>'Ijazah','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'KTP','name'=>'ktp','type'=>'upload','validation'=>'required|image|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'NPWP','name'=>'npwp','type'=>'upload','validation'=>'required|image|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ijazah','name'=>'ijazah','type'=>'upload','validation'=>'required|image|min:1|max:2550','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SIPP','name'=>'SIPP','type'=>'upload','validation'=>'required|image|min:1|max:2550','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nominal Pembayaran','name'=>'nominal_bayar','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'No. Rekening','name'=>'no_rekening','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Verifikasi Status','name'=>'verifikasi_status','type'=>'radio','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Sudah Terverifikasi;Belum Terverifikasi'];

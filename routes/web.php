@@ -4,6 +4,7 @@ use App\Http\Controllers\DataAnakController;
 use App\Http\Controllers\DataPasienController;
 use App\Http\Controllers\PublikKonselorController;
 use App\Http\Controllers\PublikSpesialisController;
+use App\Http\Controllers\KonselorJanjiTemu28Controller;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
 use App\User;
@@ -96,3 +97,4 @@ Route::post('/register', [PublikUserController::class, 'create'])->name('publiku
 Route::post('/login', [PublikUserController::class, 'login'])->name('login.user');
 Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuser');
 
+Route::get('admin/konselor_janji_temu28/set-status/active/{id}', [KonselorJanjiTemu28Controller::class, 'active'])->name('janjitemu.aktif');

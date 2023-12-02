@@ -100,6 +100,8 @@ use Session;
 	        |
 	        */
 	        $this->addaction = array();
+			$this->addaction[] = ['label'=>'Diterima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','confirmation' => true];
+			$this->addaction[] = ['label'=>'Ditolak','url'=>CRUDBooster::mainpath('set-status/pending/[id]'),'icon'=>'fa fa-ban','color'=>'warning','confirmation' => true];
 
 
 	        /*
@@ -181,7 +183,7 @@ use Session;
 	        | $this->pre_index_html = "<p>test</p>";
 	        |
 	        */
-	        $this->pre_index_html = null;
+	        $this->pre_index_html = "<p>test</p>";
 
 
 
@@ -362,6 +364,11 @@ use Session;
 
 
 	    //By the way, you can still create your own method in here... :)
+
+		public function active($id){
+			// dd($id);
+			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
+		}
 
 
 	}
