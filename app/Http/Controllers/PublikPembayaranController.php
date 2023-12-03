@@ -6,6 +6,7 @@ use App\janjitemu;
 use App\konselor;
 use App\topik;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,32 +29,42 @@ class PublikPembayaranController extends Controller
     }
 
     public function booking(Request $request){
+        try {
+            $request->validate([
+                'keluhan' => 'required|string|min:100',
+                'selectedTopik' => 'required',
+            ]);
 
-        $request->validate([
-            'konselor_id' => 'required',
-            'keluhan' => 'required|min:100',
-            'topik' => 'required',
-        ]);
+            $uid = auth()->user()->id;
+            $konselor_id = $request->session()->get('id');
+            $nominal = konselor::find($konselor_id)->nominal_bayar;
+            $tgl_konsultasi_mulai = Carbon::now();
+            $keluhan = $request->input('keluhan');
+            $selectedTopik = $request->input('selectedTopik');
 
-        $pasien_id = auth()->user()->id;
-        $konselor_id = $request->input('id');
-        $nominal = konselor::find($konselor_id)->nominal_bayar;
-        $tgl_konsultasi_mulai = Carbon::now();
+            $janji_temu = janjitemu::create([
+                'pasien_id' => $uid,
+                'nominal_bayar' => $nominal,
+                'tgl_konsultas_mulai' => $tgl_konsultasi_mulai,
+                'konselor_id' => $konselor_id,
+                'keluhan' => $keluhan,
+            ]);
 
-        $janji_temu = janjitemu::create([
-            'pasien_id' => $pasien_id,
-            'nominal_bayar' => $nominal,
-            'tgl_konsultas_mulai' => $tgl_konsultasi_mulai,
-            'konselor_id' => $konselor_id,
-            "keluhan" => $request->input('keluhan'),
-        ]);
+            $topik = Topik::findOrFail($selectedTopik);
+            $janji_temu->topiks()->attach($topik->topiks_id);
 
-        $topiks = $request->input('topiks_id');
-        $janji_temu->topiks()->attach($topiks);
+            return dd($janji_temu);
+            // return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
+        } catch (Exception $e) {
+            // return redirect('/booking');
+            return dd($e);
+        }
+    }
 
-        // return dd($request);
-        return redirect()->route('detail-pembayaran')->with('sucess', 'Booking Berhasil');
-        // return view('status-booking', ['janji_temus'=> $janji_temu, 'topiks' => $topiks]);
+    public function statusBooking($id) {
+        $janji_temu = janjitemu::find($id);
+
+        return view('status-booking', ['janji_temus'=> $janji_temu]);
     }
 
     /**

@@ -177,8 +177,10 @@
                 <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Keluhan</h2>
-                        <form method="POST" action="{{ route('pembayaran.booking') }}">
+                        <form action="{{ route('booking.create') }}" method="POST"
+                            onsubmit="return validateTextArea()">
                             @csrf
+                            {{-- {{ method_field('POST') }} --}}
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label class="form-label">Nama Pasien:</label>
@@ -186,7 +188,7 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label class="form-label">Topik Keluhan</label>
-                                    <select name="topik_id" id="topik">
+                                    <select name="selecttedTopik" id="selectedTopik">
                                         @foreach ($topiks as $t)
                                             <option value="{{ $t->id }}">{{ $t->nama_topik }}</option>
                                         @endforeach
@@ -201,12 +203,10 @@
                                     @endforeach
                                 </div>
                                 <div class="form-group col-12">
-                                    <form onsubmit="return validateTextArea()">
-                                        <label for="keluhan">Keluhan Pasien</label><br>
-                                        <textarea id="keluhan" class="form-control" name="keluhan" rows="4" cols="50"
-                                            oninput="countWords(this)" required></textarea><br>
-                                        <span id="wordCount">0 kata</span><br><br>
-                                    </form>
+                                    <label for="keluhan">Keluhan Pasien</label><br>
+                                    <textarea id="keluhan" class="form-control" minlength="100" name="keluhan" rows="5" cols="50"
+                                        oninput="countWords(this)" value="{{ $janji_temu->keluhan }}" required></textarea><br>
+                                    <span id="wordCount">0 kata</span><br><br>
                                     {{-- <label class="form-label">Keluhan</label>
                                 <input type="text" class="form-control" name="keluhan" id="keluhan"
                                     placeholder="isi keluhan anda"  required> --}}
@@ -215,8 +215,7 @@
                             <p class="form-messages mb-0 mt-3"></p>
                             <div class="woocommerce-checkout-payment">
                                 <div class="form-row place-order">
-                                    {{-- <a href="{{ route('status-booking') }}" class="vs-btn wave-btn">Booking</a> --}}
-                                    <button type="submit" class="vs-btn"><i class="fal fa-paper-plane"></i>Booking</button>
+                                    <button type="submit" class="vs-btn">Booking</button>
                                 </div>
                             </div>
                         </form>
@@ -246,10 +245,12 @@
                                             href="shop-details.html">{{ $cms_users->nama_konselor }}</a>
                                     </td>
                                     <td data-title="Price">
-                                        <span class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
+                                        <span
+                                            class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
                                     </td>
                                     <td data-title="Total">
-                                        <span class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
+                                        <span
+                                            class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -273,8 +274,28 @@
 
     <!--======== / Checkout Section ========-->
 
-    <!-- Scroll To Top -->
-    <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+    <script>
+        function countWords(element) {
+            const keluhan = element.value.trim();
+            const words = keluhan.split(/\s+/).filter(word => word !== '');
+
+            const wordCount = words.length;
+            document.getElementById('wordCount').innerHTML = wordCount + " kata";
+        }
+
+        function validateTextArea() {
+            const keluhan = document.getElementById('keluhan').value.trim();
+            const words = keluhan.split(/\s+/).filter(word => word !== '');
+
+            if (words.length < 100) {
+                alert('Keluhan harus minimal 100 kata.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
     <!--==============================
         All Js File
     ============================== -->
@@ -304,28 +325,7 @@
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
+
 </body>
 
 </html>
-
-<script>
-    function countWords(element) {
-        const keluhan = element.value.trim();
-        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
-
-        const wordCount = words.length;
-        document.getElementById('wordCount').innerHTML = wordCount + " kata";
-    }
-
-    function validateTextArea() {
-        const keluhan = document.getElementById('keluhan').value.trim();
-        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
-
-        if (words.length < 100) {
-            alert('Keluhan harus minimal 100 kata.');
-            return false;
-        }
-
-        return true;
-    }
-</script>
