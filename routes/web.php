@@ -69,14 +69,15 @@ Route::get('/konselor/detailkonselor/booking', function () {
     return view('booking');
 });
 
-Route::get('/konselor/detailkonselor/detail-pembayaran', function () {
-    return view('detail-pembayaran');
+Route::get('/booking/status-booking', function () {
+    return view('status-booking');
 });
 
 // Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 Route::get('/booking/{id}', 'PublikPembayaranController@index')->name('booking');
-Route::post('/booking/detailpembayaran', 'PublikPembayaranController@booking')->name('pembayaran.booking');
+// Route::post('/booking/status-booking', 'PublikPembayaranController@booking')->name('status-booking');
+Route::post('/booking/detail-pembayaran', 'PublikPembayaranController@booking')->name('pembayaran.booking');
 
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");

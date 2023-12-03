@@ -175,76 +175,7 @@
                             </div>
                         </div>
                     </div> <!-- / class details -->
-                </div> <!-- / col-8 end -->
-                <!-- Sidebar -->
-                {{-- <div class="col-xl-4 col-lg-5">
-                    <aside class="sidebar-area class-sidebar">
-                        <div class="widget wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="class-info-wrap">
-                                <div class="info-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <div class="info">
-                                        <h6 class="title">Start Date: </h6>
-                                        <span class="text">25 October, 2023</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-user"></i>
-                                    <div class="info">
-                                        <h6 class="title">Student Ages: </h6>
-                                        <span class="text">03 - 06 Years</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-users-class"></i>
-                                    <div class="info">
-                                        <h6 class="title">Number Of Kids: </h6>
-                                        <span class="text">30 Child Student</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-clock"></i>
-                                    <div class="info">
-                                        <h6 class="title">Class Time: </h6>
-                                        <span class="text">9:00am - 12:00pm</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-sunrise"></i>
-                                    <div class="info">
-                                        <h6 class="title">Class Day: </h6>
-                                        <span class="text">Monday, Friday</span>
-                                    </div>
-                                </div>
-                                <div class="info-item">
-                                    <i class="fas fa-language"></i>
-                                    <div class="info">
-                                        <h6 class="title">Language: </h6>
-                                        <span class="text">English</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="author-widget-wrap">
-                                <div class="avator">
-                                    <img src="{{ asset('assets/img/blog/author-2.jpg') }}" alt="avator">
-                                </div>
-                                <div class="author-info">
-                                    <h4 class="name text-title"><a href="classes.html">Jenny Rose</a></h4>
-                                    <span class="desig">Teacher</span>
-                                </div>
-                                <p class="author-bio">Gressively reinvent optimal expertise without go forward initiatives. virtual applications without resource.</p>
-                                <div class="multi-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>
