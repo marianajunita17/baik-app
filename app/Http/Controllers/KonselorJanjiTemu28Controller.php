@@ -4,7 +4,7 @@ use App\janjitemu;
 use Carbon\Carbon;
 use Session;
 	use Request;
-	use DB;
+	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
 
 	class KonselorJanjiTemu28Controller extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -36,13 +36,14 @@ use Session;
 			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
+			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
 			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
 			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"catatan_kasus"];
 			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"presentase_kesesuaian"];
-			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
 			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"rekomendasi"];
 			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
 			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
+            $this->col[] = ["label"=>"Status","name"=>"status"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -183,7 +184,7 @@ use Session;
 	        | $this->pre_index_html = "<p>test</p>";
 	        |
 	        */
-	        $this->pre_index_html = "<p>test</p>";
+	        $this->pre_index_html = null;
 
 
 
@@ -195,7 +196,18 @@ use Session;
 	        | $this->post_index_html = "<p>test</p>";
 	        |
 	        */
-	        $this->post_index_html = null;
+	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh pasien</p>
+                                    <p>Klien = Nama Pasien yang melakukan janji temu dengan anda</p>
+                                    <p>Tanggal Konsultasi Mulai = Tanggal dimana sesi konsultasi resmi dimulai</p>
+                                    <p>Tanggal Konsultasi Selesai = Tanggal dimana sesi konsultasi yang dilakukan telah selesai</p>
+                                    <p>Durasi Konsultasi (menit) = Durasi dari berapa lama sesi konsultasi berlangsung dalam hitungan menit</p>
+                                    <p>Keluhan Klien = Sebuah keluhan atau keadaan yang ditulis oleh klien sebelum melakukan sesi konsultasi</p>
+                                    <p>Catatan Kasus Konselor = catatan kasus yang dapat ditulis oleh anda jika sudah selesai melakukan sesi konsultasi</p>
+                                    <p>Persentase Kesesuaian (%) = Persentase yang menunjukkan kesesuaian antara topik keluhan pasien dengan topik spesialisasi konselor</p>
+                                    <p>Rekomendasi Konselor = </p>
+                                    <p>Perlu Lanjut? = Sebuah pernyataan apakah klien perlu lanjut untuk melakukan sesi konsultasi kembali atau tidak</p>
+                                    <p>Janji Temu Sebelumnya = Merujuk pada janji temu yang sebelumnya pernah dilakukan oleh klien dengan konselor</p>
+                                    <p>Nominal = Nominal harga dari sesi konsultasi ini</p>";
 
 
 
@@ -261,6 +273,7 @@ use Session;
 	    public function hook_query_index(&$query) {
 	        //Your code here
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
+            $query->whereRaw('date(janji_temu.tgl_konsultasi_mulai) = curdate()');
 
 	    }
 
@@ -367,8 +380,22 @@ use Session;
 
 		public function active($id){
 			// dd($id);
+            DB::table('janji_temu')->where('id',$id)->update(['status'=>1]);
+
 			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
 		}
 
+        public function getEdit($id) {
+            //Create an Auth
+            if(!CRUDBooster::isUpdate() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {
+              CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+            }
 
+            $data = [];
+            $data['page_title'] = 'Edit Data';
+            $data['row'] = DB::table('janji_temu')->where('id',$id)->first();
+
+            //Please use view method instead view method from laravel
+            return $this->view('alasan-janji-temu',$data);
+          }
 	}
