@@ -171,15 +171,16 @@
 
 
     <!-- keluhan -->
-    <section class="vs-checkout-wrapper space-page">
+    <section class="contact-section">
         <div class="container">
-            <div class="row gx-60">
-                <div class="col-xl-8 col-lg-7">
-
+            <div class="row gx-50 gy-30">
+                <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-form-box">
                         <h2 class="contact-title">Isi Keluhan</h2>
-                        <form method="POST" action="{{ route('pembayaran.booking') }}">
+                        <form action="{{ route('booking.create') }}" method="POST"
+                            onsubmit="return validateTextArea()">
                             @csrf
+                            {{-- {{ method_field('POST') }} --}}
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label class="form-label">Nama Pasien:</label>
@@ -187,9 +188,9 @@
                                 </div>
                                 <div class="form-group col-12">
                                     <label class="form-label">Topik Keluhan</label>
-                                    <select name="topik_id" id="topik">
-                                        @foreach ($topiks as $key => $value)
-                                            <option value="{{ $key }}">{{ $value }}</option>
+                                    <select name="selecttedTopik" id="selectedTopik">
+                                        @foreach ($topiks as $t)
+                                            <option value="{{ $t->id }}">{{ $t->nama_topik }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -202,75 +203,67 @@
                                     @endforeach
                                 </div>
                                 <div class="form-group col-12">
-                                    <form onsubmit="return validateTextArea()">
-                                        <label for="keluhan">Keluhan Pasien</label><br>
-                                        <textarea id="keluhan" class="form-control" name="keluhan" rows="4" cols="50" oninput="countWords(this)" required></textarea><br>
-                                        <span id="wordCount">0 kata</span><br><br>
-                                    </form>
+                                    <label for="keluhan">Keluhan Pasien</label><br>
+                                    <textarea id="keluhan" class="form-control" minlength="100" name="keluhan" rows="5" cols="50"
+                                        oninput="countWords(this)" value="{{ $janji_temu->keluhan }}" required></textarea><br>
+                                    <span id="wordCount">0 kata</span><br><br>
                                     {{-- <label class="form-label">Keluhan</label>
                                 <input type="text" class="form-control" name="keluhan" id="keluhan"
                                     placeholder="isi keluhan anda"  required> --}}
                                 </div>
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
+                            <div class="woocommerce-checkout-payment">
+                                <div class="form-row place-order">
+                                    <button type="submit" class="vs-btn">Booking</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
-                </div> <!-- / col-8 end -->
-            </div>
-        </div>
-        <!--======== Checkout Section ========-->
-
-        <div class="vs-checkout-wrapper space-page">
-            <div class="container">
-                <h4 class="mt-4 pt-lg-2">Ringkasan Pembayaran</h4>
-                <form action="#" class="woocommerce-cart-form">
-                    <table class="cart_table mb-20">
-                        <thead>
-                            <tr>
-                                <th class="cart-col-image">Konselor</th>
-                                <th class="cart-col-productname">Nama Konselor</th>
-                                <th class="cart-col-price">Harga</th>
-                                {{-- <th class="cart-col-quantity">Sesi(Menit)</th> --}}
-                                <th class="cart-col-total">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="cart_item">
-                                <td data-title="Product">
-                                    <a class="cart-productimage" href="shop-details.html"><img width="91"
-                                            height="91" src="{{ asset('assets/img/icon/psiko.png') }}"
-                                            alt="Image"></a>
-                                </td>
-                                <td data-title="Name">
-                                    <a class="cart-productname"
-                                        href="shop-details.html">{{ $cms_users->nama_konselor }}</a>
-                                </td>
-                                <td data-title="Price">
-                                    <span
-                                        class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
-                                </td>
-                                <td data-title="Total">
-                                    <span
-                                        class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot class="checkout-ordertable">
-                            <tr class="order-total">
-                                <th>Total</th>
-                                <td data-title="Total" colspan="4"><strong><span
-                                            class="woocommerce-Price-amount amount"><bdi><span
-                                                    class="woocommerce-Price-currencySymbol">Rp.</span>100.000,-</bdi></span></strong>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </form>
-                <div class="mt-lg-3">
-                    <div class="woocommerce-checkout-payment">
-                        <div class="form-row place-order">
-                            <a href="{{ route('pembayaran.booking')}}"><button type="submit" class="vs-btn">Konfirmasi</button></a>
-                        </div>
+                </div>
+                <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.1s">
+                    <div class="contact-info-box">
+                        <h2 class="contact-title">Konselor Informasi</h2>
+                        <table class="cart_table mb-20">
+                            <thead>
+                                <tr>
+                                    <th class="cart-col-image">Konselor</th>
+                                    <th class="cart-col-productname">Nama Konselor</th>
+                                    <th class="cart-col-price">Harga</th>
+                                    <th class="cart-col-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart_item">
+                                    <td data-title="Product">
+                                        <a class="cart-productimage" href="shop-details.html"><img width="91"
+                                                height="91" src="{{ asset('assets/img/icon/psiko.png') }}"
+                                                alt="Image"></a>
+                                    </td>
+                                    <td data-title="Name">
+                                        <a class="cart-productname"
+                                            href="shop-details.html">{{ $cms_users->nama_konselor }}</a>
+                                    </td>
+                                    <td data-title="Price">
+                                        <span
+                                            class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
+                                    </td>
+                                    <td data-title="Total">
+                                        <span
+                                            class="amount"><bdi><span>Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="checkout-ordertable">
+                                <tr class="order-total">
+                                    <th>Total</th>
+                                    <td data-title="Total" colspan="4"><strong><span
+                                                class="woocommerce-Price-amount amount"><bdi><span
+                                                        class="woocommerce-Price-currencySymbol">Rp.</span>{{ $cms_users->nominal_bayar }}</bdi></span></strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -281,8 +274,28 @@
 
     <!--======== / Checkout Section ========-->
 
-    <!-- Scroll To Top -->
-    <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+    <script>
+        function countWords(element) {
+            const keluhan = element.value.trim();
+            const words = keluhan.split(/\s+/).filter(word => word !== '');
+
+            const wordCount = words.length;
+            document.getElementById('wordCount').innerHTML = wordCount + " kata";
+        }
+
+        function validateTextArea() {
+            const keluhan = document.getElementById('keluhan').value.trim();
+            const words = keluhan.split(/\s+/).filter(word => word !== '');
+
+            if (words.length < 100) {
+                alert('Keluhan harus minimal 100 kata.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
     <!--==============================
         All Js File
     ============================== -->
@@ -312,28 +325,7 @@
     <!-- Main Js File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
+
 </body>
 
 </html>
-
-<script>
-    function countWords(element) {
-        const keluhan = element.value.trim();
-        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
-
-        const wordCount = words.length;
-        document.getElementById('wordCount').innerHTML = wordCount + " kata";
-    }
-
-    function validateTextArea() {
-        const keluhan = document.getElementById('keluhan').value.trim();
-        const words = keluhan.match(/\S+/g) || []; // Memisahkan kata-kata berdasarkan spasi
-
-        if (words.length < 100) {
-            alert('Keluhan harus minimal 100 kata.');
-            return false;
-        }
-
-        return true;
-    }
-</script>

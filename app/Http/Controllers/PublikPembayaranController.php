@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\janjitemu;
 use App\konselor;
 use App\topik;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,27 +21,50 @@ class PublikPembayaranController extends Controller
     public function index($id){
         $konselor = konselor::find($id);
         $spesialisasi = $konselor->spesialisasis()->get();
-        $topiks = topik::pluck('nama_topik', 'id');
+        // $topiks = topik::pluck('nama_topik', 'id');
+        $topiks = topik::all();
 
         // return dd($topiks, $spesialisasi, $konselor);
         return view('booking', ['cms_users'=>$konselor, 'spesialisasis'=>$spesialisasi, 'topiks'=>$topiks]);
     }
 
     public function booking(Request $request){
-        $request->validate([
-            'topik' => 'required|string|max:255',
-            'spesialisasi'=>'required|string|max:255',
-            'keluhan'=>'required|string|max:255'
-        ]);
+        try {
+            $request->validate([
+                'keluhan' => 'required|string|min:100',
+                'selectedTopik' => 'required',
+            ]);
 
-        $iduser = auth()->user()->id;
-        janjitemu::create([
-            'pasien_id'=>$iduser,
-            // topik()->attach($request->input('topik')),
-            // 'keluhan'=> $request->input('keluhan')
-        ]);
+            $uid = auth()->user()->id;
+            $konselor_id = $request->session()->get('id');
+            $nominal = konselor::find($konselor_id)->nominal_bayar;
+            $tgl_konsultasi_mulai = Carbon::now();
+            $keluhan = $request->input('keluhan');
+            $selectedTopik = $request->input('selectedTopik');
 
-        return redirect()->route('detailpembayaran')->with('sucess', 'Booking Berhasil');
+            $janji_temu = janjitemu::create([
+                'pasien_id' => $uid,
+                'nominal_bayar' => $nominal,
+                'tgl_konsultas_mulai' => $tgl_konsultasi_mulai,
+                'konselor_id' => $konselor_id,
+                'keluhan' => $keluhan,
+            ]);
+
+            $topik = Topik::findOrFail($selectedTopik);
+            $janji_temu->topiks()->attach($topik->topiks_id);
+
+            return dd($janji_temu);
+            // return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
+        } catch (Exception $e) {
+            // return redirect('/booking');
+            return dd($e);
+        }
+    }
+
+    public function statusBooking($id) {
+        $janji_temu = janjitemu::find($id);
+
+        return view('status-booking', ['janji_temus'=> $janji_temu]);
     }
 
     /**

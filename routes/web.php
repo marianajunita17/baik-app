@@ -5,6 +5,7 @@ use App\Http\Controllers\DataPasienController;
 use App\Http\Controllers\PublikKonselorController;
 use App\Http\Controllers\PublikSpesialisController;
 use App\Http\Controllers\KonselorJanjiTemu28Controller;
+use App\Http\Controllers\PublikPembayaranController;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
 use App\User;
@@ -69,14 +70,15 @@ Route::get('/konselor/detailkonselor/booking', function () {
     return view('booking');
 });
 
-Route::get('/konselor/detailkonselor/detail-pembayaran', function () {
-    return view('detail-pembayaran');
+Route::get('/status-booking', function () {
+    return view('status-booking');
 });
 
 // Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 Route::get('/booking/{id}', 'PublikPembayaranController@index')->name('booking');
-Route::post('/booking/detailpembayaran', 'PublikPembayaranController@booking')->name('pembayaran.booking');
+Route::post('/booking/create', [PublikPembayaranController::class, 'booking'])->name('booking.create')->middleware('auth');
+// Route::get('/booking/status-booking/{id}', [PublikPembayaranController::class, 'statusBooking'])->name('booking.status')->middleware('auth');
 
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
@@ -90,7 +92,6 @@ Route::get('/home', [PublikSpesialisController::class, 'index'])->name('home')->
 Route::get('home/{id}/konselor', [PublikSpesialisController::class, 'showKonselor'])->name('spesialisasi.konselor');
 
 Route::get('/home/category/{slug}', 'PublikSpesialisController@categoryPsikolog')->name('front.category');
-// Route::get('home/{id}/konselor', [PublikKonselorController::class, 'index']);
 Route::get('/konselor/detailkonselor/{id}', [PublikKonselorController::class, 'detailKonselor'])->name('konselor.detailKonselor');
 
 Route::post('/register', [PublikUserController::class, 'create'])->name('publikuser.create');
