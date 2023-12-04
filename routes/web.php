@@ -99,3 +99,4 @@ Route::post('/login', [PublikUserController::class, 'login'])->name('login.user'
 Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuser');
 
 Route::get('admin/konselor_janji_temu28/set-status/active/{id}', [KonselorJanjiTemu28Controller::class, 'active'])->name('janjitemu.aktif');
+Route::get('admin/konselor_janji_temu28/set-status/tolak/{id}', [KonselorJanjiTemu28Controller::class, 'getEdit'])->name('janjitemu.tolak');

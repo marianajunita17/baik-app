@@ -102,7 +102,7 @@ use Session;
 	        */
 	        $this->addaction = array();
 			$this->addaction[] = ['label'=>'Diterima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','confirmation' => true];
-			$this->addaction[] = ['label'=>'Ditolak','url'=>CRUDBooster::mainpath('set-status/pending/[id]'),'icon'=>'fa fa-ban','color'=>'warning','confirmation' => true];
+			$this->addaction[] = ['label'=>'Ditolak','url'=>CRUDBooster::mainpath('set-status/tolak/[id]'),'icon'=>'fa fa-ban','color'=>'warning','confirmation' => true];
 
 
 	        /*

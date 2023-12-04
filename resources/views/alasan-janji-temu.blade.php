@@ -5,14 +5,11 @@
   <div class='panel panel-default'>
     <div class='panel-heading'>Edit Form</div>
     <div class='panel-body'>
-      <form method='post' action='{{CRUDBooster::mainpath('edit-save/'.$row->id)}}'>
+      <form method='post' action='{{CRUDBooster::mainpath('konselor_janji_temu28')}}'>
         <div class='form-group'>
-          <label>Name</label>
-          <input type='text' name='name' required class='form-control' value='{{$row->name}}'/>
+          <label>Alasan</label>
+          <input type='text' name='alasan' required class='form-control' value='{{$row->alasan}}'/>
         </div>
-
-        <!-- etc .... -->
-
       </form>
     </div>
     <div class='panel-footer'>
