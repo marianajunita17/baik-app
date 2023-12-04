@@ -8,6 +8,10 @@ class janjitemu extends Model
 {
     protected $table = 'janji_temu';
 
+    protected $fillable = [
+        'keluhan', 'pasien_id', 'nominal', 'tgl_konsultasi_mulai', 'konselor_id', 'bank_id'
+    ];
+
     public function pasien(){
         return $this->belongsTo('App\pasien', 'pasien_id');
     }

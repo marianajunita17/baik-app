@@ -187,8 +187,8 @@
                                     <label class="form-label">{{ auth()->user()->nama_pasien }}</label>
                                 </div>
                                 <div class="form-group col-12">
-                                    <label class="form-label">Topik Keluhan</label>
-                                    <select name="selecttedTopik" id="selectedTopik">
+                                    <label class="form-label">Topik Keluhan:</label>
+                                    <select name="selectedTopik" id="selectedTopik">
                                         @foreach ($topiks as $t)
                                             <option value="{{ $t->id }}">{{ $t->nama_topik }}</option>
                                         @endforeach
@@ -198,19 +198,29 @@
                                     <label class="form-label">Spesialisasi:</label>
                                     @foreach ($spesialisasis as $s)
                                         <ul>
-                                            <li>{{ $s->nama_spesialisasi }}</li>
+                                            <li class="form-label">{{ $s->nama_spesialisasi }}</li>
                                         </ul>
                                     @endforeach
                                 </div>
                                 <div class="form-group col-12">
-                                    <label for="keluhan">Keluhan Pasien</label><br>
-                                    <textarea id="keluhan" class="form-control" minlength="100" name="keluhan" rows="5" cols="50"
-                                        oninput="countWords(this)" value="{{ $janji_temu->keluhan }}" required></textarea><br>
+                                    <label class="form-label" for="keluhan">Keluhan Pasien: </label><br>
+                                    <textarea id="keluhan" class="form-control" minlength="100" id="keluhan" name="keluhan" rows="5"
+                                        cols="50" oninput="countWords(this)" value="{{ $janji_temu->keluhan }}" required></textarea><br>
                                     <span id="wordCount">0 kata</span><br><br>
-                                    {{-- <label class="form-label">Keluhan</label>
-                                <input type="text" class="form-control" name="keluhan" id="keluhan"
-                                    placeholder="isi keluhan anda"  required> --}}
                                 </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Tanggal Konsultasi: </label><br>
+                                    <input class="form-control" id="time" name="time" type="datetime-local" value="{{ now()->setTimezone('T')->format('Y-m-dTh:m') }}" form-control>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="form-label">Bank:</label>
+                                    <select name="selectedBank" id="selectedBank">
+                                        @foreach ($pembayarans as $p)
+                                            <option value="{{ $p->id }}">{{ $p->jenis_pembayaran }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <input name="konselor_id" type="hidden" value="{{ $cms_users->id }}">
                             </div>
                             <p class="form-messages mb-0 mt-3"></p>
                             <div class="woocommerce-checkout-payment">
@@ -294,6 +304,10 @@
 
             return true;
         }
+
+        // $(function() {
+        //     $('#datetimepicker').datetimepicker();
+        // });
     </script>
 
     <!--==============================

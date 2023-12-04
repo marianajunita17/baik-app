@@ -77,8 +77,8 @@ Route::get('/status-booking', function () {
 // Route::get('/konselor', [DataPasienController::class, 'janjiTemu'])->name('pasien.janjitemu');
 Route::post('/data-anak', [DataAnakController::class, 'addDataAnak'])->name('dataanak');
 Route::get('/booking/{id}', 'PublikPembayaranController@index')->name('booking');
-Route::post('/booking/create', [PublikPembayaranController::class, 'booking'])->name('booking.create')->middleware('auth');
-// Route::get('/booking/status-booking/{id}', [PublikPembayaranController::class, 'statusBooking'])->name('booking.status')->middleware('auth');
+Route::post('/booking/create', [PublikPembayaranController::class, 'booking'])->name('booking.create');
+Route::get('/status-booking', [PublikPembayaranController::class, 'statusBooking'])->name('status-booking');
 
 Route::get('google/login', 'Auth\LoginController@redirectToProvider')->name("redirectlogingoogle");
 Route::get('google/register', 'Auth\LoginController@redirectToProviderRegister')->name("redirectregistergoogle");
