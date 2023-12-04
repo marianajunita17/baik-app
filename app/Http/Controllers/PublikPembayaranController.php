@@ -75,11 +75,11 @@ class PublikPembayaranController extends Controller
 
     public function statusBooking() {
         $uid = auth()->user()->id;
-        $janji_temu = JanjiTemu::where('pasien_id', $uid)->get();
+        $janji_temu = JanjiTemu::with('konselor')->where('pasien_id', $uid)->get();
 
     // return view('status_booking', ['janjiTemu' => $janjiTemu]);
 
-        return view('status-booking', ['janji_temus'=> $janji_temu]);
+        return view('status-booking', ['janji_temu'=> $janji_temu]);
     }
 
     /**

@@ -246,13 +246,13 @@
                             <tbody>
                                 <tr class="cart_item">
                                     <td data-title="Product">
-                                        <a class="cart-productimage" href="shop-details.html"><img width="91"
+                                        <a class="cart-productimage" href=""><img width="91"
                                                 height="91" src="{{ asset('assets/img/icon/psiko.png') }}"
                                                 alt="Image"></a>
                                     </td>
                                     <td data-title="Name">
                                         <a class="cart-productname"
-                                            href="shop-details.html">{{ $cms_users->nama_konselor }}</a>
+                                            href="">{{ $cms_users->nama_konselor }}</a>
                                     </td>
                                     <td data-title="Price">
                                         <span

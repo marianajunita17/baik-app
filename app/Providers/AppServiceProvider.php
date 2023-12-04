@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('statusText', function ($status) {
+            return "<?php
+                switch ($status) {
+                    case -1: echo 'Ditolak'; break;
+                    case 0: echo 'Draft'; break;
+                    case 1: echo 'Diterima'; break;
+                }
+            ?>";
+        });
     }
 }
