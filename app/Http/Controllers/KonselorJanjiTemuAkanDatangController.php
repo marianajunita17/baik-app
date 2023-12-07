@@ -1,13 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\janjitemu;
-use Carbon\Carbon;
-use Session;
+	use Session;
 	use Request;
 	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
+use Illuminate\Support\Carbon;
 
-	class KonselorJanjiTemu28Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class KonselorJanjiTemuAkanDatangController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -49,12 +48,20 @@ use Session;
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
+			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,nama_pasien'];
 			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
+			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Topik','name'=>'topiks_id','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'topiks,nama_topik','relationship_table'=>'topik_janji_temu'];
+			$this->form[] = ['label'=>'Keluhan','name'=>'keluhan','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Konselor','name'=>'konselor_id','type'=>'select2','validation'=>'required|min:1|max:255','width'=>'col-sm-10','datatable'=>'cms_users,nama_konselor'];
 			$this->form[] = ['label'=>'Catatan Kasus','name'=>'catatan_kasus','type'=>'textarea','validation'=>'min:0|max:5000','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Persentase Kesesuaian (%)','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rekomendasi Konselor','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Persentase Kesesuaian','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Konfirmasi','name'=>'tanggal_konfirmasi','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Alasan','name'=>'alasan','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -72,6 +79,9 @@ use Session;
 			//$this->form[] = ["label"=>"Rekomendasi","name"=>"rekomendasi","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			//$this->form[] = ["label"=>"Perlu Lanjut","name"=>"perlu_lanjut","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			//$this->form[] = ["label"=>"Konselor Id","name"=>"konselor_id","type"=>"select2","required"=>TRUE,"validation"=>"required|integer|min:0","datatable"=>"konselor,id"];
+			//$this->form[] = ["label"=>"Status","name"=>"status","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Tanggal Konfirmasi","name"=>"tanggal_konfirmasi","type"=>"datetime","required"=>TRUE,"validation"=>"required|date_format:Y-m-d H:i:s"];
+			//$this->form[] = ["label"=>"Alasan","name"=>"alasan","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
 			# OLD END FORM
 
 			/*
@@ -101,7 +111,7 @@ use Session;
 	        |
 	        */
 	        $this->addaction = array();
-			$this->addaction[] = ['label'=>'Diterima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','confirmation' => true];
+            $this->addaction[] = ['label'=>'Diterima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','confirmation' => true];
 			$this->addaction[] = ['label'=>'Ditolak','url'=>CRUDBooster::mainpath('set-status/tolak/[id]'),'icon'=>'fa fa-ban','color'=>'warning','confirmation' => true];
 
 
@@ -273,8 +283,7 @@ use Session;
 	    public function hook_query_index(&$query) {
 	        //Your code here
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
-            $query->whereRaw('date(janji_temu.tgl_konsultasi_mulai) = curdate()');
-
+            $query->where('janji_temu.tgl_konsultasi_mulai', ">=", Carbon::tomorrow());
 	    }
 
 	    /*
@@ -307,22 +316,8 @@ use Session;
 	    |
 	    */
 	    public function hook_after_add($id) {
-	        $janjitemu = janjitemu::find($id);
+	        //Your code here
 
-            $startDate = Carbon::parse($janjitemu->tgl_konsultasi_mulai);
-            $endDate = Carbon::parse($janjitemu->tgl_konsultasi_selesai);
-
-            $diff = $startDate->diffInMinutes($endDate);
-
-            $different = $startDate->diff($endDate);
-            $second = $different->s;
-
-            if($second > 0){
-                $diff += 1;
-            }
-
-            $janjitemu->durasi_konsultasi = $diff;
-            $janjitemu->save();
 	    }
 
 	    /*
@@ -378,11 +373,11 @@ use Session;
 
 	    //By the way, you can still create your own method in here... :)
 
-		public function active($id){
+        public function active($id){
 			// dd($id);
             DB::table('janji_temu')->where('id',$id)->update(['status'=>1]);
 
-			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
+			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
 		}
 
         public function getEdit($id) {
@@ -398,4 +393,5 @@ use Session;
             //Please use view method instead view method from laravel
             return $this->view('alasan-janji-temu',$data);
           }
+
 	}

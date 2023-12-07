@@ -5,6 +5,7 @@ use App\Http\Controllers\DataPasienController;
 use App\Http\Controllers\PublikKonselorController;
 use App\Http\Controllers\PublikSpesialisController;
 use App\Http\Controllers\KonselorJanjiTemu28Controller;
+use App\Http\Controllers\KonselorJanjiTemuAkanDatangController;
 use App\Http\Controllers\PublikPembayaranController;
 use App\Http\Controllers\PublikUserController;
 use App\Http\Controllers\UserController;
@@ -100,3 +101,6 @@ Route::post('/logout', 'Auth\LoginController@handleLogoutUser')->name('logoutuse
 
 Route::get('admin/konselor_janji_temu28/set-status/active/{id}', [KonselorJanjiTemu28Controller::class, 'active'])->name('janjitemu.aktif');
 Route::get('admin/konselor_janji_temu28/set-status/tolak/{id}', [KonselorJanjiTemu28Controller::class, 'getEdit'])->name('janjitemu.tolak');
+
+Route::get('admin/konselor_janji_temu_akan_datang/set-status/active/{id}', [KonselorJanjiTemuAkanDatangController::class, 'active'])->name('janjitemu.aktif');
+Route::get('admin/konselor_janji_temu_akan_datang/set-status/tolak/{id}', [KonselorJanjiTemuAkanDatangController::class, 'getEdit'])->name('janjitemu.tolak');
