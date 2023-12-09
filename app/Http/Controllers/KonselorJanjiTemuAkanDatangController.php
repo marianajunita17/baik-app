@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-	use Session;
+use App\janjitemu;
+use Session;
 	use Request;
 	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
 use Illuminate\Support\Carbon;
+use Illuminate\Http\Request as FacadesRequest;
 
 	class KonselorJanjiTemuAkanDatangController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -382,6 +384,7 @@ use Illuminate\Support\Carbon;
 
         public function getEdit($id) {
             //Create an Auth
+            // dd($id);
             if(!CRUDBooster::isUpdate() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {
               CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
             }
@@ -389,6 +392,34 @@ use Illuminate\Support\Carbon;
             $data = [];
             $data['page_title'] = 'Alasan Ditolak';
             $data['row'] = DB::table('janji_temu')->where('id',$id)->first();
+            // dd($data);
+
+            //Please use view method instead view method from laravel
+            return $this->view('alasan-janji-temu',$data);
+          }
+
+        public function insertAlasanTolak(FacadesRequest $request, $id){
+            $janjitemu = janjitemu::find($id);
+            // dd($janjitemu, $id);
+            $janjitemu->status = -1;
+            $janjitemu->tanggal_konfirmasi = Carbon::now()->toDateTimeString();
+            $janjitemu->alasan = $request->get('alasan');
+            $janjitemu->save();
+
+            CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
+
+        }
+
+        public function getAdd() {
+            //Create an Auth
+            // dd($id);
+            if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {
+              CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+            }
+
+            $data = [];
+            $data['page_title'] = 'Add Data';
+            // dd($data);
 
             //Please use view method instead view method from laravel
             return $this->view('alasan-janji-temu',$data);

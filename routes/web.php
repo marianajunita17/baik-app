@@ -104,3 +104,7 @@ Route::get('admin/konselor_janji_temu28/set-status/tolak/{id}', [KonselorJanjiTe
 
 Route::get('admin/konselor_janji_temu_akan_datang/set-status/active/{id}', [KonselorJanjiTemuAkanDatangController::class, 'active'])->name('janjitemu.aktif');
 Route::get('admin/konselor_janji_temu_akan_datang/set-status/tolak/{id}', [KonselorJanjiTemuAkanDatangController::class, 'getEdit'])->name('janjitemu.tolak');
+
+Route::post('admin/konselor_janji_temu_akan_datang/inserttolak/{id}', [KonselorJanjiTemuAkanDatangController::class, 'insertAlasanTolak'])->name('insertalasan');
+
+Route::post('admin/konselor_janji_temu28/inserttolak/{id}', [KonselorJanjiTemu28Controller::class, 'insertAlasanTolak'])->name('insertalasan');
