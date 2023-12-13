@@ -5,6 +5,7 @@ use Session;
 	use Request;
 	use Illuminate\Support\Facades\DB;
 	use CRUDBooster;
+use FontLib\Table\Type\name;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request as FacadesRequest;
 
@@ -45,6 +46,7 @@ use Illuminate\Http\Request as FacadesRequest;
 			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
 			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
             $this->col[] = ["label"=>"Status","name"=>"status"];
+            $this->col[] = ["label"=>"Alasan (jika ditolak)","name"=>"alasan"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -113,8 +115,8 @@ use Illuminate\Http\Request as FacadesRequest;
 	        |
 	        */
 	        $this->addaction = array();
-            $this->addaction[] = ['label'=>'Diterima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','confirmation' => true];
-			$this->addaction[] = ['label'=>'Ditolak','url'=>CRUDBooster::mainpath('set-status/tolak/[id]'),'icon'=>'fa fa-ban','color'=>'warning','confirmation' => true];
+            $this->addaction[] = ['label'=>'Diterima','name'=>'terima','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','showIf'=>'[status] == 100','confirmation' => true];
+			$this->addaction[] = ['label'=>'Ditolak','name'=>'tolak','url'=>CRUDBooster::mainpath('set-status/tolak/[id]'),'icon'=>'fa fa-ban','color'=>'warning','showIf'=>'[status] == 100','confirmation' => true];
 
 
 	        /*
@@ -319,7 +321,31 @@ use Illuminate\Http\Request as FacadesRequest;
 	    */
 	    public function hook_after_add($id) {
 	        //Your code here
+            $janjitemu = janjitemu::find($id);
 
+            $startDate = Carbon::parse($janjitemu->tgl_konsultasi_mulai);
+            $endDate = Carbon::parse($janjitemu->tgl_konsultasi_selesai);
+
+            $diff = $startDate->diffInMinutes($endDate);
+
+            $different = $startDate->diff($endDate);
+            $second = $different->s;
+
+            if($second > 0){
+                $diff += 1;
+            }
+
+            $janjitemu->durasi_konsultasi = $diff;
+            $janjitemu->save();
+
+            $konselor = $janjitemu->konselor_id;
+            $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
+                    ->where('cms_users.id', $konselor)
+                    ->where('janji_temu.id', $janjitemu->id)
+                    ->value('nominal_bayar');
+
+            $janjitemu->nominal = $getNominal;
+            $janjitemu->save();
 	    }
 
 	    /*
@@ -384,14 +410,13 @@ use Illuminate\Http\Request as FacadesRequest;
 
         public function getEdit($id) {
             //Create an Auth
-            // dd($id);
             if(!CRUDBooster::isUpdate() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {
               CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
             }
 
             $data = [];
             $data['page_title'] = 'Alasan Ditolak';
-            $data['row'] = DB::table('janji_temu')->where('id',$id)->first();
+            $data['row'] = DB::table('janji_temu')->select('janji_temu.id','nama_pasien','keluhan', DB::raw('DATE(tgl_konsultasi_mulai) as dateonly'))->join('pasiens', 'janji_temu.pasien_id', '=', 'pasiens.id')->where('janji_temu.id',$id)->first();
             // dd($data);
 
             //Please use view method instead view method from laravel

@@ -197,7 +197,7 @@ use Session;
 	        |
 	        */
 	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh pasien</p>
-                                    <p>Klien = Nama Pasien yang melakukan janji temu dengan anda</p>
+                                    <p>Klien = Nama Klien yang melakukan janji temu dengan anda</p>
                                     <p>Tanggal Konsultasi Mulai = Tanggal dimana sesi konsultasi resmi dimulai</p>
                                     <p>Tanggal Konsultasi Selesai = Tanggal dimana sesi konsultasi yang dilakukan telah selesai</p>
                                     <p>Durasi Konsultasi (menit) = Durasi dari berapa lama sesi konsultasi berlangsung dalam hitungan menit</p>
@@ -393,7 +393,7 @@ use Session;
 
             $data = [];
             $data['page_title'] = 'Alasan Ditolak';
-            $data['row'] = DB::table('janji_temu')->where('id',$id)->first();
+            $data['row'] = DB::table('janji_temu')->join('pasiens', 'janji_temu.pasien_id', '=', 'pasiens.id')->where('janji_temu.id',$id)->first();
 
             //Please use view method instead view method from laravel
             return $this->view('alasan-janji-temu',$data);

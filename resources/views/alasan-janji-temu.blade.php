@@ -11,6 +11,11 @@
                     <label>Kode Janji Temu: </label>
                     <p>{{ $row->id }}</p>
                     <label>Nama Pasien: </label>
+                    <p>{{ $row->nama_pasien }}</p>
+                    <label>Keluhan: </label>
+                    <p>{{ $row->keluhan }}</p>
+                    <label>Tanggal Konsultasi:</label>
+                    <p>{{ $row->dateonly }}</p>
                     <label>Alasan</label>
                     <input type='text' name='alasan' required class='form-control' value='{{ $row->alasan }}' />
                 </div>

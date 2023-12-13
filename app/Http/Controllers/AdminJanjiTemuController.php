@@ -51,7 +51,7 @@ use Illuminate\Support\Facades\DB;
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,nama_pasien'];
+			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'pasiens,nama_pasien'];
 			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];

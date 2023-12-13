@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+    use Illuminate\Support\Carbon;
 
 	class KonselorRiwayatJanjiTemuController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -276,6 +277,7 @@
 	    public function hook_query_index(&$query) {
 	        //Your code here
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
+            $query->where('janji_temu.tgl_konsultasi_mulai', "<=", Carbon::yesterday());
 	    }
 
 	    /*
