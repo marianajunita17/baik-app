@@ -408,7 +408,7 @@ use Illuminate\Http\Request as FacadesRequest;
 			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
 		}
 
-        public function getEdit($id) {
+        public function insertAlasan($id) {
             //Create an Auth
             if(!CRUDBooster::isUpdate() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {
               CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
