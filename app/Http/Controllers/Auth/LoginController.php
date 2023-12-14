@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\pasien;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
@@ -34,7 +34,7 @@ class LoginController extends Controller
 
             if($session_check == "loginuser"){
                 // Login User
-                $existingUser = pasien::where('google_id', $user->getId())->first();
+                $existingUser = User::where('google_id', $user->getId())->first();
                 if($existingUser){
                     auth()->login($existingUser, true);
                     return redirect()->intended('home');
@@ -56,7 +56,7 @@ class LoginController extends Controller
                     return redirect()->route('login')->with('message' , 'Silahkan Register menggunakan Email anda terlebih dahulu')->withInput();
                 }
             }elseif ($session_check == "registeruser") {
-                pasien::create([
+                User::create([
                     'nama_pasien' => $user->getName(),
                     'email' => $user->getEmail(),
                     'google_id' =>$user->getId(),
