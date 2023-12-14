@@ -451,6 +451,49 @@ use Illuminate\Http\Request as FacadesRequest;
 
             //Please use view method instead view method from laravel
             return $this->view('add-konseling-session',$data);
-          }
+        }
 
+        public function addSession(FacadesRequest $request){
+            $date = $request->get('date');
+            $startTime = $request->get('start_time');
+            $endTime = $request->get('end_time');
+
+            $startDate = Carbon::parse($date.' '.$startTime);
+            $endDate = Carbon::parse($date.' '.$endTime);
+
+            $sessionStatus = $request->get('session');
+
+            if ($sessionStatus == "Slot"){
+                $slot = $request->get('jumlah_sesi');
+                $diff = $startDate->diffInMinutes($endDate);
+                $perSesi = $diff / $slot;
+
+                for($i = 0; $i < $slot; $i++){
+                    $janjitemu = new janjitemu();
+                    $endSession = Carbon::parse($startDate)->addMinutes($perSesi)->format('Y-m-d H:i:s');
+
+                    $janjitemu->konselor_id = CRUDBooster::myId();
+                    $janjitemu->tgl_konsultasi_mulai = $startDate;
+                    $janjitemu->tgl_konsultasi_selesai = $endSession;
+                    $janjitemu->status = 100;
+
+                    $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
+                    ->where('cms_users.id', CRUDBooster::myId())
+                    ->value('nominal_bayar');
+
+                    $janjitemu->nominal = $getNominal;
+
+                    $janjitemu->save();
+
+                    $startDate = $endSession;
+                }
+            } elseif ($sessionStatus == 'Menit') {
+
+            }
+
+            CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
+
+            // dd($request->all());
+
+        }
 	}
