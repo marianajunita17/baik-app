@@ -28,7 +28,8 @@ class AppServiceProvider extends ServiceProvider
             return "<?php
                 switch ($status) {
                     case -1: echo 'Ditolak'; break;
-                    case 0: echo 'Draft'; break;
+                    case 100: echo 'Draft'; break;
+                    case 0: echo 'Pending'; break;
                     case 1: echo 'Diterima'; break;
                 }
             ?>";
