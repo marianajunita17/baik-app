@@ -33,7 +33,7 @@ use Session;
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"pasiens,nama_pasien"];
+			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"users,nama_pasien"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
@@ -392,7 +392,7 @@ use Session;
 
             $data = [];
             $data['page_title'] = 'Alasan Ditolak';
-            $data['row'] = DB::table('janji_temu')->select('janji_temu.id','nama_pasien','keluhan', DB::raw('DATE(tgl_konsultasi_mulai) as dateonly'))->join('pasiens', 'janji_temu.pasien_id', '=', 'pasiens.id')->where('janji_temu.id',$id)->first();
+            $data['row'] = DB::table('janji_temu')->select('janji_temu.id','nama_pasien','keluhan', DB::raw('DATE(tgl_konsultasi_mulai) as dateonly'))->join('users', 'janji_temu.pasien_id', '=', 'users.id')->where('janji_temu.id',$id)->first();
 
             //Please use view method instead view method from laravel
             return $this->view('alasan-janji-temu',$data);

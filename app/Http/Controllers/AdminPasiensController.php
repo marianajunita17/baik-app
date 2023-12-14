@@ -25,7 +25,7 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "pasiens";
+			$this->table = "users";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
@@ -35,9 +35,9 @@
 			$this->col[] = ["label"=>"Jenis Kelamin","name"=>"jenis_kelamin"];
 			$this->col[] = ["label"=>"Umur","name"=>"umur"];
             $this->col[] = ["label"=>"Jumlah Anak","name"=>"id","callback"=>function($row){
-                $db = DB::table('pasiens')
-                    ->join('anaks','pasiens.id','=','anaks.pasien_id')
-                    ->where('pasiens.id', $row->id)->count();
+                $db = DB::table('users')
+                    ->join('anaks','users.id','=','anaks.pasien_id')
+                    ->where('users.id', $row->id)->count();
 
                 $res = "";
                 $res = $db;
