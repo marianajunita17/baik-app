@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2023 at 10:30 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Dec 14, 2023 at 02:34 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -928,21 +928,21 @@ CREATE TABLE `janji_temu` (
 --
 
 INSERT INTO `janji_temu` (`id`, `keluhan`, `janji_temu_id`, `pasien_id`, `nominal`, `bank_id`, `tgl_konsultasi_mulai`, `tgl_konsultasi_selesai`, `durasi_konsultasi`, `catatan_kasus`, `presentase_kesesuaian`, `rekomendasi`, `perlu_lanjut`, `konselor_id`, `status`, `tanggal_konfirmasi`, `alasan`, `created_at`, `updated_at`) VALUES
-(4, 'saya capek dengan anak saya karena pekerjaan saya juga berat', NULL, 3, 50000, 5, '2023-11-13 13:00:00', '2023-11-13 14:40:00', 100, NULL, NULL, NULL, 'Tidak', 6, 0, NULL, NULL, '2023-11-19 10:30:55', '2023-12-13 11:41:30'),
-(13, 'osijdficnsoansjdfnvs', NULL, 2, 100000, 3, '2023-12-07 11:00:00', '2023-12-07 12:00:00', 0, NULL, '80', NULL, 'Tidak', 8, 1, NULL, NULL, '2023-11-20 10:01:10', '2023-12-13 11:41:39'),
-(14, 'Terlalu capek dengan keadaan apalagi dengan anak sendiri yang makin hari makin bandel', 13, 8, 100000, 3, '2023-12-08 10:00:00', '2023-12-08 11:00:00', 60, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-07 15:22:06', 'halooooo3', '2023-12-04 11:37:18', '2023-12-13 11:41:35'),
-(15, 'Sebagai orang tua, saya merasa perlu mengungkapkan kekhawatiran terkait perilaku anak-anak belakangan ini. Meskipun saya mencoba memberikan arahan dan pendampingan yang baik, saya khawatir dengan pergaulan mereka di lingkungan sekitar. Saya merasa anak-anak kurang mendapat pengawasan yang memadai dari orang tua mereka. Perkembangan teknologi juga membuat mereka terlalu terpaku pada gadget, mengurangi waktu interaksi sosial dan aktivitas fisik yang sehat. Selain itu, saya prihatin dengan kurangnya perhatian terhadap pendidikan, kurangnya minat membaca, dan rendahnya keterampilan sosial yang dapat memengaruhi masa depan mereka. Perlunya kolaborasi antara orang tua, sekolah, dan komunitas untuk membantu anak-anak tumbuh menjadi individu yang berpengetahuan luas, bertanggung jawab, dan memiliki keterampilan yang diperlukan dalam menghadapi tantangan masa depan. Saya berharap ada perhatian lebih dalam memberikan panduan dan perhatian kepada generasi muda agar mereka dapat berkembang secara optimal.', NULL, 3, 100000, 2, '2023-12-07 19:00:00', NULL, NULL, NULL, NULL, NULL, NULL, 8, 1, NULL, NULL, '2023-12-07 08:25:19', '2023-12-13 11:41:38'),
-(20, 'Hai, saya agak khawatir tentang anak saya dan ingin berbagi dengan seorang psikolog. Anak saya agak tertutup dan susah banget buat ngomongin perasaannya. Saya sering bingung gimana caranya mendekati dia tanpa bikin dia tambah tertekan. Saya pengen anak saya bisa dapet bantuan yang tepat biar dia bisa lebih bahagia dan ngeluarin perasaannya dengan lebih nyaman. Kayaknya dia butuh bantuan untuk menghadapi perubahan suasana hati yang tiba-tiba dan mengungkapkan dirinya dengan lebih baik. Jadi, saya mencari saran bagaimana cara terbaik mendukungnya.', NULL, 4, 100000, 3, '2023-12-13 10:00:00', '2023-12-13 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, 100, NULL, NULL, '2023-12-13 11:43:18', '2023-12-13 11:51:22'),
-(21, 'Hai, saya agak khawatir tentang anak saya dan ingin berbagi dengan seorang psikolog. Anak saya agak tertutup dan susah banget buat ngomongin perasaannya. Saya sering bingung gimana caranya mendekati dia tanpa bikin dia tambah tertekan. Saya pengen anak saya bisa dapet bantuan yang tepat biar dia bisa lebih bahagia dan ngeluarin perasaannya dengan lebih nyaman. Kayaknya dia butuh bantuan untuk menghadapi perubahan suasana hati yang tiba-tiba dan mengungkapkan dirinya dengan lebih baik. Jadi, saya mencari saran bagaimana cara terbaik mendukungnya.', NULL, 8, 100000, 3, '2023-12-15 10:00:00', '2023-12-15 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-14 16:20:20', 'banyak alasan', '2023-12-13 11:43:19', '2023-12-14 09:20:20'),
-(23, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:00:00', '2023-12-14 15:12:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:30:42'),
-(24, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:12:00', '2023-12-14 15:24:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
-(25, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:24:00', '2023-12-14 15:36:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
-(26, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:36:00', '2023-12-14 15:48:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
-(27, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:48:00', '2023-12-14 16:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
-(28, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:00:00', '2023-12-15 16:30:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
-(29, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:30:00', '2023-12-15 17:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
-(30, NULL, NULL, NULL, 100000, NULL, '2023-12-15 17:00:00', '2023-12-15 17:30:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
-(31, NULL, NULL, NULL, 100000, NULL, '2023-12-15 17:30:00', '2023-12-15 18:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42');
+(4, 'saya capek dengan anak saya karena pekerjaan saya juga berat', NULL, NULL, 50000, 5, '2023-11-13 13:00:00', '2023-11-13 14:40:00', 100, NULL, NULL, NULL, 'Tidak', 6, 0, NULL, NULL, '2023-11-19 10:30:55', '2023-12-14 13:27:14'),
+(13, 'osijdficnsoansjdfnvs', NULL, NULL, 100000, 3, '2023-12-07 11:00:00', '2023-12-07 12:00:00', 0, NULL, '80', NULL, 'Tidak', 8, 1, NULL, NULL, '2023-11-20 10:01:10', '2023-12-14 13:27:23'),
+(14, 'Terlalu capek dengan keadaan apalagi dengan anak sendiri yang makin hari makin bandel', 13, NULL, 100000, 3, '2023-12-08 10:00:00', '2023-12-08 11:00:00', 60, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-07 15:22:06', 'halooooo3', '2023-12-04 11:37:18', '2023-12-14 13:27:19'),
+(15, 'Sebagai orang tua, saya merasa perlu mengungkapkan kekhawatiran terkait perilaku anak-anak belakangan ini. Meskipun saya mencoba memberikan arahan dan pendampingan yang baik, saya khawatir dengan pergaulan mereka di lingkungan sekitar. Saya merasa anak-anak kurang mendapat pengawasan yang memadai dari orang tua mereka. Perkembangan teknologi juga membuat mereka terlalu terpaku pada gadget, mengurangi waktu interaksi sosial dan aktivitas fisik yang sehat. Selain itu, saya prihatin dengan kurangnya perhatian terhadap pendidikan, kurangnya minat membaca, dan rendahnya keterampilan sosial yang dapat memengaruhi masa depan mereka. Perlunya kolaborasi antara orang tua, sekolah, dan komunitas untuk membantu anak-anak tumbuh menjadi individu yang berpengetahuan luas, bertanggung jawab, dan memiliki keterampilan yang diperlukan dalam menghadapi tantangan masa depan. Saya berharap ada perhatian lebih dalam memberikan panduan dan perhatian kepada generasi muda agar mereka dapat berkembang secara optimal.', NULL, NULL, 100000, 2, '2023-12-07 19:00:00', NULL, NULL, NULL, NULL, NULL, NULL, 8, 1, NULL, NULL, '2023-12-07 08:25:19', '2023-12-14 13:27:26'),
+(20, 'Sebagai seorang orang tua, kekhawatiran seputar pekerjaan saya terus meningkat. Saya merasa tertekan dengan tuntutan profesional dan tanggung jawab sebagai seorang ayah/ibu. Terkadang, sulit untuk menemukan keseimbangan antara karier yang menuntut dengan kehadiran yang diperlukan di rumah. Waktu yang terbatas sering membuat saya merasa bersalah karena tidak bisa memberikan perhatian yang cukup kepada anak-anak. Selain itu, tekanan untuk menopang keuangan keluarga membuat pekerjaan terasa sangat penting, namun kadang juga melelahkan.\r\n\r\nSaya merindukan momen-momen berharga dengan anak-anak, seperti hadir di acara sekolah mereka atau hanya menghabiskan waktu bersama di rumah. Seringkali, beban pekerjaan yang menumpuk membuat saya merasa lelah secara fisik dan mental. Pengorbanan demi kesuksesan karier terkadang membuat saya merasa kehilangan momen-momen penting dalam pertumbuhan anak-anak saya.\r\n\r\nMungkin yang paling sulit adalah menyatukan aspek profesional dan pribadi dalam kehidupan sehari-hari. Terkadang saya bertanya-tanya apakah pilihan karier saya yang tepat, atau apakah ada cara untuk mencapai keseimbangan yang lebih baik. Saya berharap bisa menemukan solusi untuk mengatasi tekanan pekerjaan dan memberikan perhatian yang berkualitas kepada keluarga saya.\"\r\n\r\nSemoga keluhan ini mencerminkan beban yang bisa dirasakan oleh banyak orang tua yang berusaha menyeimbangkan kehidupan profesional dan pribadi mereka.', NULL, 22, 100000, 5, '2023-12-13 10:00:00', '2023-12-13 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, 100, NULL, NULL, '2023-12-13 11:43:18', '2023-12-14 13:30:27'),
+(21, 'Hai, saya agak khawatir tentang anak saya dan ingin berbagi dengan seorang psikolog. Anak saya agak tertutup dan susah banget buat ngomongin perasaannya. Saya sering bingung gimana caranya mendekati dia tanpa bikin dia tambah tertekan. Saya pengen anak saya bisa dapet bantuan yang tepat biar dia bisa lebih bahagia dan ngeluarin perasaannya dengan lebih nyaman. Kayaknya dia butuh bantuan untuk menghadapi perubahan suasana hati yang tiba-tiba dan mengungkapkan dirinya dengan lebih baik. Jadi, saya mencari saran bagaimana cara terbaik mendukungnya.', NULL, NULL, 100000, 3, '2023-12-15 10:00:00', '2023-12-15 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-14 16:20:20', 'banyak alasan', '2023-12-13 11:43:19', '2023-12-14 13:27:32'),
+(23, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:00:00', '2023-12-14 15:12:00', 12, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 11:20:59'),
+(24, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:12:00', '2023-12-14 15:24:00', 12, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 11:21:02'),
+(25, 'Tentu, berikut adalah contoh keluhan dari seorang orang tua yang berkaitan dengan pekerjaan:\r\n\r\n\"Sebagai seorang orang tua, kekhawatiran seputar pekerjaan saya terus meningkat. Saya merasa tertekan dengan tuntutan profesional dan tanggung jawab sebagai seorang ayah/ibu. Terkadang, sulit untuk menemukan keseimbangan antara karier yang menuntut dengan kehadiran yang diperlukan di rumah. Waktu yang terbatas sering membuat saya merasa bersalah karena tidak bisa memberikan perhatian yang cukup kepada anak-anak. Selain itu, tekanan untuk menopang keuangan keluarga membuat pekerjaan terasa sangat penting, namun kadang juga melelahkan.\r\n\r\nSaya merindukan momen-momen berharga dengan anak-anak, seperti hadir di acara sekolah mereka atau hanya menghabiskan waktu bersama di rumah. Seringkali, beban pekerjaan yang menumpuk membuat saya merasa lelah secara fisik dan mental. Pengorbanan demi kesuksesan karier terkadang membuat saya merasa kehilangan momen-momen penting dalam pertumbuhan anak-anak saya.\r\n\r\nMungkin yang paling sulit adalah menyatukan aspek profesional dan pribadi dalam kehidupan sehari-hari. Terkadang saya bertanya-tanya apakah pilihan karier saya yang tepat, atau apakah ada cara untuk mencapai keseimbangan yang lebih baik. Saya berharap bisa menemukan solusi untuk mengatasi tekanan pekerjaan dan memberikan perhatian yang berkualitas kepada keluarga saya.\"\r\n\r\nSemoga keluhan ini mencerminkan beban yang bisa dirasakan oleh banyak orang tua yang berusaha menyeimbangkan kehidupan profesional dan pribadi mereka.', NULL, NULL, 100000, 4, '2023-12-14 15:24:00', '2023-12-14 15:36:00', 12, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 13:27:35'),
+(26, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:36:00', '2023-12-14 15:48:00', 12, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 11:21:07'),
+(27, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:48:00', '2023-12-14 16:00:00', 30, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 11:21:10'),
+(28, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:00:00', '2023-12-15 16:30:00', 30, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 11:21:13'),
+(29, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:30:00', '2023-12-15 17:00:00', 30, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 11:21:16'),
+(30, NULL, NULL, NULL, 100000, NULL, '2023-12-15 17:00:00', '2023-12-15 17:30:00', 30, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 11:21:19'),
+(31, 'Sebagai seorang orang tua, kekhawatiran seputar pekerjaan saya terus meningkat. Saya merasa tertekan dengan tuntutan profesional dan tanggung jawab sebagai seorang ayah/ibu. Terkadang, sulit untuk menemukan keseimbangan antara karier yang menuntut dengan kehadiran yang diperlukan di rumah. Waktu yang terbatas sering membuat saya merasa bersalah karena tidak bisa memberikan perhatian yang cukup kepada anak-anak. Selain itu, tekanan untuk menopang keuangan keluarga membuat pekerjaan terasa sangat penting, namun kadang juga melelahkan.\r\n\r\nSaya merindukan momen-momen berharga dengan anak-anak, seperti hadir di acara sekolah mereka atau hanya menghabiskan waktu bersama di rumah. Seringkali, beban pekerjaan yang menumpuk membuat saya merasa lelah secara fisik dan mental. Pengorbanan demi kesuksesan karier terkadang membuat saya merasa kehilangan momen-momen penting dalam pertumbuhan anak-anak saya.\r\n\r\nMungkin yang paling sulit adalah menyatukan aspek profesional dan pribadi dalam kehidupan sehari-hari. Terkadang saya bertanya-tanya apakah pilihan karier saya yang tepat, atau apakah ada cara untuk mencapai keseimbangan yang lebih baik. Saya berharap bisa menemukan solusi untuk mengatasi tekanan pekerjaan dan memberikan perhatian yang berkualitas kepada keluarga saya.\"\r\n\r\nSemoga keluhan ini mencerminkan beban yang bisa dirasakan oleh banyak orang tua yang berusaha menyeimbangkan kehidupan profesional dan pribadi mereka.', NULL, 22, 100000, 2, '2023-12-15 17:30:00', '2023-12-15 18:00:00', 30, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 13:31:54');
 
 -- --------------------------------------------------------
 
@@ -1063,12 +1063,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `pasiens` (
   `id` int(11) NOT NULL,
   `nama_pasien` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jenis_kelamin` varchar(255) NOT NULL,
-  `umur` int(11) NOT NULL,
+  `jenis_kelamin` varchar(255) DEFAULT NULL,
+  `umur` int(11) DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `google_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `passowrd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
@@ -1078,13 +1078,14 @@ CREATE TABLE `pasiens` (
 -- Dumping data for table `pasiens`
 --
 
-INSERT INTO `pasiens` (`id`, `nama_pasien`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `passowrd`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO `pasiens` (`id`, `nama_pasien`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Noventa Ladeta', 'Perempuan', 45, '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:15:16'),
 (3, 'Mariana Junita Mawuntu', 'Perempuan', 31, '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:14:48'),
 (4, 'David Herlambang', 'Laki-Laki', 44, '', NULL, NULL, '', NULL, '2023-11-13 10:01:22', '2023-11-16 17:15:23'),
 (5, 'Mariana Junita', 'Perempuan', 30, '', NULL, NULL, '', NULL, '2023-11-16 08:00:55', '2023-11-16 08:00:55'),
 (7, 'Felix', 'Laki-Laki', 45, '', NULL, NULL, '', NULL, '2023-11-16 19:27:35', '2023-11-16 19:27:35'),
-(8, 'Sarah Wijayanto', 'Perempuan', 56, '', NULL, NULL, '', NULL, '2023-11-16 20:23:05', '2023-11-16 20:23:05');
+(8, 'Sarah Wijayanto', 'Perempuan', 56, '', NULL, NULL, '', NULL, '2023-11-16 20:23:05', '2023-11-16 20:23:05'),
+(9, 'KATHERYN NATASIA LIEM CHRISLIANTI _', NULL, NULL, 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$6dQbzJpyE.QMu08dWdGOOuDvBhcsiFGN/.dJwIcBcpq8RrvvsLzYu', NULL, '2023-12-14 13:12:15', '2023-12-14 13:12:15');
 
 -- --------------------------------------------------------
 
@@ -1182,7 +1183,10 @@ INSERT INTO `topik_janji_temu` (`id`, `topiks_id`, `janji_temu_id`) VALUES
 (29, 5, 21),
 (30, 7, 21),
 (31, 5, 20),
-(32, 7, 20);
+(32, 7, 20),
+(33, 6, 25),
+(34, 6, 20),
+(35, 4, 31);
 
 -- --------------------------------------------------------
 
@@ -1209,18 +1213,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama_pasien`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Katheryn', '', 0, 'admin@ubayabaik', NULL, NULL, '$2y$10$O2rqAl..QMVc/w4j9OR/YecQqSj6L/EMAC/AJdo66SNsebrFnaDxG', NULL, '2023-10-31 20:51:37', NULL),
 (2, 'Junita', '', 0, 'junjun@ubaya.baik', NULL, NULL, '$2y$10$37IoKvncV6lrUArX2mi2suxkPrMeVrWmCIT/6taXPmRUyjYSSFHFG', NULL, '2023-11-04 20:48:41', '2023-11-13 04:56:05'),
 (3, 'Yolenta', 'Perempuan', 35, 'yola@gmail.com', NULL, NULL, '$2y$10$htzEFZl89nz3/f0XJi1.pOKe/GF6/6rCd9/yKLK55or2tn/Xq7c3i', NULL, '2023-11-04 20:48:57', '2023-11-20 08:44:07'),
 (4, 'David', '', 0, 'david@gmail.com', NULL, NULL, '$2y$10$T8pjgfdYGa/8/KqdWo4Uke2KSSuYLDAudZl2LnRUnFgTr0P3JZlhm', NULL, '2023-11-04 21:15:31', NULL),
-(5, 'Adgie', '', 0, 'adgie@gmail.com', NULL, NULL, '$2y$10$CNsFsuKcZI7rt7whO4n21.YnxiMfWWg98yTWm.LYxFqoTqGiEQ0Ui', NULL, '2023-11-04 21:15:45', NULL),
-(10, 'KATHERYN NATASIA LIEM CHRISLIANTI _', '', 0, 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$frUEQW5WGQ1Op3VqEqnXN.N5T4N0qNrACyyabH875w0duleFb81pW', 'F3HLeqRtB4h8CRlmjaE4s25U8JKIP4MZGA0Qr4gwvltBQHFtTP5JeE9HF0lj', '2023-11-15 18:53:09', '2023-11-16 02:01:12'),
-(13, 'Katheryn Natasia', '', 0, 'katherynatasialiem@gmail.com', NULL, '109342889608692761046', '$2y$10$kb/xQ9NKpPv.JGVDVra.r.hr.Q4X1G4mNmKFSJC4/y4r095djmXUu', '73e3hRZYBhmt2s67Y5OBMLzFYkC6PMMb5ZxwWerc2gDigret6AWxoLMeaPRY', '2023-11-15 18:59:27', '2023-11-16 01:59:34'),
-(14, 'Mariana Yunita', '', 0, 'ymawuntu14@gmail.com', NULL, '104493692090950621833', '$2y$10$sdq./aQWg4TkS.qvoYddSuM4XJP7dklzATBAn8cq1YY8o3YGnrgJ6', 'mxECDJRVJQH5BqwG7bibLlbtXtJupbwaS0AMNx0sosU2PvQwZww4VNaMPWXL', '2023-11-16 07:59:18', '2023-11-16 14:59:26'),
 (15, 'Mbo Bebas', '', 0, 'mbobebas@gmail.com', NULL, '112145646681532680706', '$2y$10$Xe1CRqPYl/76duSkMlno1ucgyx/nrcviT2p9Te1.1mjQlICZMV8Pe', 'YOhT54fVMC7qHkQkgUCO3yhuML6Q5vlKQX8oQJjkk7LWT5nEkLqel7XKMJ2b', '2023-11-16 19:26:21', '2023-11-21 02:30:51'),
-(17, 'Kalong MeLife', '', 0, 'kalongmelife@gmail.com', NULL, '110503399047046502243', '$2y$10$WDnYD85RQ9KfNL5lutRDm.W8u/6beOv5zZXYott0ISJk9pq82p/3.', 'py3Kb2Baxc4ReJJwVmfeptiRQnreyqenqDxXpNqd2AyEhxIdiB9CPmAYjuHm', '2023-11-16 20:21:50', '2023-11-17 03:22:01'),
-(19, 'Yola Noventa', NULL, NULL, 'yolanoventa17@gmail.com', NULL, '114114483324874536912', '$2y$10$GP7Uu03R14urIpBxWOqtyeiJ7OwDLJFhhp0ZuZl5Xj4iKFl9CP.VW', 'KAe9gvD91UvHgnJp53Fq3FXpZM6TJmD92gPPOFbWFqixFc9Fs0L7xb0KeQyQ', '2023-11-20 19:41:26', '2023-11-21 02:56:29'),
-(20, 'Yola Noventa', NULL, NULL, 'yolanoventa02@gmail.com', NULL, '117861347880382281542', '$2y$10$VR1me1VsufASdA0Uq8Q79uy7pjYRIcQKc./Yh/rRdaMTEVm2WXkpq', NULL, '2023-11-30 01:23:05', '2023-11-30 01:23:05');
+(22, 'KATHERYN NATASIA LIEM CHRISLIANTI _', NULL, NULL, 's160420038@student.ubaya.ac.id', NULL, '108301379835168699034', '$2y$10$osNmkQBD0F/7qRLiq7ypt.NFTXiQIe7FfIxGW3ULb2X/vctwk0Pey', 'AKvQBbU2RozZl6SCrt4ebiPscT9piaTiywrbq2rNxLEsLMrz0cMxFEsvW0z8', '2023-12-14 11:16:44', '2023-12-14 12:59:57');
 
 --
 -- Indexes for dumped tables
@@ -1559,7 +1556,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pasiens`
 --
 ALTER TABLE `pasiens`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pembayarans`
@@ -1583,13 +1580,13 @@ ALTER TABLE `topiks`
 -- AUTO_INCREMENT for table `topik_janji_temu`
 --
 ALTER TABLE `topik_janji_temu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
@@ -1608,7 +1605,7 @@ ALTER TABLE `janji_temu`
   ADD CONSTRAINT `janji_temu_ibfk_1` FOREIGN KEY (`janji_temu_id`) REFERENCES `janji_temu` (`id`),
   ADD CONSTRAINT `janji_temu_ibfk_4` FOREIGN KEY (`bank_id`) REFERENCES `pembayarans` (`id`),
   ADD CONSTRAINT `janji_temu_ibfk_5` FOREIGN KEY (`konselor_id`) REFERENCES `cms_users` (`id`),
-  ADD CONSTRAINT `janji_temu_ibfk_6` FOREIGN KEY (`pasien_id`) REFERENCES `pasiens` (`id`);
+  ADD CONSTRAINT `janji_temu_ibfk_6` FOREIGN KEY (`pasien_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `konselors`
