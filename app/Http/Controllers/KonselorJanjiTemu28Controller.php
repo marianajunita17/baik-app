@@ -406,7 +406,7 @@ use Session;
             $janjitemu->alasan = $request->get('alasan');
             $janjitemu->save();
 
-            CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
+            CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
 
         }
 	}
