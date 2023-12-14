@@ -211,7 +211,7 @@ use Illuminate\Http\Request as FacadesRequest;
 	        |
 	        */
 	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh pasien</p>
-                                    <p>Klien = Nama Pasien yang melakukan janji temu dengan anda</p>
+                                    <p>Klien = Nama Klien yang melakukan janji temu dengan anda</p>
                                     <p>Tanggal Konsultasi Mulai = Tanggal dimana sesi konsultasi resmi dimulai</p>
                                     <p>Tanggal Konsultasi Selesai = Tanggal dimana sesi konsultasi yang dilakukan telah selesai</p>
                                     <p>Durasi Konsultasi (menit) = Durasi dari berapa lama sesi konsultasi berlangsung dalam hitungan menit</p>
@@ -287,7 +287,7 @@ use Illuminate\Http\Request as FacadesRequest;
 	    public function hook_query_index(&$query) {
 	        //Your code here
             $query->where('janji_temu.konselor_id', CRUDBooster::myId());
-            $query->where('janji_temu.tgl_konsultasi_mulai', ">=", Carbon::tomorrow());
+            $query->where('janji_temu.tgl_konsultasi_mulai', ">=", Carbon::today());
 	    }
 
 	    /*
@@ -462,13 +462,13 @@ use Illuminate\Http\Request as FacadesRequest;
             $endDate = Carbon::parse($date.' '.$endTime);
 
             $sessionStatus = $request->get('session');
+            $jumlah = $request->get('jumlah_sesi');
+
+            $diff = $startDate->diffInMinutes($endDate);
+            $perSesi = floor($diff / $jumlah);
 
             if ($sessionStatus == "Slot"){
-                $slot = $request->get('jumlah_sesi');
-                $diff = $startDate->diffInMinutes($endDate);
-                $perSesi = $diff / $slot;
-
-                for($i = 0; $i < $slot; $i++){
+                for($i = 0; $i < $jumlah; $i++){
                     $janjitemu = new janjitemu();
                     $endSession = Carbon::parse($startDate)->addMinutes($perSesi)->format('Y-m-d H:i:s');
 
@@ -482,13 +482,29 @@ use Illuminate\Http\Request as FacadesRequest;
                     ->value('nominal_bayar');
 
                     $janjitemu->nominal = $getNominal;
-
                     $janjitemu->save();
 
                     $startDate = $endSession;
                 }
             } elseif ($sessionStatus == 'Menit') {
+                for($i = 0; $i < $perSesi; $i++){
+                    $janjitemu = new janjitemu();
+                    $endSession = Carbon::parse($startDate)->addMinutes($jumlah)->format('Y-m-d H:i:s');
 
+                    $janjitemu->konselor_id = CRUDBooster::myId();
+                    $janjitemu->tgl_konsultasi_mulai = $startDate;
+                    $janjitemu->tgl_konsultasi_selesai = $endSession;
+                    $janjitemu->status = 100;
+
+                    $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
+                    ->where('cms_users.id', CRUDBooster::myId())
+                    ->value('nominal_bayar');
+
+                    $janjitemu->nominal = $getNominal;
+                    $janjitemu->save();
+
+                    $startDate = $endSession;
+                }
             }
 
             CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
