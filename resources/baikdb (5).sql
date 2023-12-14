@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 04:12 AM
--- Server version: 10.4.25-MariaDB
+-- Generation Time: Dec 14, 2023 at 10:30 AM
+-- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -487,7 +487,32 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `d
 (285, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselors/delete-image', 'Delete the image of Katheryn Natasia S.Psi, M.Psi, Psikolog at Konselor', '', 1, '2023-11-30 01:37:07', NULL),
 (286, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselors/edit-save/7', 'Update data Katheryn Natasia S.Psi, M.Psi, Psikolog at Konselor', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>name</td><td>Katheryn Natasia</td><td></td></tr><tr><td>email</td><td>katherynatasialiem@gmail.com</td><td></td></tr><tr><td>password</td><td>$2y$10$J9jug6XkOu6cbOYVXDVxGeCcCPCRgeR09y2h75gTHATzEt3BWShze</td><td></td></tr><tr><td>CV</td><td></td><td>uploads/1/2023-11/11.png</td></tr><tr><td>SIPP</td><td></td><td>uploads/1/2023-11/11.png</td></tr><tr><td>ijazah</td><td>uploads/1/2023-11/ijazah.png</td><td></td></tr><tr><td>ktp</td><td>uploads/1/2023-11/ktp.jpg</td><td></td></tr><tr><td>npwp</td><td>uploads/1/2023-11/npwp.jpg</td><td></td></tr><tr><td>photo</td><td></td><td>uploads/1/2023-11/11.png</td></tr><tr><td>nominal_bayar</td><td>75000</td><td>10000</td></tr><tr><td>id_cms_privileges</td><td>4</td><td></td></tr><tr><td>verifikasi_at</td><td></td><td></td></tr><tr><td>verifikasi_status</td><td></td><td>Sudah Terverifikasi</td></tr><tr><td>status</td><td>Active</td><td></td></tr></tbody></table>', 1, '2023-11-30 01:41:09', NULL),
 (287, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselors/edit-save/7', 'Update data Katheryn Natasia S.Psi, M.Psi, Psikolog at Konselor', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>name</td><td>Katheryn Natasia</td><td></td></tr><tr><td>email</td><td>katherynatasialiem@gmail.com</td><td></td></tr><tr><td>password</td><td>$2y$10$J9jug6XkOu6cbOYVXDVxGeCcCPCRgeR09y2h75gTHATzEt3BWShze</td><td></td></tr><tr><td>id_cms_privileges</td><td>4</td><td></td></tr><tr><td>verifikasi_at</td><td></td><td></td></tr><tr><td>status</td><td>Active</td><td></td></tr></tbody></table>', 1, '2023-11-30 01:42:52', NULL),
-(288, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@ubayabaik.id logout', '', 1, '2023-11-30 01:45:06', NULL);
+(288, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'admin@ubayabaik.id logout', '', 1, '2023-11-30 01:45:06', NULL),
+(289, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-04 11:05:53', NULL),
+(290, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/menu_management/edit-save/17', 'Update data Janji Temu Saat Ini at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>name</td><td>Janji Temu</td><td>Janji Temu Saat Ini</td></tr><tr><td>sorting</td><td>13</td><td></td></tr></tbody></table>', 1, '2023-12-04 11:27:35', NULL),
+(291, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/add-save', 'Add New Data  at janji temu', '', 1, '2023-12-04 11:37:18', NULL),
+(292, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/menu_management/edit-save/23', 'Update data Riwayat Janji Temu at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>path</td><td>AdminKonselorRiwayatJanjiTemuControllerGetIndex</td><td>KonselorRiwayatJanjiTemuControllerGetIndex</td></tr><tr><td>color</td><td></td><td>normal</td></tr><tr><td>sorting</td><td>17</td><td></td></tr></tbody></table>', 1, '2023-12-04 12:07:02', NULL),
+(293, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselor_riwayat_janji_temu', 'Try view the data :name at Riwayat Janji Temu', '', 8, '2023-12-04 12:07:08', NULL),
+(294, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselor_riwayat_janji_temu', 'Try view the data :name at Riwayat Janji Temu', '', 8, '2023-12-04 12:07:11', NULL),
+(295, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselor_riwayat_janji_temu', 'Try view the data :name at Riwayat Janji Temu', '', 8, '2023-12-04 12:08:01', NULL),
+(296, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/konselor_riwayat_janji_temu', 'Try view the data :name at Riwayat Janji Temu', '', 8, '2023-12-04 12:08:06', NULL),
+(297, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'ymawuntu14@gmail.com logout', '', 8, '2023-12-04 12:08:11', NULL),
+(298, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-07 04:55:02', NULL),
+(299, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/menu_management/edit-save/24', 'Update data Janji Temu Akan Datang at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>path</td><td>AdminKonselorJanjiTemuAkanDatangControllerGetIndex</td><td>KonselorJanjiTemuAkanDatangControllerGetIndex</td></tr><tr><td>color</td><td></td><td>normal</td></tr><tr><td>sorting</td><td>13</td><td></td></tr></tbody></table>', 1, '2023-12-07 05:03:02', NULL),
+(300, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'ymawuntu14@gmail.com logout', '', 8, '2023-12-07 05:06:45', NULL),
+(301, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/menu_management/edit-save/24', 'Update data Janji Temu Akan Datang at Menu Management', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>sorting</td><td>13</td><td></td></tr></tbody></table>', 1, '2023-12-07 05:07:23', NULL),
+(302, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/edit-save/14', 'Update data  at janji temu', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>nominal</td><td>100000</td><td></td></tr><tr><td>tgl_konsultasi_mulai</td><td>2023-12-05 10:00:00</td><td>2023-12-08 10:00:00</td></tr><tr><td>tgl_konsultasi_selesai</td><td>2023-12-05 11:00:00</td><td>2023-12-08 11:00:00</td></tr><tr><td>durasi_konsultasi</td><td>60</td><td></td></tr><tr><td>catatan_kasus</td><td></td><td></td></tr><tr><td>presentase_kesesuaian</td><td></td><td></td></tr><tr><td>rekomendasi</td><td></td><td></td></tr><tr><td>status</td><td>1</td><td></td></tr><tr><td>tanggal_konfirmasi</td><td></td><td></td></tr><tr><td>alasan</td><td></td><td></td></tr></tbody></table>', 1, '2023-12-07 05:11:53', NULL),
+(303, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/edit-save/13', 'Update data  at janji temu', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>janji_temu_id</td><td></td><td></td></tr><tr><td>nominal</td><td>100000</td><td></td></tr><tr><td>tgl_konsultasi_mulai</td><td>2023-11-20 00:00:00</td><td>2023-12-07 11:00:00</td></tr><tr><td>tgl_konsultasi_selesai</td><td>2023-11-20 00:00:00</td><td>2023-12-07 12:00:00</td></tr><tr><td>durasi_konsultasi</td><td>0</td><td></td></tr><tr><td>catatan_kasus</td><td></td><td></td></tr><tr><td>rekomendasi</td><td></td><td></td></tr><tr><td>status</td><td>0</td><td></td></tr><tr><td>tanggal_konfirmasi</td><td></td><td></td></tr><tr><td>alasan</td><td></td><td></td></tr></tbody></table>', 1, '2023-12-07 05:12:51', NULL),
+(304, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'ymawuntu14@gmail.com logout', '', 8, '2023-12-07 05:51:55', NULL),
+(305, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-07 00:41:22', NULL),
+(306, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', 'http://127.0.0.1:8000/admin/logout', 'ymawuntu14@gmail.com logout', '', 8, '2023-12-07 00:47:19', NULL),
+(307, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-08 07:16:15', NULL),
+(308, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-09 16:12:18', NULL),
+(309, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-12 13:39:30', NULL),
+(310, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/login', 'admin@ubayabaik.id login with IP Address 127.0.0.1', '', 1, '2023-12-13 11:27:48', NULL),
+(311, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/add-save', 'Add New Data  at janji temu', '', 1, '2023-12-13 11:43:18', NULL),
+(312, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/add-save', 'Add New Data  at janji temu', '', 1, '2023-12-13 11:43:19', NULL),
+(313, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0', 'http://127.0.0.1:8000/admin/janji_temu/edit-save/20', 'Update data  at janji temu', '<table class=\"table table-striped\"><thead><tr><th>Key</th><th>Old Value</th><th>New Value</th></thead><tbody><tr><td>janji_temu_id</td><td></td><td></td></tr><tr><td>nominal</td><td>100000</td><td></td></tr><tr><td>durasi_konsultasi</td><td>90</td><td></td></tr><tr><td>catatan_kasus</td><td></td><td></td></tr><tr><td>presentase_kesesuaian</td><td></td><td></td></tr><tr><td>rekomendasi</td><td></td><td></td></tr><tr><td>status</td><td>100</td><td></td></tr><tr><td>tanggal_konfirmasi</td><td></td><td></td></tr><tr><td>alasan</td><td></td><td></td></tr></tbody></table>', 1, '2023-12-13 11:43:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -527,11 +552,13 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (12, 'Konselor Spesialis', 'Route', 'AdminKonselorSpesialisControllerGetIndex', 'normal', 'fa fa-asterisk', 0, 1, 0, 1, 9, '2023-10-31 21:50:20', '2023-11-20 10:52:42'),
 (14, 'Topik Janji Temu', 'Route', 'AdminTopikJanjiTemuControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 8, '2023-11-04 21:33:19', '2023-11-17 03:32:15'),
 (16, 'Konselor', 'Route', 'KonselorKonselors27ControllerGetIndex', 'normal', 'fa fa-user-md', 0, 1, 0, 4, 11, '2023-11-16 01:54:16', '2023-11-17 03:59:55'),
-(17, 'Janji Temu', 'Route', 'KonselorJanjiTemu28ControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 13, '2023-11-16 02:08:51', '2023-11-16 02:11:48'),
+(17, 'Janji Temu Saat Ini', 'Route', 'KonselorJanjiTemu28ControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 14, '2023-11-16 02:08:51', '2023-12-04 11:27:35'),
 (18, 'Pasien', 'Route', 'KonselorPasiens29ControllerGetIndex', 'normal', 'fa fa-user', 0, 1, 0, 1, 12, '2023-11-16 02:40:34', '2023-11-16 02:43:42'),
-(20, 'Pembayaran', 'Route', 'KeuanganPembayaransControllerGetIndex', 'normal', 'fa fa-money', 0, 1, 0, 1, 14, '2023-11-16 10:12:09', '2023-11-16 10:13:24'),
-(21, 'Janji Temu', 'Route', 'KeuanganJanjiTemuControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 15, '2023-11-16 10:19:10', '2023-11-16 10:20:59'),
-(22, 'Konselor', 'Route', 'KeuanganKonselorsControllerGetIndex', 'normal', 'fa fa-user-md', 0, 1, 0, 1, 16, '2023-11-16 10:27:29', '2023-11-16 10:39:29');
+(20, 'Pembayaran', 'Route', 'KeuanganPembayaransControllerGetIndex', 'normal', 'fa fa-money', 0, 1, 0, 1, 16, '2023-11-16 10:12:09', '2023-11-16 10:13:24'),
+(21, 'Janji Temu', 'Route', 'KeuanganJanjiTemuControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 17, '2023-11-16 10:19:10', '2023-11-16 10:20:59'),
+(22, 'Konselor', 'Route', 'KeuanganKonselorsControllerGetIndex', 'normal', 'fa fa-user-md', 0, 1, 0, 1, 18, '2023-11-16 10:27:29', '2023-11-16 10:39:29'),
+(23, 'Riwayat Janji Temu', 'Route', 'KonselorRiwayatJanjiTemuControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 15, '2023-12-04 12:04:29', '2023-12-04 12:07:02'),
+(24, 'Janji Temu Akan Datang', 'Route', 'KonselorJanjiTemuAkanDatangControllerGetIndex', 'normal', 'fa fa-book', 0, 1, 0, 1, 13, '2023-12-07 04:59:46', '2023-12-07 05:07:23');
 
 -- --------------------------------------------------------
 
@@ -558,7 +585,6 @@ INSERT INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) V
 (15, 13, 1),
 (19, 2, 1),
 (36, 15, 4),
-(42, 17, 4),
 (46, 18, 4),
 (50, 19, 4),
 (52, 20, 3),
@@ -571,7 +597,10 @@ INSERT INTO `cms_menus_privileges` (`id`, `id_cms_menus`, `id_cms_privileges`) V
 (63, 14, 1),
 (64, 16, 4),
 (67, 8, 1),
-(68, 12, 1);
+(68, 12, 1),
+(69, 17, 4),
+(71, 23, 4),
+(74, 24, 4);
 
 -- --------------------------------------------------------
 
@@ -625,12 +654,14 @@ INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controlle
 (25, 'Topik Janji Temu', 'fa fa-book', 'topik_janji_temu', 'topik_janji_temu', 'AdminTopikJanjiTemuController', 0, 0, '2023-11-04 21:33:19', NULL, NULL),
 (26, 'Konselor Role', 'fa fa-glass', 'konselors26', 'konselors', 'KonselorKonselorsController', 0, 0, '2023-11-16 00:58:03', NULL, '2023-11-16 01:52:13'),
 (27, 'Konselor', 'fa fa-user-md', 'konselors27', 'konselors', 'KonselorKonselors27Controller', 0, 0, '2023-11-16 01:54:16', NULL, NULL),
-(28, 'Janji Temu', 'fa fa-book', 'konselor_janji_temu28', 'janji_temu', 'KonselorJanjiTemu28Controller', 0, 0, '2023-11-16 02:08:51', NULL, NULL),
+(28, 'Janji Temu Saat Ini', 'fa fa-times', 'konselor_janji_temu28', 'janji_temu', 'KonselorJanjiTemu28Controller', 0, 0, '2023-11-16 02:08:51', NULL, NULL),
 (29, 'Pasien', 'fa fa-user', 'konselor_pasiens29', 'pasiens', 'KonselorPasiens29Controller', 0, 0, '2023-11-16 02:40:34', NULL, NULL),
 (30, 'Anak', 'fa fa-group', 'konselor_anaks', 'anaks', 'KonselorAnaksController', 0, 0, '2023-11-16 09:47:51', NULL, NULL),
 (31, 'Pembayaran', 'fa fa-money', 'keuangan_pembayarans', 'pembayarans', 'KeuanganPembayaransController', 0, 0, '2023-11-16 10:12:09', NULL, NULL),
 (32, 'Janji Temu', 'fa fa-book', 'keuangan_janji_temu', 'janji_temu', 'KeuanganJanjiTemuController', 0, 0, '2023-11-16 10:19:09', NULL, NULL),
-(33, 'Konselor', 'fa fa-user-md', 'keuangan_konselors', 'konselors', 'KeuanganKonselorsController', 0, 0, '2023-11-16 10:27:29', NULL, NULL);
+(33, 'Konselor', 'fa fa-user-md', 'keuangan_konselors', 'konselors', 'KeuanganKonselorsController', 0, 0, '2023-11-16 10:27:29', NULL, NULL),
+(34, 'Riwayat Janji Temu', 'fa fa-book', 'konselor_riwayat_janji_temu', 'janji_temu', 'KonselorRiwayatJanjiTemuController', 0, 0, '2023-12-04 12:04:29', NULL, NULL),
+(35, 'Janji Temu Akan Datang', 'fa fa-star', 'konselor_janji_temu_akan_datang', 'janji_temu', 'KonselorJanjiTemuAkanDatangController', 0, 0, '2023-12-07 04:59:46', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -719,11 +750,15 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 (135, 1, 1, 1, 1, 1, 1, 25, NULL, NULL),
 (136, 1, 1, 1, 1, 1, 1, 16, NULL, NULL),
 (137, 1, 1, 1, 1, 1, 1, 4, NULL, NULL),
-(147, 1, 0, 1, 0, 0, 4, 19, NULL, NULL),
-(148, 1, 0, 1, 0, 0, 4, 29, NULL, NULL),
-(149, 1, 0, 1, 1, 0, 4, 28, NULL, NULL),
-(150, 1, 0, 1, 1, 0, 4, 27, NULL, NULL),
-(151, 1, 1, 1, 1, 1, 4, 4, NULL, NULL);
+(152, 1, 1, 1, 1, 1, 1, 34, NULL, NULL),
+(159, 1, 1, 1, 1, 1, 1, 35, NULL, NULL),
+(174, 1, 0, 1, 0, 0, 4, 19, NULL, NULL),
+(175, 1, 1, 1, 1, 1, 4, 35, NULL, NULL),
+(176, 1, 0, 1, 1, 0, 4, 28, NULL, NULL),
+(177, 1, 0, 1, 1, 0, 4, 27, NULL, NULL),
+(178, 1, 0, 1, 0, 0, 4, 29, NULL, NULL),
+(179, 1, 0, 1, 0, 0, 4, 34, NULL, NULL),
+(180, 1, 1, 1, 1, 1, 4, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -868,11 +903,11 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `janji_temu` (
   `id` int(11) NOT NULL,
-  `keluhan` longtext NOT NULL,
+  `keluhan` longtext DEFAULT NULL,
   `janji_temu_id` int(11) DEFAULT NULL,
-  `pasien_id` int(11) NOT NULL,
+  `pasien_id` int(11) DEFAULT NULL,
   `nominal` int(11) NOT NULL DEFAULT 0,
-  `bank_id` int(11) NOT NULL,
+  `bank_id` int(11) DEFAULT NULL,
   `tgl_konsultasi_mulai` datetime NOT NULL,
   `tgl_konsultasi_selesai` datetime DEFAULT NULL,
   `durasi_konsultasi` int(11) DEFAULT NULL,
@@ -881,7 +916,7 @@ CREATE TABLE `janji_temu` (
   `rekomendasi` varchar(255) DEFAULT NULL,
   `perlu_lanjut` varchar(255) DEFAULT NULL,
   `konselor_id` int(10) UNSIGNED NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0 COMMENT '-1 = tolak\r\n0 = draft\r\n1 = accept',
+  `status` int(11) NOT NULL DEFAULT 100 COMMENT '-1 = tolak\r\n0 = Pending\r\n1 = accept\r\n100 = Draft',
   `tanggal_konfirmasi` datetime DEFAULT NULL,
   `alasan` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -893,9 +928,21 @@ CREATE TABLE `janji_temu` (
 --
 
 INSERT INTO `janji_temu` (`id`, `keluhan`, `janji_temu_id`, `pasien_id`, `nominal`, `bank_id`, `tgl_konsultasi_mulai`, `tgl_konsultasi_selesai`, `durasi_konsultasi`, `catatan_kasus`, `presentase_kesesuaian`, `rekomendasi`, `perlu_lanjut`, `konselor_id`, `status`, `tanggal_konfirmasi`, `alasan`, `created_at`, `updated_at`) VALUES
-(3, 'Selama saya bekerja di perusahaan yang baru ini, saya cukup banyak menelantarkan anak saya. Sampai saya sendiri tidak tahu apa kesukaan anak saya ataupun apa yang dia senangi. Kita juga jadi lebih menjauh daripada biasanya', NULL, 4, 87000, 2, '2023-11-08 10:33:00', '2023-11-08 11:12:00', 39, NULL, NULL, NULL, 'Ya', 7, 0, NULL, NULL, '2023-11-16 17:29:58', '2023-11-30 09:14:20'),
-(4, 'saya capek dengan anak saya karena pekerjaan saya juga berat', NULL, 3, 50000, 5, '2023-11-13 13:00:00', '2023-11-13 14:40:00', 100, NULL, NULL, NULL, 'Tidak', 6, 0, NULL, NULL, '2023-11-19 10:30:55', '2023-11-30 09:14:30'),
-(13, 'osijdficnsoansjdfnvs', NULL, 2, 100000, 3, '2023-11-20 00:00:00', '2023-11-20 00:00:00', 0, NULL, '80', NULL, 'Tidak', 7, 0, NULL, NULL, '2023-11-20 10:01:10', '2023-11-30 09:14:38');
+(4, 'saya capek dengan anak saya karena pekerjaan saya juga berat', NULL, 3, 50000, 5, '2023-11-13 13:00:00', '2023-11-13 14:40:00', 100, NULL, NULL, NULL, 'Tidak', 6, 0, NULL, NULL, '2023-11-19 10:30:55', '2023-12-13 11:41:30'),
+(13, 'osijdficnsoansjdfnvs', NULL, 2, 100000, 3, '2023-12-07 11:00:00', '2023-12-07 12:00:00', 0, NULL, '80', NULL, 'Tidak', 8, 1, NULL, NULL, '2023-11-20 10:01:10', '2023-12-13 11:41:39'),
+(14, 'Terlalu capek dengan keadaan apalagi dengan anak sendiri yang makin hari makin bandel', 13, 8, 100000, 3, '2023-12-08 10:00:00', '2023-12-08 11:00:00', 60, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-07 15:22:06', 'halooooo3', '2023-12-04 11:37:18', '2023-12-13 11:41:35'),
+(15, 'Sebagai orang tua, saya merasa perlu mengungkapkan kekhawatiran terkait perilaku anak-anak belakangan ini. Meskipun saya mencoba memberikan arahan dan pendampingan yang baik, saya khawatir dengan pergaulan mereka di lingkungan sekitar. Saya merasa anak-anak kurang mendapat pengawasan yang memadai dari orang tua mereka. Perkembangan teknologi juga membuat mereka terlalu terpaku pada gadget, mengurangi waktu interaksi sosial dan aktivitas fisik yang sehat. Selain itu, saya prihatin dengan kurangnya perhatian terhadap pendidikan, kurangnya minat membaca, dan rendahnya keterampilan sosial yang dapat memengaruhi masa depan mereka. Perlunya kolaborasi antara orang tua, sekolah, dan komunitas untuk membantu anak-anak tumbuh menjadi individu yang berpengetahuan luas, bertanggung jawab, dan memiliki keterampilan yang diperlukan dalam menghadapi tantangan masa depan. Saya berharap ada perhatian lebih dalam memberikan panduan dan perhatian kepada generasi muda agar mereka dapat berkembang secara optimal.', NULL, 3, 100000, 2, '2023-12-07 19:00:00', NULL, NULL, NULL, NULL, NULL, NULL, 8, 1, NULL, NULL, '2023-12-07 08:25:19', '2023-12-13 11:41:38'),
+(20, 'Hai, saya agak khawatir tentang anak saya dan ingin berbagi dengan seorang psikolog. Anak saya agak tertutup dan susah banget buat ngomongin perasaannya. Saya sering bingung gimana caranya mendekati dia tanpa bikin dia tambah tertekan. Saya pengen anak saya bisa dapet bantuan yang tepat biar dia bisa lebih bahagia dan ngeluarin perasaannya dengan lebih nyaman. Kayaknya dia butuh bantuan untuk menghadapi perubahan suasana hati yang tiba-tiba dan mengungkapkan dirinya dengan lebih baik. Jadi, saya mencari saran bagaimana cara terbaik mendukungnya.', NULL, 4, 100000, 3, '2023-12-13 10:00:00', '2023-12-13 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, 100, NULL, NULL, '2023-12-13 11:43:18', '2023-12-13 11:51:22'),
+(21, 'Hai, saya agak khawatir tentang anak saya dan ingin berbagi dengan seorang psikolog. Anak saya agak tertutup dan susah banget buat ngomongin perasaannya. Saya sering bingung gimana caranya mendekati dia tanpa bikin dia tambah tertekan. Saya pengen anak saya bisa dapet bantuan yang tepat biar dia bisa lebih bahagia dan ngeluarin perasaannya dengan lebih nyaman. Kayaknya dia butuh bantuan untuk menghadapi perubahan suasana hati yang tiba-tiba dan mengungkapkan dirinya dengan lebih baik. Jadi, saya mencari saran bagaimana cara terbaik mendukungnya.', NULL, 8, 100000, 3, '2023-12-15 10:00:00', '2023-12-15 11:30:00', 90, NULL, NULL, NULL, 'Ya', 8, -1, '2023-12-14 16:20:20', 'banyak alasan', '2023-12-13 11:43:19', '2023-12-14 09:20:20'),
+(23, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:00:00', '2023-12-14 15:12:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:30:42'),
+(24, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:12:00', '2023-12-14 15:24:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
+(25, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:24:00', '2023-12-14 15:36:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
+(26, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:36:00', '2023-12-14 15:48:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
+(27, NULL, NULL, NULL, 100000, NULL, '2023-12-14 15:48:00', '2023-12-14 16:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:02:43', '2023-12-14 09:02:43'),
+(28, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:00:00', '2023-12-15 16:30:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
+(29, NULL, NULL, NULL, 100000, NULL, '2023-12-15 16:30:00', '2023-12-15 17:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
+(30, NULL, NULL, NULL, 100000, NULL, '2023-12-15 17:00:00', '2023-12-15 17:30:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42'),
+(31, NULL, NULL, NULL, 100000, NULL, '2023-12-15 17:30:00', '2023-12-15 18:00:00', NULL, NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, '2023-12-14 09:19:42', '2023-12-14 09:19:42');
 
 -- --------------------------------------------------------
 
@@ -1015,9 +1062,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `pasiens` (
   `id` int(11) NOT NULL,
+  `nama_pasien` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `jenis_kelamin` varchar(255) NOT NULL,
   `umur` int(11) NOT NULL,
-  `nama_pasien` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `google_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1031,13 +1078,13 @@ CREATE TABLE `pasiens` (
 -- Dumping data for table `pasiens`
 --
 
-INSERT INTO `pasiens` (`id`, `jenis_kelamin`, `umur`, `nama_pasien`, `email`, `email_verified_at`, `google_id`, `passowrd`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Perempuan', 45, 'Noventa Ladeta', '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:15:16'),
-(3, 'Perempuan', 31, 'Mariana Junita Mawuntu', '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:14:48'),
-(4, 'Laki-Laki', 44, 'David Herlambang', '', NULL, NULL, '', NULL, '2023-11-13 10:01:22', '2023-11-16 17:15:23'),
-(5, 'Perempuan', 30, 'Mariana Junita', '', NULL, NULL, '', NULL, '2023-11-16 08:00:55', '2023-11-16 08:00:55'),
-(7, 'Laki-Laki', 45, 'Felix', '', NULL, NULL, '', NULL, '2023-11-16 19:27:35', '2023-11-16 19:27:35'),
-(8, 'Perempuan', 56, 'Sarah Wijayanto', '', NULL, NULL, '', NULL, '2023-11-16 20:23:05', '2023-11-16 20:23:05');
+INSERT INTO `pasiens` (`id`, `nama_pasien`, `jenis_kelamin`, `umur`, `email`, `email_verified_at`, `google_id`, `passowrd`, `remember_token`, `created_at`, `updated_at`) VALUES
+(2, 'Noventa Ladeta', 'Perempuan', 45, '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:15:16'),
+(3, 'Mariana Junita Mawuntu', 'Perempuan', 31, '', NULL, NULL, '', NULL, '2023-11-10 06:57:17', '2023-11-16 17:14:48'),
+(4, 'David Herlambang', 'Laki-Laki', 44, '', NULL, NULL, '', NULL, '2023-11-13 10:01:22', '2023-11-16 17:15:23'),
+(5, 'Mariana Junita', 'Perempuan', 30, '', NULL, NULL, '', NULL, '2023-11-16 08:00:55', '2023-11-16 08:00:55'),
+(7, 'Felix', 'Laki-Laki', 45, '', NULL, NULL, '', NULL, '2023-11-16 19:27:35', '2023-11-16 19:27:35'),
+(8, 'Sarah Wijayanto', 'Perempuan', 56, '', NULL, NULL, '', NULL, '2023-11-16 20:23:05', '2023-11-16 20:23:05');
 
 -- --------------------------------------------------------
 
@@ -1132,12 +1179,10 @@ CREATE TABLE `topik_janji_temu` (
 --
 
 INSERT INTO `topik_janji_temu` (`id`, `topiks_id`, `janji_temu_id`) VALUES
-(5, 8, 3),
-(6, 6, 3),
-(7, 7, 3),
-(10, 8, 4),
-(11, 6, 4),
-(20, 8, 13);
+(29, 5, 21),
+(30, 7, 21),
+(31, 5, 20),
+(32, 7, 20);
 
 -- --------------------------------------------------------
 
@@ -1418,25 +1463,25 @@ ALTER TABLE `cms_email_templates`
 -- AUTO_INCREMENT for table `cms_logs`
 --
 ALTER TABLE `cms_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=314;
 
 --
 -- AUTO_INCREMENT for table `cms_menus`
 --
 ALTER TABLE `cms_menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `cms_menus_privileges`
 --
 ALTER TABLE `cms_menus_privileges`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `cms_moduls`
 --
 ALTER TABLE `cms_moduls`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `cms_notifications`
@@ -1454,7 +1499,7 @@ ALTER TABLE `cms_privileges`
 -- AUTO_INCREMENT for table `cms_privileges_roles`
 --
 ALTER TABLE `cms_privileges_roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT for table `cms_settings`
@@ -1490,7 +1535,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `janji_temu`
 --
 ALTER TABLE `janji_temu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `konselors`
@@ -1538,7 +1583,7 @@ ALTER TABLE `topiks`
 -- AUTO_INCREMENT for table `topik_janji_temu`
 --
 ALTER TABLE `topik_janji_temu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1561,9 +1606,9 @@ ALTER TABLE `anaks`
 --
 ALTER TABLE `janji_temu`
   ADD CONSTRAINT `janji_temu_ibfk_1` FOREIGN KEY (`janji_temu_id`) REFERENCES `janji_temu` (`id`),
-  ADD CONSTRAINT `janji_temu_ibfk_2` FOREIGN KEY (`pasien_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `janji_temu_ibfk_4` FOREIGN KEY (`bank_id`) REFERENCES `pembayarans` (`id`),
-  ADD CONSTRAINT `janji_temu_ibfk_5` FOREIGN KEY (`konselor_id`) REFERENCES `cms_users` (`id`);
+  ADD CONSTRAINT `janji_temu_ibfk_5` FOREIGN KEY (`konselor_id`) REFERENCES `cms_users` (`id`),
+  ADD CONSTRAINT `janji_temu_ibfk_6` FOREIGN KEY (`pasien_id`) REFERENCES `pasiens` (`id`);
 
 --
 -- Constraints for table `konselors`
