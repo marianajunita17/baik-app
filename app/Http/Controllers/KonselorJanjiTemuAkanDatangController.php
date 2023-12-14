@@ -475,6 +475,7 @@ use Illuminate\Http\Request as FacadesRequest;
                     $janjitemu->konselor_id = CRUDBooster::myId();
                     $janjitemu->tgl_konsultasi_mulai = $startDate;
                     $janjitemu->tgl_konsultasi_selesai = $endSession;
+                    $janjitemu->durasi_konsultasi = $perSesi;
                     $janjitemu->status = 100;
 
                     $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
@@ -494,6 +495,7 @@ use Illuminate\Http\Request as FacadesRequest;
                     $janjitemu->konselor_id = CRUDBooster::myId();
                     $janjitemu->tgl_konsultasi_mulai = $startDate;
                     $janjitemu->tgl_konsultasi_selesai = $endSession;
+                    $janjitemu->durasi_konsultasi = $jumlah;
                     $janjitemu->status = 100;
 
                     $getNominal = janjitemu::join('cms_users', 'cms_users.id', '=', 'konselor_id')
