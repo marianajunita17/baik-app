@@ -201,16 +201,18 @@
 	        |
 	        */
 	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh pasien</p>
-                                    <p>Klien = Nama Pasien yang melakukan janji temu dengan anda</p>
+                                    <p>Klien = Nama Klien yang melakukan janji temu dengan anda</p>
                                     <p>Tanggal Konsultasi Mulai = Tanggal dimana sesi konsultasi resmi dimulai</p>
                                     <p>Tanggal Konsultasi Selesai = Tanggal dimana sesi konsultasi yang dilakukan telah selesai</p>
                                     <p>Durasi Konsultasi (menit) = Durasi dari berapa lama sesi konsultasi berlangsung dalam hitungan menit</p>
                                     <p>Keluhan Klien = Sebuah keluhan atau keadaan yang ditulis oleh klien sebelum melakukan sesi konsultasi</p>
                                     <p>Catatan Kasus Konselor = catatan kasus yang dapat ditulis oleh anda jika sudah selesai melakukan sesi konsultasi</p>
                                     <p>Persentase Kesesuaian (%) = Persentase yang menunjukkan kesesuaian antara topik keluhan pasien dengan topik spesialisasi konselor</p>
-                                    <p>Rekomendasi Konselor = </p>
-                                    <p>Perlu Lanjut? = Sebuah pernyataan apakah klien perlu lanjut untuk melakukan sesi konsultasi kembali atau tidak</p>
+                                    <p>Rekomendasi Konselor = Saran yang diberikan oleh konselor kepada klien</p>
+                                    <p>Perlu Lanjut? = Sebuah pernyataan apakah klien perlu lanjut untuk melakukan sesi konsultasi lanjutan atau tidak</p>
                                     <p>Janji Temu Sebelumnya = Merujuk pada janji temu yang sebelumnya pernah dilakukan oleh klien dengan konselor</p>
+                                    <p>Status = Menunjukkan status penerimaan dan penolakan sesi konseling (100 = Open, 0 = Draft, 1 = Diterima, -1 = Ditolak)</p>
+                                    <p>Alasan = Alasan penolakan sesi konseling yang telah dibooking oleh klien</p>
                                     <p>Nominal = Nominal harga dari sesi konsultasi ini</p>";
 
 
