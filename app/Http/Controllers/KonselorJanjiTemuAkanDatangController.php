@@ -442,12 +442,15 @@ use Illuminate\Http\Request as FacadesRequest;
               CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
             }
 
+            $timezone = Carbon::now()->setTimezone('Asia/Jakarta')->format('H:i');
+
             $data = [];
-            $data['page_title'] = 'Add Data';
+            $data['page_title'] = 'Add Sesi Konseling';
+            $data['jakartaTimezone'] = $timezone;
             // dd($data);
 
             //Please use view method instead view method from laravel
-            return $this->view('alasan-janji-temu',$data);
+            return $this->view('add-konseling-session',$data);
           }
 
 	}

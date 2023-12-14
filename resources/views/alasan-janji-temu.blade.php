@@ -3,9 +3,10 @@
 @section('content')
     <!-- Your html goes here -->
     <div class='panel panel-default'>
-        <div class='panel-heading'>Alasan</div>
+        <div class='panel-heading'>Sesi Konseling</div>
         <div class='panel-body'>
-            <form method='post' action='{{ CRUDBooster::adminpath('konselor_janji_temu_akan_datang/inserttolak/' . $row->id) }}'>
+            <form method='post'
+                action='{{ CRUDBooster::adminpath('konselor_janji_temu_akan_datang/inserttolak/' . $row->id) }}'>
                 @csrf
                 <div class='form-group'>
                     <label>Kode Janji Temu: </label>

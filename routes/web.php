@@ -108,3 +108,5 @@ Route::get('admin/konselor_janji_temu_akan_datang/set-status/tolak/{id}', [Konse
 Route::post('admin/konselor_janji_temu_akan_datang/inserttolak/{id}', [KonselorJanjiTemuAkanDatangController::class, 'insertAlasanTolak'])->name('insertalasan');
 
 Route::post('admin/konselor_janji_temu28/inserttolak/{id}', [KonselorJanjiTemu28Controller::class, 'insertAlasanTolak'])->name('insertalasan');
+
+// Route::post('admin/konselor_janji_temu_akan_datang/add', [KonselorJanjiTemuAkanDatangController::class, 'getAdd'])->name('addSession');
