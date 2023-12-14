@@ -44,6 +44,7 @@ use Session;
 			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
 			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
             $this->col[] = ["label"=>"Status","name"=>"status"];
+            $this->col[] = ["label"=>"Alasan (jika ditolak)","name"=>"alasan"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 

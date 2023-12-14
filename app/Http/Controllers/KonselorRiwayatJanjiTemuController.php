@@ -42,6 +42,8 @@
 			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"rekomendasi"];
 			$this->col[] = ["label"=>"Perlu Lanjut?","name"=>"perlu_lanjut"];
 			$this->col[] = ["label"=>"Janji Temu Sebelumnya","name"=>"janji_temu_id","join"=>"janji_temu,id"];
+            $this->col[] = ["label"=>"Status","name"=>"status"];
+            $this->col[] = ["label"=>"Alasan (jika ditolak)","name"=>"alasan"];
 			$this->col[] = ["label"=>"Nominal","name"=>"nominal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -58,6 +60,9 @@
 			$this->form[] = ['label'=>'Persentase Kesesuaian','name'=>'presentase_kesesuaian','type'=>'text','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rekomendasi','name'=>'rekomendasi','type'=>'textarea','validation'=>'min:0|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Perlu Lanjut','name'=>'perlu_lanjut','type'=>'radio','validation'=>'min:0|max:255','width'=>'col-sm-10','dataenum'=>'Ya;Tidak'];
+            $this->form[] = ['label'=>'Status','name'=>'status','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tanggal Konfirmasi','name'=>'tanggal_konfirmasi','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Alasan','name'=>'alasan','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
