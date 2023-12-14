@@ -41,19 +41,19 @@ class PublikPembayaranController extends Controller
             ]);
 
             $uid = auth()->user()->id;
-            // $konselor_id = $request->input('konselor_id');
-            // $nominal = konselor::find($konselor_id)->nominal_bayar;
-            // $tgl_konsultasi_mulai = $request->input('time');
             $keluhan = $request->input('keluhan');
             $bank = $request->input('selectedBank');
             $selectedJanjiTemu = $request->input('selectedJanjiTemu');
-            $janji_temu = janjitemu::find($selectedJanjiTemu);
+            // $janji_temu = janjitemu::find($selectedJanjiTemu);
+            // $status = 0;
 
-            $janji_temu->update([
+            $janji_temu = DB::table('janji_temu')
+            ->where('id', $selectedJanjiTemu)
+            ->update([
                 'pasien_id' => $uid,
                 'keluhan' => $keluhan,
                 'bank_id' => $bank,
-                'status' => 0
+                'status' => 0,
             ]);
 
             // $janji_temu = janjitemu::create([
@@ -74,8 +74,8 @@ class PublikPembayaranController extends Controller
             // $topik = Topik::findOrFail($selectedTopik);
             // $janji_temu->topiks()->attach($topik->topiks_id);
 
-            // return dd($janji_temu);
-            return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
+            return dd($janji_temu);
+            // return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
         } catch (Exception $e) {
             // return redirect('/booking');
             return dd($e);
