@@ -101,7 +101,7 @@
 	        */
 	        $this->sub_module = array();
             $this->sub_module[] = ['label'=>'Konselor Spesialisasi','path'=>'konselor_spesialis','parent_columns'=>'nomor_str,nama_konselor','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
-            $this->sub_module[] = ['label'=>'Pasien Konselor','path'=>'pasien_konselor','parent_columns'=>'nomor_str,nama_konselor','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
+            $this->sub_module[] = ['label'=>'Klien Konselor','path'=>'pasien_konselor','parent_columns'=>'nomor_str,nama_konselor','icon'=>'fa fa-bars','foreign_key'=>'konselors_id'];
 
 
 	        /*

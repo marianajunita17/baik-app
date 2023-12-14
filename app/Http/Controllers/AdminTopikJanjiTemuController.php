@@ -33,7 +33,7 @@
             $this->col[] = ["label"=>"Kode","name"=>"janji_temu_id","join"=>"janji_temu,id"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"janji_temu_id","join"=>"janji_temu,tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"janji_temu_id","join"=>"janji_temu,tgl_konsultasi_selesai"];
-			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"janji_temu_id","join"=>"janji_temu,keluhan"];
+			$this->col[] = ["label"=>"Keluhan Klien","name"=>"janji_temu_id","join"=>"janji_temu,keluhan"];
 			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"janji_temu_id","join"=>"janji_temu,catatan_kasus"];
 			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"janji_temu_id","join"=>"janji_temu,presentase_kesesuaian"];
 			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"janji_temu_id","join"=>"janji_temu,durasi_konsultasi"];

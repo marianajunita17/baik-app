@@ -34,12 +34,12 @@ use Illuminate\Support\Facades\DB;
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
             $this->col[] = ["label"=>"Kode","name"=>"id"];
-			$this->col[] = ["label"=>"Pasien","name"=>"pasien_id","join"=>"users,nama_pasien"];
+			$this->col[] = ["label"=>"Klien","name"=>"pasien_id","join"=>"users,nama_pasien"];
 			$this->col[] = ["label"=>"Konselor","name"=>"konselor_id","join"=>"cms_users,nama_konselor"];
 			$this->col[] = ["label"=>"Tanggal Konsultasi Mulai","name"=>"tgl_konsultasi_mulai"];
             $this->col[] = ["label"=>"Tanggal Konsultasi Selesai","name"=>"tgl_konsultasi_selesai"];
 			$this->col[] = ["label"=>"Durasi Konsultasi (menit)","name"=>"durasi_konsultasi"];
-			$this->col[] = ["label"=>"Keluhan Pasien","name"=>"keluhan"];
+			$this->col[] = ["label"=>"Keluhan Klien","name"=>"keluhan"];
 			$this->col[] = ["label"=>"Catatan Kasus Konselor","name"=>"catatan_kasus"];
 			$this->col[] = ["label"=>"Persentase Kesesuaian (%)","name"=>"presentase_kesesuaian"];
 			$this->col[] = ["label"=>"Rekomendasi Konselor","name"=>"rekomendasi"];
@@ -51,7 +51,7 @@ use Illuminate\Support\Facades\DB;
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Pasien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,nama_pasien'];
+			$this->form[] = ['label'=>'Klien','name'=>'pasien_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,nama_pasien'];
 			$this->form[] = ['label'=>'Janji Temu Sebelumnya','name'=>'janji_temu_id','type'=>'select2','validation'=>'integer|min:0','width'=>'col-sm-10','datatable'=>'janji_temu,id'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Mulai','name'=>'tgl_konsultasi_mulai','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Tanggal Konsultasi Selesai','name'=>'tgl_konsultasi_selesai','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
@@ -204,18 +204,18 @@ use Illuminate\Support\Facades\DB;
 	        | $this->post_index_html = "<p>test</p>";
 	        |
 	        */
-	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh pasien</p>
+	        $this->post_index_html = "<p>Kode = Menunjukkan kode dari janji temu yang dilakukan oleh klien</p>
                                     <p>Klien = Nama Klien yang melakukan janji temu dengan anda</p>
                                     <p>Tanggal Konsultasi Mulai = Tanggal dimana sesi konsultasi resmi dimulai</p>
                                     <p>Tanggal Konsultasi Selesai = Tanggal dimana sesi konsultasi yang dilakukan telah selesai</p>
                                     <p>Durasi Konsultasi (menit) = Durasi dari berapa lama sesi konsultasi berlangsung dalam hitungan menit</p>
                                     <p>Keluhan Klien = Sebuah keluhan atau keadaan yang ditulis oleh klien sebelum melakukan sesi konsultasi</p>
                                     <p>Catatan Kasus Konselor = catatan kasus yang dapat ditulis oleh anda jika sudah selesai melakukan sesi konsultasi</p>
-                                    <p>Persentase Kesesuaian (%) = Persentase yang menunjukkan kesesuaian antara topik keluhan pasien dengan topik spesialisasi konselor</p>
+                                    <p>Persentase Kesesuaian (%) = Persentase yang menunjukkan kesesuaian antara topik keluhan klien dengan topik spesialisasi konselor</p>
                                     <p>Rekomendasi Konselor = Saran yang diberikan oleh konselor kepada klien</p>
                                     <p>Perlu Lanjut? = Sebuah pernyataan apakah klien perlu lanjut untuk melakukan sesi konsultasi lanjutan atau tidak</p>
                                     <p>Janji Temu Sebelumnya = Merujuk pada janji temu yang sebelumnya pernah dilakukan oleh klien dengan konselor</p>
-                                    <p>Status = Menunjukkan status penerimaan dan penolakan sesi konseling (100 = Open, 0 = Draft, 1 = Diterima, -1 = Ditolak)</p>
+                                    <p>Status = Menunjukkan status penerimaan dan penolakan sesi konseling (100 = Open, 0 = Pending, 1 = Diterima, -1 = Ditolak)</p>
                                     <p>Alasan = Alasan penolakan sesi konseling yang telah dibooking oleh klien</p>
                                     <p>Nominal = Nominal harga dari sesi konsultasi ini</p>";
 

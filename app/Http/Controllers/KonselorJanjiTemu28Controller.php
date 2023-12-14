@@ -207,7 +207,7 @@ use Session;
                                     <p>Rekomendasi Konselor = Saran yang diberikan oleh konselor kepada klien</p>
                                     <p>Perlu Lanjut? = Sebuah pernyataan apakah klien perlu lanjut untuk melakukan sesi konsultasi lanjutan atau tidak</p>
                                     <p>Janji Temu Sebelumnya = Merujuk pada janji temu yang sebelumnya pernah dilakukan oleh klien dengan konselor</p>
-                                    <p>Status = Menunjukkan status penerimaan dan penolakan sesi konseling (100 = Open, 0 = Draft, 1 = Diterima, -1 = Ditolak)</p>
+                                    <p>Status = Menunjukkan status penerimaan dan penolakan sesi konseling (100 = Open, 0 = Pending, 1 = Diterima, -1 = Ditolak)</p>
                                     <p>Alasan = Alasan penolakan sesi konseling yang telah dibooking oleh klien</p>
                                     <p>Nominal = Nominal harga dari sesi konsultasi ini</p>";
 
