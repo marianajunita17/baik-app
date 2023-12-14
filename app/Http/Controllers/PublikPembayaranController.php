@@ -53,7 +53,7 @@ class PublikPembayaranController extends Controller
                 'pasien_id' => $uid,
                 'keluhan' => $keluhan,
                 'bank_id' => $bank,
-                'status' => 1
+                'status' => 0
             ]);
 
             // $janji_temu = janjitemu::create([
