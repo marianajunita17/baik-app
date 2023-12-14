@@ -379,7 +379,6 @@ use Session;
 	    //By the way, you can still create your own method in here... :)
 
 		public function active($id){
-			// dd($id);
             DB::table('janji_temu')->where('id',$id)->update(['status'=>1]);
 
 			CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
@@ -393,9 +392,21 @@ use Session;
 
             $data = [];
             $data['page_title'] = 'Alasan Ditolak';
-            $data['row'] = DB::table('janji_temu')->join('pasiens', 'janji_temu.pasien_id', '=', 'pasiens.id')->where('janji_temu.id',$id)->first();
+            $data['row'] = DB::table('janji_temu')->select('janji_temu.id','nama_pasien','keluhan', DB::raw('DATE(tgl_konsultasi_mulai) as dateonly'))->join('pasiens', 'janji_temu.pasien_id', '=', 'pasiens.id')->where('janji_temu.id',$id)->first();
 
             //Please use view method instead view method from laravel
             return $this->view('alasan-janji-temu',$data);
-          }
+        }
+
+        public function insertAlasanTolak(FacadesRequest $request, $id){
+            $janjitemu = janjitemu::find($id);
+            // dd($janjitemu, $id);
+            $janjitemu->status = -1;
+            $janjitemu->tanggal_konfirmasi = Carbon::now()->toDateTimeString();
+            $janjitemu->alasan = $request->get('alasan');
+            $janjitemu->save();
+
+            CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu28'), 'Status Berhasil', 'success');
+
+        }
 	}
