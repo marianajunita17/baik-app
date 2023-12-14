@@ -205,12 +205,23 @@
                                 <div class="form-group col-12">
                                     <label class="form-label" for="keluhan">Keluhan Pasien: </label><br>
                                     <textarea id="keluhan" class="form-control" minlength="100" id="keluhan" name="keluhan" rows="5"
-                                        cols="50" oninput="countWords(this)" value="{{ $janji_temu->keluhan }}" required></textarea><br>
+                                        cols="50" oninput="countWords(this)" value="{{ $jj->keluhan }}" required></textarea><br>
                                     <span id="wordCount">0 kata</span><br><br>
                                 </div>
-                                <div class="form-group col-12">
+                                {{-- <div class="form-group col-12">
                                     <label class="form-label">Tanggal Konsultasi: </label><br>
                                     <input class="form-control" id="time" name="time" type="datetime-local" value="{{ now()->setTimezone('T')->format('Y-m-dTh:m') }}" form-control>
+                                </div> --}}
+                                <div class="form-group col-12">
+                                    <label class="form-label">Sesi Janji Temu: </label>
+                                    <select name="selectedJanjiTemu" id="selectedJanjiTemu">
+                                        @foreach ($janji_temu as $jj)
+                                            <option value="{{ $jj->id }}">
+                                                <p>Tanggal Konsultasi: {{ $jj->tgl_konsultasi_mulai }}</p>
+                                                <p>Durasi Konsultasi: {{$jj->durasi_konsultasi}}</p>
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group col-12">
                                     <label class="form-label">Bank:</label>

@@ -22,12 +22,11 @@ class PublikPembayaranController extends Controller
     public function index($id){
         $konselor = konselor::find($id);
         $spesialisasi = $konselor->spesialisasis()->get();
-        // $topiks = topik::pluck('nama_topik', 'id');
         $bank = pembayaran::all();
         $topiks = topik::all();
+        $janji_temu = janjitemu::where('konselor_id', $id)->get();
 
-        // return dd($topiks, $spesialisasi, $konselor);
-        return view('booking', ['cms_users'=>$konselor, 'spesialisasis'=>$spesialisasi, 'topiks'=>$topiks, 'pembayarans'=>$bank]);
+        return view('booking', ['cms_users'=>$konselor, 'spesialisasis'=>$spesialisasi, 'topiks'=>$topiks, 'pembayarans'=>$bank, 'janji_temu'=>$janji_temu]);
     }
 
     public function booking(Request $request){
@@ -35,26 +34,36 @@ class PublikPembayaranController extends Controller
             $request->validate([
                 'selectedTopik' => 'required|integer',
                 'keluhan' => 'required',
-                'time' => 'required',
+                // 'time' => 'required',
                 'selectedBank' => 'required',
-                'konselor_id'=>'required'
+                'selectedJanjiTemu' => 'required',
+                // 'konselor_id'=>'required'
             ]);
 
             $uid = auth()->user()->id;
-            $konselor_id = $request->input('konselor_id');
-            $nominal = konselor::find($konselor_id)->nominal_bayar;
-            $tgl_konsultasi_mulai = $request->input('time');
+            // $konselor_id = $request->input('konselor_id');
+            // $nominal = konselor::find($konselor_id)->nominal_bayar;
+            // $tgl_konsultasi_mulai = $request->input('time');
             $keluhan = $request->input('keluhan');
             $bank = $request->input('selectedBank');
+            $selectedJanjiTemu = $request->input('selectedJanjiTemu');
+            $janji_temu = janjitemu::find($selectedJanjiTemu);
 
-            $janji_temu = janjitemu::create([
+            $janji_temu->update([
                 'pasien_id' => $uid,
-                'nominal' => $nominal,
-                'tgl_konsultasi_mulai' => $tgl_konsultasi_mulai,
-                'konselor_id' => $konselor_id,
                 'keluhan' => $keluhan,
-                'bank_id' => $bank
+                'bank_id' => $bank,
+                'status' => 1
             ]);
+
+            // $janji_temu = janjitemu::create([
+            //     'pasien_id' => $uid,
+            //     // 'nominal' => $nominal,
+            //     // 'tgl_konsultasi_mulai' => $tgl_konsultasi_mulai,
+            //     // 'konselor_id' => $konselor_id,
+            //     'keluhan' => $keluhan,
+            //     'bank_id' => $bank
+            // ]);
 
             $topik_janji_temu = DB::table('topik_janji_temu')
             ->insert([
