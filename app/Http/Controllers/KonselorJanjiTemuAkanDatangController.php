@@ -511,7 +511,5 @@ use Illuminate\Http\Request as FacadesRequest;
 
             CRUDBooster::redirect(CRUDBooster::adminPath('konselor_janji_temu_akan_datang'), 'Status Berhasil', 'success');
 
-            // dd($request->all());
-
         }
 	}
