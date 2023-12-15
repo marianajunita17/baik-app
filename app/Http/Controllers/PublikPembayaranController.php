@@ -34,18 +34,14 @@ class PublikPembayaranController extends Controller
             $request->validate([
                 'selectedTopik' => 'required|integer',
                 'keluhan' => 'required',
-                // 'time' => 'required',
                 'selectedBank' => 'required',
                 'selectedJanjiTemu' => 'required',
-                // 'konselor_id'=>'required'
             ]);
 
             $uid = auth()->user()->id;
             $keluhan = $request->input('keluhan');
             $bank = $request->input('selectedBank');
             $selectedJanjiTemu = $request->input('selectedJanjiTemu');
-            // $janji_temu = janjitemu::find($selectedJanjiTemu);
-            // $status = 0;
 
             $janji_temu = DB::table('janji_temu')
             ->where('id', $selectedJanjiTemu)
@@ -56,26 +52,16 @@ class PublikPembayaranController extends Controller
                 'status' => 0,
             ]);
 
-            // $janji_temu = janjitemu::create([
-            //     'pasien_id' => $uid,
-            //     // 'nominal' => $nominal,
-            //     // 'tgl_konsultasi_mulai' => $tgl_konsultasi_mulai,
-            //     // 'konselor_id' => $konselor_id,
-            //     'keluhan' => $keluhan,
-            //     'bank_id' => $bank
-            // ]);
-
             $topik_janji_temu = DB::table('topik_janji_temu')
             ->insert([
-                'janji_temu_id' => $janji_temu->id,
+                'janji_temu_id' => $selectedJanjiTemu,
                 'topiks_id' =>  $selectedTopik = $request->input('selectedTopik'),
             ]);
 
-            // $topik = Topik::findOrFail($selectedTopik);
-            // $janji_temu->topiks()->attach($topik->topiks_id);
 
-            return dd($janji_temu);
-            // return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
+
+            // return dd($janji_temu, $selectedTopik);
+            return redirect()->route('status-booking')->with('success', 'Booking Berhasil');
         } catch (Exception $e) {
             // return redirect('/booking');
             return dd($e);
